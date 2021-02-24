@@ -1,3 +1,12 @@
+/* 
+Color scheme for site:
+	129793 - teal blue
+	505050 - gray
+	FFF5C3 - light yellow
+	9BD7D5 - light blue
+	FF7260 - salmon 
+*/
+
 :root {
 	--blue: #007bff;
 	--indigo: #6610f2;
@@ -32,15 +41,6 @@
 		'Liberation Mono', 'Courier New', monospace;
 }
 
-/* 
-Color scheme for site:
-	129793 - teal blue
-	505050 - gray
-	FFF5C3 - light yellow
-	9BD7D5 - light blue
-	FF7260 - salmon 
-*/
-
 #navbar {
 	overflow: hidden;
 	list-style-type: none;
@@ -62,14 +62,18 @@ Color scheme for site:
 }
 
 #navLogo {
-	flex: 3; 
+	flex: 4; 
 }
 
 .navLinks a:hover {
 	color: white;
-	border-bottom: 3px solid white;
+	border-bottom: 2px solid white;
 }
 
-.userLinks {
+#navRecommendations {
 	flex: 1;
+}
+
+#navMain {
+	flex: 0;
 }
