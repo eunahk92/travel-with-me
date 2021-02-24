@@ -45,10 +45,6 @@ body {
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.showOnMobileOnly { 
-	display: none; 
-}
-
 #scrollDownDirectionDiv {
 	position: absolute;
 	left: -20px;
@@ -109,7 +105,7 @@ div i {
 }
 
 /* Image styling */
-img {
+#eunahsDiv img {
 	width: 60%;
 	border: 20px solid rgba(255,255,255,0.95);
 }
@@ -127,10 +123,8 @@ img {
 		letter-spacing: -.7rem;
 		text-align: center;
 	}
-	#navLogo, .hideOnMobile { display: none; }
-	.showOnMobileOnly { display: block;}
 	#aboutMeDiv { flex-direction: column-reverse; }
-	img {
+	#eunahsDiv img {
 		width: 80%;
 		border: 10px solid rgba(255,255,255,0.95);
 		align-items: center;

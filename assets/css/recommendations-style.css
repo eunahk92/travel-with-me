@@ -8,13 +8,14 @@ Color scheme for site:
 */
 
 #recommendationListDiv { 
-	width: 45vw;
+	width: 320px;
 	background-color: #212629;
 	color: wheat;
 	-webkit-box-shadow: 10px 8px 5px rgba(0, 0, 0, 0.4) ;  
   	-moz-box-shadow:    10px 8px 5px rgba(0, 0, 0, 0.4) ;  
   	box-shadow:         10px 8px 5px rgba(0, 0, 0, 0.4) ;
-	border-radius: 25px;
+	border-radius: 10px;
+	margin-left: 5vw;
 }
 
 /* Centering bottom pagination dots */
@@ -25,18 +26,46 @@ Color scheme for site:
 .fp-controlArrow.fp-next { border-width: 20.5px 0 20.5px 24px; }
 
 /* Cities links*/
-.listOfLocations { list-style-type: none; }
+.listOfLocations { 
+	list-style-type: none; 
+	padding: 0; 
+}
 
 .citiesLink a {
-	text-align: end;
+	text-align: start;
 	display: block;
 	color: white;
-	padding: 10px 16px;
 	text-decoration: none;
 }
 
 .citiesLink a:hover {
 	color: #9BD7D5;
+}
+
+/* Font styling */
+.smallText {
+	font-size: x-small;
+}
+
+/* Picture div */
+.travelPics {
+	display: flex; 
+	padding: 5px;
+	width: fit-content;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #FF7260;
+	border: 1px solid white;
+	justify-content: center;
+}
+
+.travelPics img { 
+	display: inline; 
+	flex: 1; 
+	width: fit-content;
+	max-width: 200px;
+	height: 200px;
+	padding: 3px;
 }
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/
