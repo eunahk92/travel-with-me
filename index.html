@@ -9,7 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="./assets/style.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/882676d0bc.js" crossorigin="anonymous"></script>
+    <link href="./assets/css/main-style.css" rel="stylesheet">
+    <link href="./assets/css/recommendations-style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -30,9 +32,9 @@
         <div class="section" data-anchor="about-me">
             <div class="row justify-content-center" id="aboutMeDiv">
                 <div class="col-md-5 col-md-pull-7">
-                    <div >
-                        <img src="./assets/photos/IMG_0672.JPG" alt="Eunah in hawaii" class="float-end">
-                        <div id="polaroidDiv" class="float-end">
+                    <div id="eunahsDiv">
+                        <img src="./assets/photos/IMG_0672.JPG" alt="Eunah in hawaii" class="float-md-end">
+                        <div id="polaroidDiv" class="float-md-end">
                             <p class="text-end px-3">Eunah Kim | Travel blog<br>
                             <small>all the things I did on my trips</small></p>
                         </div>
@@ -44,9 +46,24 @@
                     <h1 class="showOnMobileOnly">HE<span class="text-white">LLO</span></h1>
                 </div>
             </div>
+            <div id="scrollDownDirectionDiv" class="mb-5">
+                <p class="verticalText">scroll down</p>
+                <i class="fas fa-angle-double-down fa-2x"></i>
+            </div>
         </div>
         <div class="section" data-anchor="recommendations">
-            <!-- different recommendation cards go here-->
+            <div class="slide" data-anchor="recommendationsList">
+                <div class="card mx-auto" id="recommendationListDiv">
+                    <div class="card-body">
+                      <h5 class="card-title">Places I've Been</h5>
+                      <small class="card-text">Click on the location to see my recommendations!</small>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" data-anchor="city1"></div>
+            <div class="slide" data-anchor="city2"></div>
+            <div class="slide" data-anchor="city3"></div>
+            <div class="slide" data-anchor="city4"></div>
         </div>
     </div>
 
@@ -54,6 +71,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/vendors/scrolloverflow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.extensions.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <script src="./assets/script.js"></script>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
