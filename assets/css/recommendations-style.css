@@ -7,17 +7,6 @@ Color scheme for site:
 	FF7260 - salmon 
 */
 
-#recommendationListDiv { 
-	width: 320px;
-	background-color: #212629;
-	color: wheat;
-	-webkit-box-shadow: 10px 8px 5px rgba(0, 0, 0, 0.4) ;  
-  	-moz-box-shadow:    10px 8px 5px rgba(0, 0, 0, 0.4) ;  
-  	box-shadow:         10px 8px 5px rgba(0, 0, 0, 0.4) ;
-	border-radius: 10px;
-	margin-left: 5vw;
-}
-
 /* Centering bottom pagination dots */
 .fp-slidesNav { text-align: center; }
 
@@ -25,52 +14,67 @@ Color scheme for site:
 .fp-controlArrow.fp-prev { border-width: 20.5px 24px 20.5px 0; }
 .fp-controlArrow.fp-next { border-width: 20.5px 0 20.5px 24px; }
 
-/* Cities links*/
-.listOfLocations { 
-	list-style-type: none; 
-	padding: 0; 
+/* Font styling */
+.smallText { font-size: x-small; }
+
+/* Wrapper for whole section */
+.wrapper {
+	display: inline;
 }
 
-.citiesLink a {
+/* Location list section */
+.recommendationListContainer { 
+	width: 20%;
+	min-height: 300px;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 5px;
+	color: #212629;
+	float: left;
+;}
+
+.recommendationListContainer a {
+	display: block; 
+	flex: 1; 
+	padding: 2px;
 	text-align: start;
-	display: block;
 	color: white;
 	text-decoration: none;
 }
 
-.citiesLink a:hover {
-	color: #9BD7D5;
-}
-
-/* Font styling */
-.smallText {
-	font-size: x-small;
-}
-
-/* Picture div */
-.travelPics {
-	display: flex; 
-	padding: 5px;
-	width: fit-content;
+/* Pictures Section */
+.pictureSection {
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #FF7260;
-	border: 1px solid white;
-	justify-content: center;
+	float: right;
+	padding-left: 25px;
+	padding-right: 25px;
 }
 
-.travelPics img { 
+.picContainer {
+	display: flex; 
+	padding: 4px;
+	background-color: #FF7260;
+	border: 1px solid white;
+}
+
+.picContainer img { 
 	display: inline; 
 	flex: 1; 
-	width: fit-content;
-	max-width: 200px;
-	height: 200px;
+	max-width: 20%;
+	height: auto;
 	padding: 3px;
 }
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/
 @media only screen and (max-width: 600px) {
-	#recommendationListDiv { width: 80vw; }
+	.recommendationListContainer { width: 100%; min-height: fit-content; }
 	.fp-controlArrow.fp-prev { border-width: 10.5px 14px 10.5px 0 }
 	.fp-controlArrow.fp-next { border-width: 10.5px 0 10.5px 14px; }
+	.pictureSection {
+		width: 100%;
+		padding: 5px;
+	}
 }
