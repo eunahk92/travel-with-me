@@ -1,23 +1,47 @@
 /* 
 Color scheme for site:
 	129793 - teal blue
-	505050 - gray
+	212629 - gray
 	FFF5C3 - light yellow
 	9BD7D5 - light blue
 	FF7260 - salmon 
 */
 
-#recommendationListDiv { width: 55vw; }
+#recommendationListDiv { 
+	width: 45vw;
+	background-color: #212629;
+	color: wheat;
+	-webkit-box-shadow: 10px 8px 5px rgba(0, 0, 0, 0.4) ;  
+  	-moz-box-shadow:    10px 8px 5px rgba(0, 0, 0, 0.4) ;  
+  	box-shadow:         10px 8px 5px rgba(0, 0, 0, 0.4) ;
+	border-radius: 25px;
+}
 
 /* Centering bottom pagination dots */
 .fp-slidesNav { text-align: center; }
 
 /* Left/Right arrow resizing */
-.fp-controlArrow.fp-prev { border-width: 20.5px 24px 20.5px 0 }
+.fp-controlArrow.fp-prev { border-width: 20.5px 24px 20.5px 0; }
 .fp-controlArrow.fp-next { border-width: 20.5px 0 20.5px 24px; }
+
+/* Cities links*/
+.listOfLocations { list-style-type: none; }
+
+.citiesLink a {
+	text-align: end;
+	display: block;
+	color: white;
+	padding: 10px 16px;
+	text-decoration: none;
+}
+
+.citiesLink a:hover {
+	color: #9BD7D5;
+}
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/
 @media only screen and (max-width: 600px) {
+	#recommendationListDiv { width: 80vw; }
 	.fp-controlArrow.fp-prev { border-width: 10.5px 14px 10.5px 0 }
 	.fp-controlArrow.fp-next { border-width: 10.5px 0 10.5px 14px; }
 }
