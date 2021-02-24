@@ -31,3 +31,45 @@
 	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
 		'Liberation Mono', 'Courier New', monospace;
 }
+
+/* 
+Color scheme for site:
+	129793 - teal blue
+	505050 - gray
+	FFF5C3 - light yellow
+	9BD7D5 - light blue
+	FF7260 - salmon 
+*/
+
+#navbar {
+	overflow: hidden;
+	list-style-type: none;
+	display: flex;
+	width: 100%;
+}
+
+.navLinks { 
+	display: inline; 
+	flex: 1; 
+}
+
+.navLinks a, .navLinks span {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 10px 16px;
+	text-decoration: none;
+}
+
+#navLogo {
+	flex: 3; 
+}
+
+.navLinks a:hover {
+	color: white;
+	border-bottom: 3px solid white;
+}
+
+.userLinks {
+	flex: 1;
+}
