@@ -1,13 +1,5 @@
 /* 
 Color scheme 1 :
-	129793 - teal blue
-	212629 - gray
-	FFF5C3 - light yellow
-	9BD7D5 - light blue
-	FF7260 - salmon 
-*/
-/* 
-Color scheme 2 :
 	6ba292 - teal green
 	e4fde1 - mint green
 	ffdc7c - light yellow
@@ -15,7 +7,7 @@ Color scheme 2 :
 	dd614a - coral 
 */
 /* 
-Color scheme 3 :
+Color scheme 2 :
 	f4f2f0 - white
 	d7d2ce - light brown
 	d3c0b2 - light pink
@@ -37,20 +29,20 @@ Color scheme 3 :
 }
 
 /* Wrapper for whole section */
-.wrapper {
-	display: inline;
-}
+.wrapper { display: inline; }
 
 /* Location list section */
 .recommendationListContainer { 
-	width: 20%;
+	width: 15%;
 	min-height: 300px;
+	max-height: 80vh;
 	text-align: center;
-	margin-left: auto;
+	margin-left: 20px;
 	margin-right: auto;
 	padding: 5px;
 	color: #212629;
 	float: left;
+	overflow: scroll;
 ;}
 
 .recommendationListContainer a {
@@ -58,9 +50,28 @@ Color scheme 3 :
 	flex: 1; 
 	padding: 2px;
 	text-align: start;
-	color: white;
+	color: #d7d2ce;
 	text-decoration: none;
 }
+
+.recommendationListContainer a:hover { color: #d3c0b2; }
+
+#tripContentCollapse {
+	clear: right;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.boxTransformation {
+	border: 1px solid #d7d2ce;
+	width: 400px;
+	height: 400px;
+	margin-top: 2rem;
+	margin-left: 50vw;
+	margin-right: auto;
+}
+
 
 /* Pictures Section */
 .pictureSection {
@@ -76,7 +87,7 @@ Color scheme 3 :
 	display: flex; 
 	padding: 4px;
 	background-color: #6ba292;
-	border: 1px solid white;
+	border: 1px solid #d7d2ce;
 }
 
 .picContainer img { 
