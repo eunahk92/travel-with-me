@@ -1,10 +1,26 @@
 /* 
-Color scheme for site:
+Color scheme 1 :
 	129793 - teal blue
 	212629 - gray
 	FFF5C3 - light yellow
 	9BD7D5 - light blue
 	FF7260 - salmon 
+*/
+/* 
+Color scheme 2 :
+	6ba292 - teal green
+	e4fde1 - mint green
+	ffdc7c - light yellow
+	ff9b71 - salmon
+	dd614a - coral 
+*/
+/* 
+Color scheme 3 :
+	f4f2f0 - white
+	d7d2ce - light brown
+	d3c0b2 - light pink
+	a99282 - brown
+	857b74 - dark brown
 */
 
 /* Centering bottom pagination dots */
@@ -15,7 +31,10 @@ Color scheme for site:
 .fp-controlArrow.fp-next { border-width: 20.5px 0 20.5px 24px; }
 
 /* Font styling */
-.smallText { font-size: x-small; }
+.smallText { 
+	font-size: x-small; 
+	text-align: left;
+}
 
 /* Wrapper for whole section */
 .wrapper {
@@ -56,7 +75,7 @@ Color scheme for site:
 .picContainer {
 	display: flex; 
 	padding: 4px;
-	background-color: #FF7260;
+	background-color: #6ba292;
 	border: 1px solid white;
 }
 

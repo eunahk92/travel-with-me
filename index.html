@@ -29,7 +29,7 @@
 
     <div id="fullpage">
         <div class="section" data-anchor="about-me">
-            <div class="row justify-content-center" id="aboutMeDiv">
+            <div class="row justify-content-center" id="aboutMeSection">
                 <div class="col-md-5 col-md-pull-7">
                     <div id="eunahsDiv">
                         <img src="./assets/photos/IMG_0672.JPG" alt="Eunah in hawaii" class="float-md-end">
@@ -40,9 +40,9 @@
                     </div>
                 </div>
                 <div class="col-md-7 col-md-push-5">
-                    <h1 class="d-none d-lg-block">HE</h1>
-                    <h1 class="d-none d-lg-block">LLO.</h1>
-                    <h1 class="d-lg-none">HE<span class="text-white">LLO</span></h1>
+                    <h1 class="d-none d-md-block">HE</h1>
+                    <h1 class="d-none d-md-block">LLO.</h1>
+                    <h1 class="d-md-none">HE<span class="text-white">LLO</span></h1>
                 </div>
             </div>
             <div id="scrollDownDirectionDiv" class="mb-5">
@@ -53,16 +53,15 @@
         <div class="section" id="recommendationsSection" data-anchor="recommendations">
             <div class="wrapper">
                 <div class="recommendationListContainer">
-                    <p class="smallText">[Click on a location to see my recommendations]</p>
-    
-                    <a class="locationLink" data-bs-toggle="collapse" href="#tripContentCollapse" role="button" aria-expanded="false" aria-controls="tripContentCollapse">
-                        <i class="fas fa-grip-lines"></i>
-                        Honolulu, Hawaii
-                    </a>
-                    <a class="locationLink" data-bs-toggle="collapse" href="#tripContentCollapse" role="button" aria-expanded="false" aria-controls="tripContentCollapse">
-                        <i class="fas fa-grip-lines"></i>
-                        Iceland
-                    </a>
+                    <p class="smallText text-center">[Click on a location to see my recommendations]</p>
+                    <p class="smallText">US</p>
+                    <div class="usLocations">
+                        <!-- JS will populate -->
+                    </div><br/>
+                    <p class="smallText">International</p>
+                    <div class="internationalLocations">
+                        <!-- JS will populate -->
+                    </div>
                 </div>
                 <div class="pictureSection">
                     <div class="picContainer">
@@ -74,7 +73,10 @@
                     </div>
                     <div class="collapse" id="tripContentCollapse">
                         <div id="tripContent">
-                            Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+                            <h4>[HONOLULU, HAWAII]</h4>
+                            <p>ADVENTURES</p>
+                            <p>EATERIES</p>
+                            <p>PLACES TO VISIT</p>
                         </div>
                     </div>  
                 </div>

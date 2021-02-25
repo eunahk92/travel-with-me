@@ -52,6 +52,10 @@ body {
 	padding: 20px;
 }
 
+#tripContentCollapse {
+	padding: 10px;
+}
+
 /* Nav bar styling */
 #navbar {
 	overflow: hidden;
@@ -67,14 +71,14 @@ body {
 
 .navLinks a, .navLinks h4 {
 	display: block;
-	color: white;
+	color: #4A3728;
 	text-align: center;
 	padding: 10px 16px;
 	text-decoration: none;
 }
 
 .navLinks a:hover {
-	color: white;
+	color: #857b74;
 	border-bottom: 2px solid white;
 }
 
@@ -123,7 +127,7 @@ div i {
 		letter-spacing: -.7rem;
 		text-align: center;
 	}
-	#aboutMeDiv { flex-direction: column-reverse; }
+	#aboutMeSection { flex-direction: column-reverse; }
 	#eunahsDiv img {
 		width: 80%;
 		border: 10px solid rgba(255,255,255,0.95);
