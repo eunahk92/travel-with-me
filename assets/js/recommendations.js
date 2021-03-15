@@ -1,6 +1,6 @@
 const locationsArray = [
 	{
-		title: "Honolulu, Hawaii",
+		title: "Honolulu,Hawaii",
 		isInternational: false,
 		coord: {
 			lat: 21.5260075,
@@ -136,7 +136,6 @@ locationsArray.forEach(location => {
 
 renderMap = (array, location) => {
 	array.forEach(spot => {
-		console.log(spot)
 		geocoder.geocode( { 'address': spot.address }, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				let lat = results[0].geometry.location.lat();
@@ -173,19 +172,32 @@ renderMap = (array, location) => {
 	}
 };
 
-renderLocationContent = e => {
+renderLocationContent = (location) => {
+	$('#locationTitle').attr('data-city', location);
 	$("#tripContent-eateries").empty();
 	$("#tripContent-adventures").empty();
 	$("#tripContent-extra").empty();
-	const clickedLocation = e.target.innerText.trim();
-	let res = locationsArray.filter(location => location.title === clickedLocation);
+	let res = locationsArray.filter(city => city.title == location);
 	let value = res[0].recommendations;
 	specificMarkers = value.filter(spot => spot.address);
-	renderMap(specificMarkers, clickedLocation);
+	renderMap(specificMarkers, location);
 	const { title, recommendations } = res[0];
 	$('#locationTitle').text(title);
 	renderList(recommendations);
 };
+
+checkDivDisplay = (location) => {
+	let dataValue = $('#locationTitle').attr('data-city');
+	if ($("#tripContent").css('display') == 'none') {
+		$("#tripContent").css('display', 'block');
+		renderLocationContent(location);
+	} else if ($("#tripContent").css('display') == 'block' && dataValue == location) {
+		$("#tripContent").css('display', 'none'); 
+	} else if ($("#tripContent").css('display') == 'block' && dataValue != location) {		
+		$("#tripContent").css('display', 'block');
+		renderLocationContent(location);
+	}
+}
 
 renderList = (array) => {
 	array.forEach(spot => {
@@ -218,4 +230,7 @@ renderLocationLinks();
 
 $(document).ready(renderMap(allMarkers));
 
-$(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', renderLocationContent);
+$(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
+	let clickedLocation = e.target.innerText.trim();
+	checkDivDisplay(clickedLocation);
+});
