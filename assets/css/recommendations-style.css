@@ -43,7 +43,6 @@ h2 {
 .recommendationListContainer { 
 	width: 16%;
 	min-height: 300px;
-	max-height: 80vh;
 	text-align: center;
 	margin-left: 20px;
 	margin-right: auto;
@@ -81,7 +80,7 @@ h2 {
 	margin-right: auto;
 }
 
-#titleDiv {
+#locationNameDiv {
 	clear: right;
 	width: 100%;
 	position: absolute;
@@ -90,10 +89,16 @@ h2 {
 	margin-bottom: 10px;
 }
 
+.tripContent-border { 
+	width: 75%;
+	border-bottom: 2px solid white; 
+}
+
 #locationTitle { font-family: 'Lato', sans-serif; }
 
 #tripContent-eateries, #tripContent-adventures, #tripContent-extra {
 	margin: 0;
+	height: 300px;
 	overflow: scroll;
 }
 
@@ -140,7 +145,10 @@ h2 {
 	height: 410px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 5px solid #d7d2ce;
+	border-left: 17px solid rgba(255,255,255,0.95);
+	border-right: 17px solid rgba(255,255,255,0.95);
+	border-top: 17px solid rgba(255,255,255,0.95);
+	border-bottom: 80px solid rgba(255,255,255,0.95);
 }
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/

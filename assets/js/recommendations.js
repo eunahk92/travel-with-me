@@ -202,34 +202,31 @@ checkDivDisplay = (location) => {
 		renderLocationContent(location);
 	} else if ($("#tripContent").css('display') == 'block' && dataValue == location) {
 		$("#tripContent").css('display', 'none'); 
-	} else if ($("#tripContent").css('display') == 'block' && dataValue != location) {		
+	} else if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
 		$("#tripContent").css('display', 'block');
 		renderLocationContent(location);
 	}
 };
 
-renderList = (array) => {
+renderListOfRecommendations = (array) => {
 	array.forEach(spot => {
-		const { name, address, where, types, category, commentary } = spot;
+		let { name, address, types, category } = spot;
 		address ? 
 			query = address.replaceAll(',', '%2C').replaceAll(' ', '+') :
 			query = name.replaceAll(',', '%2C').replaceAll(' ', '+') ;
-		let li = `<a href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank" class="recommendationLink mr-3"><small>${name}</small><br>`
+		let icons = renderIcons(types);
+		icons = icons.toString().replaceAll(',', '');
+		let li = `
+			<div class="row d-flex justify-content-start m-0 p-0">
+				<a href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank" class="recommendationLink mr-3">
+					<small>${name} ${icons}</small>
+				</a>
+			</div>`
 		switch (category) {
 			case "toEat":
-				// types.forEach(type => {
-				// 	let icon = renderIcons(type);
-				// 	console.log('it clicked')
-				// 	$("#tripContent-eateries-icons").append(icon);
-				// });
 				$("#tripContent-eateries-list").append(li);
 				break;
 			case "toDo":
-				// types.forEach(type => {
-				// 	let icon = renderIcons(type);
-				// 	console.log('it clicked')
-				// 	$("#tripContent-adventures-icons").append(icon);
-				// });
 				$("#tripContent-adventures-list").append(li);
 				break;
 		};
@@ -261,25 +258,39 @@ renderLocationContent = (location) => {
 			markers.push(spot.address)
 		}
 	});
-	console.log(markers)
 	renderMap(markers, location);
 	$('#locationTitle').text(title);
-	renderList(recommendations);
+	renderListOfRecommendations(recommendations);
 };
 
-renderIcons = (type) => {
-	switch (type) {
-		case "seafood":
-			return `<small><i class="fas fa-fish"></i></small>`;
-		case "dessert":
-			return `<small><i class="fas fa-ice-cream"></i></small>`;
-		case "hike":
-			return `<small><i class="fas fa-hiking"></i></small>`;
-		case "shop":
-			return `<small><i class="fas fa-shopping-bag"></i></small>`;
-		case "eat":
-			return `<small><i class="fas fa-utensils"></i></small>`;
-}
+renderIcons = (array) => {
+	let icons = [];
+	array.forEach(type => {
+		switch (type) {
+			case "seafood":
+				icons.push(`<i class="fas fa-fish"></i>`);
+				break;
+			case "dessert":
+				icons.push(`<i class="fas fa-ice-cream"></i>`);
+				break;
+			case "hike":
+				icons.push(`<i class="fas fa-hiking"></i>`);
+				break;
+			case "shop":
+				icons.push(`<i class="fas fa-shopping-bag"></i>`);
+				break;
+			case "eat":
+				icons.push(`<i class="fas fa-utensils"></i>`);
+				break;
+			case "snorkeling":
+				icons.push(`<i class="fas fa-swimmer"></i>`);
+				break;
+			case "bar":
+				icons.push(`<i class="fas fa-glass-martini-alt"></i>`);
+				break;
+		}	
+	})
+	return icons;
 };
 
 $(document).ready(() => {
@@ -290,17 +301,5 @@ $(document).ready(() => {
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
-	// locationsArray.forEach(location => {
-	// 	if (location.title == clickedLocation) {
-	// 		let markers = [];
-	// 		let recos = location.recommendations;
-	// 		recos.forEach(spot => {
-	// 			if (spot.address) {
-	// 				markers.push(spot.address)
-	// 			};
-	// 		});
-	// 		allMarkers = markers;
-	// 	}
-	// });
 	checkDivDisplay(clickedLocation);
 });
