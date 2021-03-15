@@ -10,10 +10,9 @@ const locationsArray = [
 			{
 				name: "Giovanni Shrimp Truck",
 				where: "North Shore Beach",
-				address: "",
+				address: "66-472 Kamehameha Hwy, Haleiwa, HI 96712",
 				knownFor: "Shrimp dishes",
-				foodCategory: "Entree",
-				commentary: "Recommendation: Try the Shrimp Scampi Plate!! You won't be disappointed.",
+				commentary: "My recommendation: Try the Shrimp Scampi Plate!",
 				category: "toEat"
 			},
 			{
@@ -21,7 +20,6 @@ const locationsArray = [
 				where: "Everywhere",
 				address: "",
 				knownFor: "Poke",
-				foodCategory: "Entree",
 				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix). Offered in delicious different flavors.",
 				category: "toEat"
 			},
@@ -30,7 +28,6 @@ const locationsArray = [
 				where: "",
 				address: "",
 				knownFor: "Malasadas",
-				foodCategory: "Dessert",
 				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them.",
 				category: "toEat"
 			},
@@ -39,7 +36,6 @@ const locationsArray = [
 				where: "",
 				address: "",
 				knownFor: "Musubi",
-				foodCategory: "Snack",
 				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks.",
 				category: "toEat"
 			},
@@ -48,7 +44,6 @@ const locationsArray = [
 				where: "", 
 				address: "",
 				knownFor: "Shaved Ice",
-				foodCategory: "Dessert",
 				commentary: "",
 				category: "toEat"
 			},
@@ -57,7 +52,6 @@ const locationsArray = [
 				where: "",
 				address: "",
 				knownFor: "Shaved Ice",
-				foodCategory: "Dessert",
 				commentary: "",
 				category: "toEat"
 			},
@@ -227,8 +221,10 @@ renderLocationLinks = () => {
 };
 
 renderLocationLinks();
-
-$(document).ready(renderMap(allMarkers));
+$(document).ready(() => {
+	let intViewportWidth = window.innerWidth;
+	intViewportWidth < 576 ? "" : renderMap(allMarkers);
+});
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
