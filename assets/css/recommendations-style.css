@@ -65,6 +65,13 @@ h2 {
 
 .recommendationListContainer a:hover { color: #d3c0b2; }
 
+.recommendationsDivTitles { 
+	font-size: 3rem;
+	line-height: 2rem;
+	letter-spacing: -.3rem;
+	font-family: 'Lato', sans-serif;
+}
+
 /* Trip content section */
 #tripContent {
 	clear: right;
@@ -83,13 +90,21 @@ h2 {
 	margin-bottom: 10px;
 }
 
-#locationTitle {
-	font-family: 'Lato', sans-serif;
-}
+#locationTitle { font-family: 'Lato', sans-serif; }
 
 #tripContent-eateries, #tripContent-adventures, #tripContent-extra {
 	margin: 0;
 	overflow: scroll;
+}
+
+#tripContent a {
+	display: block;
+	color: #4A3728;
+	text-decoration: none;
+}
+
+#tripContent a:hover {
+	color: whitesmoke;
 }
 
 /* Pictures Section */

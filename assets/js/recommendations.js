@@ -25,23 +25,22 @@ const locationsArray = [
 			},
 			{
 				name: "Leonard’s Bakery",
-				where: "",
-				address: "",
+				address: "933 Kapahulu Ave, Honolulu, HI 96816",
 				knownFor: "Malasadas",
 				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them.",
 				category: "toEat"
 			},
 			{
 				name: "Musubi Cafe Iyasume",
-				where: "",
-				address: "",
+				where: "Waikiki",
+				address: "4211 Waialae Avenue, #G19, Honolulu, HI 96816",
 				knownFor: "Musubi",
-				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks.",
+				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks to chow down on.",
 				category: "toEat"
 			},
 			{
 				name: "MATSUMOTO’S SHAVE ICE",
-				where: "", 
+				where: "66-111 Kamehameha Hwy 605, Haleiwa, HI 96712", 
 				address: "",
 				knownFor: "Shaved Ice",
 				commentary: "",
@@ -56,9 +55,25 @@ const locationsArray = [
 				category: "toEat"
 			},
 			{
-				name: "North Shore Beach",
+				name: "Haleʻiwa Bowls",
+				where: "66-030 Kamehameha Hwy, Haleiwa, HI 96712", 
 				address: "",
+				knownFor: "Acai bowls",
 				commentary: "",
+				category: "toEat"
+			},
+			{
+				name: "Marukame Udon Waikiki",
+				where: "2310 Kūhiō Ave. 124, Honolulu, HI 96815", 
+				address: "",
+				knownFor: "Really delicious, authentic Japanese Udon noodles",
+				commentary: "",
+				category: "toEat"
+			},
+			{
+				name: "Waimea Bay, North Shore",
+				address: "61-31 Kamehameha Hwy, Haleiwa, HI 96712",
+				commentary: "Popular beach away from Waikiki tourists. Great for surfing and dolphins and turtle spottings!",
 				category: "toDo"
 			},
 			{
@@ -69,14 +84,20 @@ const locationsArray = [
 			},
 			{
 				name: "Diamond Head",
-				address: "",
-				commentary: "Diamond Head is the iconic former volcano that stands tall at Waikiki Beach. Take a seat at one of the pill boxes and enjoy the view and breeze!",
+				address: "Diamond Head, Honolulu, HI 96815",
+				commentary: "Diamond Head is the iconic former volcano right off of Waikiki Beach. Hike up the trail and take a seat at one of the pill boxes up top to enjoy the view and breeze, or go to Kahala Lookout or Diamond Head lookout for one of the best views.",
 				category: "toDo"
 			},
 			{
 				name: "Hanauma Bay",
+				address: "7455 Kalanianaʻole Hwy, Honolulu, HI 96825",
+				commentary: "One of the most famous places on the entire island for snorkeling. There is also Hanauma Bay Lookout if you don't want to go for a dip!",
+				category: "toDo"
+			},
+			{
+				name: "Hanauma Bay Lookout",
 				address: "",
-				commentary: "On the very east side of Honolulu, near an area of town called Hawaii Kai, is Hanauma Bay, one of the most famous places on the entire island for snorkeling.",
+				commentary: "There is also Hanauma Bay Lookout if you don't want to go for a dip with a hiking trail nearby!",
 				category: "toDo"
 			},
 			{
@@ -87,14 +108,14 @@ const locationsArray = [
 			},
 			{
 				name: "Ala Moana Mall",
-				address: "",
-				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but bigger.",
+				address: "1450 Ala Moana Blvd, Honolulu, HI 96814",
+				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but even bigger.",
 				category: "toDo"
 			},
 			{
-				name: "Waikiki",
+				name: "Waikiki Beach",
 				address: "",
-				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach.",
+				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach. A lot of beautiful beaches (Waikiki beach, Kuhio Beach, Kahanamoku Beach) to choose from. This is also where the more mainland restaurant brands will be.",
 				category: "toDo"
 			}
 		]
@@ -119,7 +140,7 @@ const locationsArray = [
 ];
 
 const geocoder = new google.maps.Geocoder();
-let map;
+let map, query;
 let allMarkers = [];
 let specificMarkers = [];
 
@@ -168,9 +189,9 @@ renderMap = (array, location) => {
 
 renderLocationContent = (location) => {
 	$('#locationTitle').attr('data-city', location);
-	$("#tripContent-eateries").empty();
-	$("#tripContent-adventures").empty();
-	$("#tripContent-extra").empty();
+	$("#tripContent-eateries-list").empty();
+	$("#tripContent-adventures-list").empty();
+	$("#tripContent-extra-list").empty();
 	let res = locationsArray.filter(city => city.title == location);
 	let value = res[0].recommendations;
 	specificMarkers = value.filter(spot => spot.address);
@@ -195,8 +216,11 @@ checkDivDisplay = (location) => {
 
 renderList = (array) => {
 	array.forEach(spot => {
-		const { name, where, knownFor, category, commentary } = spot;
-		let test = `<small>${name}</small><br>`
+		const { name, address, where, knownFor, category, commentary } = spot;
+		address ? 
+			query = address.replaceAll(',', '%2C').replaceAll(' ', '+') :
+			query = name.replaceAll(',', '%2C').replaceAll(' ', '+') ;
+		let test = `<a href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank" class="recommendationLink mr-3"><small>${name}</small><br>`
 		switch (category) {
 			case "toEat":
 				$("#tripContent-eateries").append(test);
@@ -220,10 +244,10 @@ renderLocationLinks = () => {
 	});
 };
 
-renderLocationLinks();
 $(document).ready(() => {
 	let intViewportWidth = window.innerWidth;
 	intViewportWidth < 576 ? "" : renderMap(allMarkers);
+	renderLocationLinks();
 });
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {

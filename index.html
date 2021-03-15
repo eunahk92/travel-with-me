@@ -70,9 +70,24 @@
             <div id="tripContent" class="row" style="display: none">
                 <div class="tripDetails row">
                     <!-- JS will populate -->
-                    <div id="tripContent-eateries" class="col-md-4"></div>
-                    <div id="tripContent-adventures" class="col-md-4"></div>
-                    <div id="tripContent-extras" class="col-md-4"></div>
+                    <div id="tripContent-eateries" class="col-md-4">
+                        <div class="row">
+                            <h3 class="mx-auto recommendationsDivTitles">Indulge</h3>
+                        </div>
+                        <div class="row" id="tripContent-eateries-list"></div>
+                    </div>
+                    <div id="tripContent-adventures" class="col-md-4">
+                        <div class="row">
+                            <h3 class="mx-auto recommendationsDivTitles">Explore</h3>
+                        </div>
+                        <div class="row" id="tripContent-adventures-list"></div>
+                    </div>
+                    <div id="tripContent-extras" class="col-md-4">
+                        <div class="row">
+                            <h3 class="mx-auto recommendationsDivTitles">Extras</h3>
+                        </div>
+                        <div class="row" id="tripContent-extra-list"></div>
+                    </div>
                 </div>
                 <div id="titleDiv" class="row">
                     <h2 class="text-end" id="locationTitle" data-city="city"></h2>
