@@ -1,5 +1,4 @@
-const mobileResoCheck = window.matchMedia("(max-width: 700px)");
-let locationsArray = [
+const locationsArray = [
 	{
 		title: "Honolulu, Hawaii",
 		isInternational: false,
@@ -9,21 +8,21 @@ let locationsArray = [
 				where: "North Shore Beach",
 				knownFor: "Shrimp dishes",
 				foodCategory: "Entree",
-				commentary: "Try the Shrimp Scampi Plate!! You won't be disappointed!"
+				commentary: "Recommendation: Try the Shrimp Scampi Plate!! You won't be disappointed.",
 			},
 			{
 				name: "Ahi Assassins",
 				where: "Everywhere",
 				knownFor: "Poke",
 				foodCategory: "Entree",
-				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market. Delicious different styles to eat them too."
+				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix). Offered in delicious different flavors."
 			},
 			{
 				name: "Leonard’s Bakery",
 				where: "",
 				knownFor: "Malasadas",
 				foodCategory: "Dessert",
-				commentary: "Similar to chinese donuts, sugary doughs."
+				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them."
 			},
 			{
 				name: "Musubi Cafe Iyasume",
@@ -54,9 +53,14 @@ let locationsArray = [
 				commentary: ""
 			},
 			{
+				title: "Dole Pineapple Farm",
+				address: "64-1550 Kamehameha Hwy, Wahiawa, HI 96786",
+				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! Recommendation: You have to try the delicious pineapple soft serve and there is also a pineapple maze you can partake in."
+			},
+			{
 				title: "Diamond Head",
 				address: "",
-				commentary: "Diamond Head is the iconic former volcano that stands tall at Waikiki Beach. Take a seat at one of the pill boxes and enjoy the view!"
+				commentary: "Diamond Head is the iconic former volcano that stands tall at Waikiki Beach. Take a seat at one of the pill boxes and enjoy the view and breeze!"
 			},
 			{
 				title: "Hanauma Bay",
@@ -106,24 +110,80 @@ let locationsArray = [
 	},
 ];
 
+// map
+const geocoder = new google.maps.Geocoder();
+let map;
+let address = "64-1550 Kamehameha Hwy, Wahiawa, HI 96786";
 
-async function renderLocationContent(e) {
-	try {
-		$("#tripContent").empty();
-		$("#tripContent").addClass('boxTransformation');
-		const clickedLocation = await e.target.innerText.trim();
-		const res = await locationsArray.filter(location => location.title === clickedLocation);
-		const { title, placesToEat, adventures, wantToTry } = res[0];
-		const tripDetails = `
-			<h4>${title}</h4>
-			<p class="smallFont">Places to eat at:</p>
-			${placesToEat.length}
-		`
-		$("#tripContent").append(tripDetails);
-	} catch (err) { if (err) throw (err) }
-}
+$(document).ready(function(){
+	map = new GMaps({
+		div: '#map',
+		lat: 28.5383,
+		lng: 81.3792
+	});
 
-$(document).ready(() => {
+	geocoder.geocode( { 'address': address }, function(results, status) {
+		if (status == google.maps.GeocoderStatus.OK) {
+			let lat = results[0].geometry.location.lat();
+			let long = results[0].geometry.location.lng();
+			console.log(`lat is ${lat} long is ${long}`)
+			map.addMarker({
+				lat: lat,
+				lng: long,
+				title:'here',
+				click: function(e) {
+					console.log('You clicked in this marker');
+				}
+			});
+		} 
+	}); 
+
+});
+
+renderLocationContent = e => {
+	$("#tripContent").empty();
+	$("#tripContent").addClass('boxTransformation');
+	const clickedLocation = e.target.innerText.trim();
+	const res = locationsArray.filter(location => location.title === clickedLocation);
+	const { title, placesToEat, adventures, barsToVisit, wantToTry } = res[0];
+	const tripDetailsContainer = `
+		<h4>${title}</h4>
+		<ul class="placesToEatList"></ul>
+		<ul class="adventuresList"></ul>
+		<ul class="barsToVisitList"></ul>
+		<ul class="wantToTryList"></ul>
+	`
+	$("#tripContent").append(tripDetailsContainer);
+	renderList(placesToEat);
+};
+
+renderList = (array) => {
+	array.forEach(spot => {
+		const { name, where, knownFor, foodCategory, commentary } = spot;
+		let test = `<p>${name}</p>`
+		$(".placesToEatList").append(test);
+		// const recommendationLi = `
+		// 	<li class="recommendationLi">
+		// 		<div class="liIcon">
+		// 			<i class="fas fa-utensils"></i>
+		// 		</div>
+		// 		<div class="liInfo">
+		// 			<h4>${name}</h4>
+		// 			<p>${where}</p>
+		// 			<p>${knownFor}</p>
+		// 			<p class="smallText">${foodCategory}</p>
+		// 			<p class="smallText">${commentary}</p>
+		// 		</div>
+		// 		<div class="liBtn">
+		// 			<i class="fas fa-bookmark fa-2x p-2"></i>
+		// 		</div>
+		// 	</li>
+		// `
+		// $(".placesToEatList").append(recommendationLi);
+	})
+};
+
+renderLocationLinks = () => {
 	locationsArray.forEach(location => {
 		const locationLink = `
 			<a class="locationLink" data-bs-toggle="collapse" href="#tripContentCollapse" role="button" aria-expanded="false" aria-controls="tripContentCollapse">
@@ -132,13 +192,9 @@ $(document).ready(() => {
 			</a>
 		`
 		location.isInternational ? $(".internationalLocations").append(locationLink) : $(".usLocations").append(locationLink);
-	})
-});
+	});
+};
+
+$(document).ready(renderLocationLinks());
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', renderLocationContent);
-
-// let myAnimation = anime({
-// 	targets: '#recommendationListDiv',
-// 	translateX: !mobileResoCheck.matches ? -240 : 0,
-// 	easing: 'easeInOutExpo',
-// });

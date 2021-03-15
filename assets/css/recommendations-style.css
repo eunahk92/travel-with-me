@@ -43,6 +43,7 @@ Color scheme 2 :
 	color: #212629;
 	float: left;
 	overflow: scroll;
+	font-family: 'Lato', sans-serif;
 ;}
 
 .recommendationListContainer a {
@@ -50,12 +51,13 @@ Color scheme 2 :
 	flex: 1; 
 	padding: 2px;
 	text-align: start;
-	color: #d7d2ce;
+	color: #f4f2f0;
 	text-decoration: none;
 }
 
 .recommendationListContainer a:hover { color: #d3c0b2; }
 
+/* Trip content section */
 #tripContentCollapse {
 	clear: right;
 	width: 100%;
@@ -64,14 +66,26 @@ Color scheme 2 :
 }
 
 .boxTransformation {
-	border: 1px solid #d7d2ce;
-	width: 400px;
-	height: 400px;
+	border: 1px solid #f4f2f0;
+	width: 700px;
+	height: auto;
 	margin-top: 2rem;
-	margin-left: 50vw;
+	margin-left: auto;
 	margin-right: auto;
 }
 
+.placesToEatList, .adventuresList, .barsToVisitList, .wantToTryList {
+	list-style: none;
+}
+
+.recommendationLi {
+	border-top: 1px solid #d7d2ce;
+	display: flex;
+}
+
+.liInfo {
+	flex: 3; 
+}
 
 /* Pictures Section */
 .pictureSection {
@@ -87,7 +101,7 @@ Color scheme 2 :
 	display: flex; 
 	padding: 4px;
 	background-color: #6ba292;
-	border: 1px solid #d7d2ce;
+	border: 1px solid #f4f2f0;
 }
 
 .picContainer img { 
@@ -97,6 +111,20 @@ Color scheme 2 :
 	height: auto;
 	padding: 3px;
 }
+
+/* Google maps */
+#map {
+	width: 400px;
+	height: 400px;
+  }
+  
+/* Optional: Makes the sample page fill the window.
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+   */
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/
 @media only screen and (max-width: 600px) {

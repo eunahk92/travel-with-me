@@ -6,43 +6,35 @@ Color scheme for site:
 	9BD7D5 - light blue
 	FF7260 - salmon 
 */
-
+/* Font styling */
 :root {
-	--blue: #007bff;
-	--indigo: #6610f2;
-	--purple: #6f42c1;
-	--pink: #e83e8c;
-	--red: #dc3545;
-	--orange: #fd7e14;
-	--yellow: #ffc107;
-	--green: #28a745;
-	--teal: #f04848;
-	--cyan: #17a2b8;
-	--white: #fff;
-	--gray: #6c757d;
-	--gray-dark: #343a40;
-	--primary: #1abc9c;
-	--secondary: #2c3e50;
-	--success: #28a745;
-	--info: #17a2b8;
-	--warning: #ffc107;
-	--danger: #dc3545;
-	--light: #f8f9fa;
-	--dark: #343a40;
-	--breakpoint-xs: 0;
-	--breakpoint-sm: 576px;
-	--breakpoint-md: 768px;
-	--breakpoint-lg: 992px;
-	--breakpoint-xl: 1200px;
 	--font-family-sans-serif: 'Lato', -apple-system, BlinkMacSystemFont,
-		'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-		'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+	'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+	'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
 	--font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
-		'Liberation Mono', 'Courier New', monospace;
+	'Liberation Mono', 'Courier New', monospace;
 }
 
-body {
+#fullpage {
 	font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+h1 {
+	font-size: clamp(10px, 20rem, 25rem);
+	line-height: 14rem;
+	letter-spacing: -2rem;
+	font-family: 'Lato', sans-serif;
+}
+
+.verticalText {
+	writing-mode:vertical-rl;
+	transform: rotate(-180deg);
+	margin: 0;
+}
+
+.fontColorChange { 
+	color: #6ba292;
+	text-align: start;
 }
 
 #scrollDownDirectionDiv {
@@ -86,25 +78,6 @@ body {
 
 #navMain { flex: 0; }
 
-/* Font styling */
-h1 {
-	font-size: clamp(10px, 20rem, 25rem);
-	line-height: 14rem;
-	letter-spacing: -2rem;
-	font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
-
-.verticalText {
-	writing-mode:vertical-rl;
-	transform: rotate(-180deg);
-	margin: 0;
-}
-
-.fontColorChange { 
-	color: #6ba292;
-	text-align: start;
-}
-
 /* Icon styling */
 div i {
 	margin-left: 3px;
@@ -125,15 +98,15 @@ div i {
 
 /* Decorative boxes */
 .decorativeEmptyBox1 {
-	width: 500px;
-	height: 500px;
+	min-width: 500px;
+	min-height: 500px;
 	border: 1px solid #e4fde1;
 	position: absolute;
 }
 
 .decorativeEmptyBox2 {
-	width: 500px;
-	height: 500px;
+	min-width: 500px;
+	min-height: 500px;
 	transform: rotate(-45deg);
 	border: 1px solid #e4fde1;
 	position: absolute;

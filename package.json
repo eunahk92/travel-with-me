@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/eunahk92/travel-with-me/issues"
   },
-  "homepage": "https://github.com/eunahk92/travel-with-me#readme"
+  "homepage": "https://github.com/eunahk92/travel-with-me#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  }
 }
