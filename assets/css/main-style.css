@@ -76,7 +76,7 @@ h1 {
 
 #navRecommendations { flex: 1; }
 
-#navMain { flex: 0; }
+#navMain, #navExtra { flex: 0; }
 
 /* Icon styling */
 div i {

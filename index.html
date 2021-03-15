@@ -21,6 +21,7 @@
                     <li class="navLinks d-none d-lg-block" id="navLogo"><h4 class="text-start">Travel-With-Me | Eunah</h4></li>
                     <li class="navLinks" id="navMain"><a href="#about-me">main</a></li>
                     <li class="navLinks" id="navRecommendations"><a href="#recommendations">recommendations</a></li>
+                    <li class="navLinks" id="navExtra"><a href="#extra">extra</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,15 +53,6 @@
             </div>
         </div>
         <div class="section" id="recommendationsSection" data-anchor="recommendations">
-            <div class="pictureSection">
-                <div class="picContainer">
-                    <img src="./assets/photos/IMG_0645.jpg" alt="Eunah in Maui" class="picBoxes">
-                    <img src="./assets/photos/IMG_9241.jpg" alt="Eunah in Phi Phi Islands" class="picBoxes">
-                    <img src="./assets/photos/IMG_4177.jpg" alt="Eunah in Chang Mai" class="picBoxes">
-                    <img src="./assets/photos/IMG_0626.jpg" alt="Eunah in Maui" class="picBoxes"> 
-                    <img src="./assets/photos/IMG_7412.jpg" alt="Eunah in Ayutthaya" class="picBoxes"> 
-                </div>
-            </div>
             <div class="recommendationListContainer">
                 <p class="smallText text-center">[CLICK ON THE LOCATION TO VIEW]</p>
                 <p class="text-start"><i class="fab fa-centos"></i>  US</p>
@@ -72,19 +64,33 @@
                     <!-- JS will populate -->
                 </div>
             </div>
-            <div id="tripContentCollapse">
-                <div id="tripContentAndMap">
-                    <!-- map -->
-                    <div id="map"></div>
-                    <div id="tripContent"></div>
-                    <!-- JS will populate -->
-                </div>
-            </div>  
+            <div id="map">
+                <!-- google map -->
+            </div>    
+            <div id="tripContent" class="row">
+                <h4 class="mx-auto" id="locationTitle"></h4>
+                <!-- JS will populate -->
+                <div id="tripContent-eateries" class="col-md-4"></div>
+                <div id="tripContent-adventures" class="col-md-4"></div>
+                <div id="tripContent-extras" class="col-md-4"></div>
+            </div>
         </div> 
+        <div class="section" id="extraSection" data-anchor="extra">
+            <div class="pictureSection">
+                <div class="picContainer">
+                    <img src="./assets/photos/IMG_0645.jpg" alt="Eunah in Maui" class="picBoxes">
+                    <img src="./assets/photos/IMG_9241.jpg" alt="Eunah in Phi Phi Islands" class="picBoxes">
+                    <img src="./assets/photos/IMG_4177.jpg" alt="Eunah in Chang Mai" class="picBoxes">
+                    <img src="./assets/photos/IMG_0626.jpg" alt="Eunah in Maui" class="picBoxes"> 
+                    <img src="./assets/photos/IMG_7412.jpg" alt="Eunah in Ayutthaya" class="picBoxes"> 
+                </div>
+            </div>
+        </div>
     </div>
 
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?key=AIzaSyCVSbsCoys4-y9UHlX6z93OzyWKnOgnTGw"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/vendors/scrolloverflow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.extensions.min.js"></script>

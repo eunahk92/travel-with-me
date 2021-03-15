@@ -2,184 +2,203 @@ const locationsArray = [
 	{
 		title: "Honolulu, Hawaii",
 		isInternational: false,
-		placesToEat: [
+		coord: {
+			lat: 21.5260075,
+			long: -158.0377136
+		},
+		recommendations: [
 			{
 				name: "Giovanni Shrimp Truck",
 				where: "North Shore Beach",
+				address: "",
 				knownFor: "Shrimp dishes",
 				foodCategory: "Entree",
 				commentary: "Recommendation: Try the Shrimp Scampi Plate!! You won't be disappointed.",
+				category: "toEat"
 			},
 			{
 				name: "Ahi Assassins",
 				where: "Everywhere",
+				address: "",
 				knownFor: "Poke",
 				foodCategory: "Entree",
-				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix). Offered in delicious different flavors."
+				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix). Offered in delicious different flavors.",
+				category: "toEat"
 			},
 			{
 				name: "Leonard’s Bakery",
 				where: "",
+				address: "",
 				knownFor: "Malasadas",
 				foodCategory: "Dessert",
-				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them."
+				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them.",
+				category: "toEat"
 			},
 			{
 				name: "Musubi Cafe Iyasume",
 				where: "",
+				address: "",
 				knownFor: "Musubi",
 				foodCategory: "Snack",
-				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks."
+				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks.",
+				category: "toEat"
 			},
 			{
 				name: "MATSUMOTO’S SHAVE ICE",
 				where: "", 
+				address: "",
 				knownFor: "Shaved Ice",
 				foodCategory: "Dessert",
-				commentary: ""
+				commentary: "",
+				category: "toEat"
 			},
 			{
 				name: "Waiola Shave Ice",
 				where: "",
+				address: "",
 				knownFor: "Shaved Ice",
 				foodCategory: "Dessert",
-				commentary: ""
-			}
-		],
-		adventures: [
-			{
-				title: "North Shore Beach",
-				address: "",
-				commentary: ""
+				commentary: "",
+				category: "toEat"
 			},
 			{
-				title: "Dole Pineapple Farm",
+				name: "North Shore Beach",
+				address: "",
+				commentary: "",
+				category: "toDo"
+			},
+			{
+				name: "Dole Pineapple Farm",
 				address: "64-1550 Kamehameha Hwy, Wahiawa, HI 96786",
-				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! Recommendation: You have to try the delicious pineapple soft serve and there is also a pineapple maze you can partake in."
+				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! Recommendation: You have to try the delicious pineapple soft serve and there is also a pineapple maze you can partake in.",
+				category: "toDo"
 			},
 			{
-				title: "Diamond Head",
+				name: "Diamond Head",
 				address: "",
-				commentary: "Diamond Head is the iconic former volcano that stands tall at Waikiki Beach. Take a seat at one of the pill boxes and enjoy the view and breeze!"
+				commentary: "Diamond Head is the iconic former volcano that stands tall at Waikiki Beach. Take a seat at one of the pill boxes and enjoy the view and breeze!",
+				category: "toDo"
 			},
 			{
-				title: "Hanauma Bay",
+				name: "Hanauma Bay",
 				address: "",
-				commentary: "On the very east side of Honolulu, near an area of town called Hawaii Kai, is Hanauma Bay, one of the most famous places on the entire island for snorkeling."
+				commentary: "On the very east side of Honolulu, near an area of town called Hawaii Kai, is Hanauma Bay, one of the most famous places on the entire island for snorkeling.",
+				category: "toDo"
 			},
 			{
-				title: "Koko Crater Trail",
+				name: "Koko Crater Trail",
 				address: "",
-				commentary: ""
+				commentary: "",
+				category: "toDo"
 			},
 			{
-				title: "Ala Moana Mall",
+				name: "Ala Moana Mall",
 				address: "",
-				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but bigger."
+				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but bigger.",
+				category: "toDo"
 			},
 			{
-				title: "Waikiki",
+				name: "Waikiki",
 				address: "",
-				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach."
+				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach.",
+				category: "toDo"
 			}
-		],
-		barsToVisit: [],
-		wantToTry: []
+		]
 	},
 	{
 		title: "Iceland",
 		isInternational: true,
-		placesToEat: [
+		coord: {
+			lat: 64.1420229,
+			long: -21.9265493
+		},
+		recommendations: [
 			{
-				name: "Giovanni Shrimp Truck",
-				where: "North Shore Beach",
-				knownFor: "Shrimp dishes",
-				foodCategory: "Entree",
-				commentary: "Try the Shrimp Scampi Plate!! You won't be disappointed!"
+				name: "Hallgrimskirkja Church",
+				where: "Reykjavik",
+				address: "Hallgrímstorg 1, 101 Reykjavík, Iceland",
+				commentary: "Beautiful church/ unique",
+				category: "toDo"
 			},
-		],
-		adventures: [
-			{
-				title: "North Shore Beach",
-				address: "",
-				commentary: ""
-			},
-		],
-		barsToVisit: [],
-		wantToTry: []
-	},
+		]
+	}
 ];
 
-// map
 const geocoder = new google.maps.Geocoder();
 let map;
-let address = "64-1550 Kamehameha Hwy, Wahiawa, HI 96786";
+let allMarkers = [];
+let specificMarkers = [];
 
-$(document).ready(function(){
-	map = new GMaps({
-		div: '#map',
-		lat: 28.5383,
-		lng: 81.3792
-	});
-
-	geocoder.geocode( { 'address': address }, function(results, status) {
-		if (status == google.maps.GeocoderStatus.OK) {
-			let lat = results[0].geometry.location.lat();
-			let long = results[0].geometry.location.lng();
-			console.log(`lat is ${lat} long is ${long}`)
-			map.addMarker({
-				lat: lat,
-				lng: long,
-				title:'here',
-				click: function(e) {
-					console.log('You clicked in this marker');
-				}
-			});
-		} 
-	}); 
-
+locationsArray.forEach(location => {
+	let value = location.recommendations;
+	value.forEach(spot => spot.address ? allMarkers.push(spot) : "");
 });
 
+renderMap = (array, location) => {
+	array.forEach(spot => {
+		console.log(spot)
+		geocoder.geocode( { 'address': spot.address }, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				let lat = results[0].geometry.location.lat();
+				let long = results[0].geometry.location.lng();
+				map.addMarker({
+					lat: lat,
+					lng: long,
+					title:'here',
+					click: function(e) {
+						console.log(`${spot.where} lat is ${lat} and long is ${long}`);
+					}
+				});
+			} 
+		}); 
+	})
+	if (array === allMarkers) {
+		map = new GMaps({
+			div: '#map',
+			zoom: 1,
+			lat: 28.5383,
+			lng: -99.3792
+		});
+	} else {
+		locationsArray.forEach(spot => {
+			if (spot.title === location) {
+				map = new GMaps({
+					div: '#map',
+					zoom: 10,
+					lat: spot.coord.lat,
+					lng: spot.coord.long
+				});
+			}
+		})
+	}
+};
+
 renderLocationContent = e => {
-	$("#tripContent").empty();
-	$("#tripContent").addClass('boxTransformation');
+	$("#tripContent-eateries").empty();
+	$("#tripContent-adventures").empty();
+	$("#tripContent-extra").empty();
 	const clickedLocation = e.target.innerText.trim();
-	const res = locationsArray.filter(location => location.title === clickedLocation);
-	const { title, placesToEat, adventures, barsToVisit, wantToTry } = res[0];
-	const tripDetailsContainer = `
-		<h4>${title}</h4>
-		<ul class="placesToEatList"></ul>
-		<ul class="adventuresList"></ul>
-		<ul class="barsToVisitList"></ul>
-		<ul class="wantToTryList"></ul>
-	`
-	$("#tripContent").append(tripDetailsContainer);
-	renderList(placesToEat);
+	let res = locationsArray.filter(location => location.title === clickedLocation);
+	let value = res[0].recommendations;
+	specificMarkers = value.filter(spot => spot.address);
+	renderMap(specificMarkers, clickedLocation);
+	const { title, recommendations } = res[0];
+	$('#locationTitle').text(title);
+	renderList(recommendations);
 };
 
 renderList = (array) => {
 	array.forEach(spot => {
-		const { name, where, knownFor, foodCategory, commentary } = spot;
-		let test = `<p>${name}</p>`
-		$(".placesToEatList").append(test);
-		// const recommendationLi = `
-		// 	<li class="recommendationLi">
-		// 		<div class="liIcon">
-		// 			<i class="fas fa-utensils"></i>
-		// 		</div>
-		// 		<div class="liInfo">
-		// 			<h4>${name}</h4>
-		// 			<p>${where}</p>
-		// 			<p>${knownFor}</p>
-		// 			<p class="smallText">${foodCategory}</p>
-		// 			<p class="smallText">${commentary}</p>
-		// 		</div>
-		// 		<div class="liBtn">
-		// 			<i class="fas fa-bookmark fa-2x p-2"></i>
-		// 		</div>
-		// 	</li>
-		// `
-		// $(".placesToEatList").append(recommendationLi);
+		const { name, where, knownFor, category, commentary } = spot;
+		let test = `<small>${name}</small><br>`
+		switch (category) {
+			case "toEat":
+				$("#tripContent-eateries").append(test);
+				break;
+			case "toDo":
+				$("#tripContent-adventures").append(test);
+				break;
+		}
 	})
 };
 
@@ -195,6 +214,8 @@ renderLocationLinks = () => {
 	});
 };
 
-$(document).ready(renderLocationLinks());
+renderLocationLinks();
+
+$(document).ready(renderMap(allMarkers));
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', renderLocationContent);
