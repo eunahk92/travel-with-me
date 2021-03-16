@@ -60,14 +60,15 @@ h2 {
 	margin-right: auto;
 }
 
-/* #locationNameDiv {
+#locationTitle {
 	clear: right;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
+	right: 5px;
 	padding: 5px;
-	margin-bottom: 10px;
-} */
+	margin-bottom: 20px;
+}
 
 .tripContent-border { 
 	width: 75%;
@@ -91,6 +92,8 @@ h2 {
 #tripContent a:hover {
 	color: whitesmoke;
 }
+
+
 
 /* Pictures Section */
 .picContainer {
