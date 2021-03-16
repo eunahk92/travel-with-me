@@ -80,7 +80,7 @@ ul {
 
 #navRecommendations { flex: 1; }
 
-#navMain { flex: 0; }
+#navHome { flex: 0; }
 
 /* Icon styling */
 div i {
@@ -118,7 +118,7 @@ div i {
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/
 @media only screen and (max-width: 600px) {
-	#navMain, #navRecommendations { flex: 0; }
+	#navHome, #navRecommendations { flex: 0; }
 	h1 {
 		font-size: 8rem;
 		letter-spacing: -.7rem;
