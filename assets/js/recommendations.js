@@ -197,15 +197,19 @@ async function renderMap(array, location) {
 
 checkDivDisplay = (location) => {
 	let dataValue = $('#locationTitle').attr('data-city');
+	let pageObj = fullpage_api.getActiveSection();
 	if ($("#tripContent").css('display') == 'none') {
 		$("#tripContent").css('display', 'block');
 		renderLocationContent(location);
+		fullpage_api.moveTo(3);
 	} else if ($("#tripContent").css('display') == 'block' && dataValue == location) {
 		$("#tripContent").css('display', 'none'); 
-	} else if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
+		fullpage_api.moveTo(4);
+ 	} else if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
 		$("#tripContent").css('display', 'block');
 		renderLocationContent(location);
-	}
+		fullpage_api.moveTo(3);
+	} 
 };
 
 renderListOfRecommendations = (array) => {
@@ -296,9 +300,9 @@ renderIcons = (array) => {
 };
 
 $(document).ready(() => {
-	let intViewportWidth = window.innerWidth;
+	// let intViewportWidth = window.innerWidth;
 	renderLocationLinks();
-	intViewportWidth < 576 ? '' : initMap();
+	initMap();
 });
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
