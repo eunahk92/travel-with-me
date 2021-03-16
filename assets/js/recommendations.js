@@ -163,7 +163,7 @@ initMap = () => {
 			lng: city.coord.long,
 			title: city.title,
 			click: function(e) {
-				checkDivDisplay(city.title);
+				renderRecommendationsPage(e.title);
 			}
 		});
 	})
@@ -184,13 +184,18 @@ async function renderMap(array, location) {
 				if (status == google.maps.GeocoderStatus.OK) {
 					let lat = results[0].geometry.location.lat();
 					let long = results[0].geometry.location.lng();
-					map.addMarker({
+					let marker = map.addMarker({
 						lat: lat,
 						lng: long,
 						title: spot,
 						label: labels[labelIndex++ % labels.length],
+						infoWindow: {
+							content: spot
+						},
 						click: function(e) {
-							console.log(`${spot} lat is ${lat} and long is ${long}`);
+							let latLng = new google.maps.LatLng(lat, long);
+							map.setZoom(14);
+							map.panTo(latLng);
 						}
 					});
 				} 
@@ -199,52 +204,21 @@ async function renderMap(array, location) {
     } catch (err) { if (err) throw (err) }
 };
 
-attachSecretMessage = (marker, secretMessage) => {
-	const infowindow = new google.maps.InfoWindow({
-	  content: secretMessage,
-	});
-	marker.addListener("click", () => {
-		map.setZoom(8);
-    	map.setCenter(marker.getPosition());
-	  infowindow.open(marker.get("map"), marker);
-	});
+renderGoogleLinks = (address) => {
+	let query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
+	let link = `https://www.google.com/maps/search/?api=1&query=${query}`
+	return link;
 };
-
-renderMarkerLabelText = () => {
-
-};
-
-// async function checkDivDisplay(location) {
-// 	try {
-// 		let dataValue = $('#locationTitle').attr('data-city');
-// 		let pageObj = await fullpage_api.getActiveSection();
-// 		if ($("#tripContent").css('display') == 'none') {
-// 			$("#tripContent").css('display', 'block');
-// 			await fullpage_api.moveSectionDown();
-// 			await renderLocationContent(location);
-// 		} 
-// 		if ($("#tripContent").css('display') == 'block' && pageObj.index === 3) {
-// 			await fullpage_api.moveTo(2);
-// 		}
-// 		if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
-// 			$("#tripContent").css('display', 'block');
-// 			await fullpage_api.moveSectionDown();
-// 			await renderLocationContent(location);
-// 		} 
-//     } catch (err) { if (err) throw (err) }
-// };
 
 renderListOfRecommendations = (array) => {
 	array.forEach(spot => {
 		let { name, address, types, category } = spot;
-		address ? 
-			query = address.replaceAll(',', '%2C').replaceAll(' ', '+') :
-			query = name.replaceAll(',', '%2C').replaceAll(' ', '+') ;
+		let query = renderGoogleLinks(address);
 		let icons = renderIcons(types);
 		icons = icons.toString().replaceAll(',', '');
 		let li = `
 			<div class="row d-flex justify-content-start m-0 p-0">
-				<a href="https://www.google.com/maps/search/?api=1&query=${query}" target="_blank" class="recommendationLink mr-3">
+				<a href="${query}" target="_blank" class="recommendationLink mr-3">
 					<small>${name} ${icons}</small>
 				</a>
 			</div>`
@@ -321,6 +295,23 @@ renderIcons = (array) => {
 	return icons;
 };
 
+renderRecommendationsPage = (location) => {
+	let dataValue = $('#locationTitle').attr('data-city');
+	if ($("#tripContent").css('display') == 'none') {
+		$("#tripContent").css('display', 'block');
+		fullpage_api.moveSectionDown();
+		renderLocationContent(location);
+	} 
+	if ($("#tripContent").css('display') == 'block' && dataValue == location) {
+		fullpage_api.moveTo(2);
+	}
+	if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
+		$("#tripContent").css('display', 'block');
+		fullpage_api.moveSectionDown();
+		renderLocationContent(location);
+	} 
+};
+
 $(document).ready(() => {
 	// let intViewportWidth = window.innerWidth;
 	renderLocationLinks();
@@ -329,18 +320,5 @@ $(document).ready(() => {
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
-	let dataValue = $('#locationTitle').attr('data-city');
-	if ($("#tripContent").css('display') == 'none') {
-		$("#tripContent").css('display', 'block');
-		fullpage_api.moveSectionDown();
-		renderLocationContent(clickedLocation);
-	} 
-	if ($("#tripContent").css('display') == 'block' && dataValue == clickedLocation) {
-		fullpage_api.moveTo(2);
-	}
-	if ($("#tripContent").css('display') == 'block' && dataValue != clickedLocation) {	
-		$("#tripContent").css('display', 'block');
-		fullpage_api.moveSectionDown();
-		renderLocationContent(clickedLocation);
-	} 
+	renderRecommendationsPage(clickedLocation);
 });
