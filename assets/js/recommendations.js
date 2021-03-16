@@ -150,7 +150,7 @@ const locationsArray = [
 initMap = () => {
 	map = new GMaps({
 		div: '#map',
-		zoom: 1,
+		zoom: 1.5,
 		lat: 28.5383,
 		lng: -99.3792
 	});
@@ -237,11 +237,12 @@ renderLocationLinks = () => {
 	locationsArray.forEach(location => {
 		const locationLink = `
 			<a class="locationLink" data-bs-toggle="collapse" href="#tripContentCollapse" role="button" aria-expanded="false" aria-controls="tripContentCollapse">
-				<i class="fas fa-grip-lines"></i>
-				${location.title}
+				<small class="px-1 text-center">
+					${location.title}
+				</small>
 			</a>
 		`
-		location.isInternational ? $(".internationalLocations").append(locationLink) : $(".usLocations").append(locationLink);
+		location.isInternational ? $(".europeLocations").append(locationLink) : $(".usLocations").append(locationLink);
 	});
 };
 
@@ -252,6 +253,7 @@ renderLocationContent = (location) => {
 	$("#tripContent-extra-list").empty();
 	let markers = [];
 	let res = locationsArray.filter(city => city.title == location);
+	console.log(res);
 	const { title, recommendations } = res[0];
 	recommendations.forEach(spot => {
 		if (spot.address) {
@@ -296,10 +298,11 @@ renderIcons = (array) => {
 $(document).ready(() => {
 	let intViewportWidth = window.innerWidth;
 	renderLocationLinks();
-	intViewportWidth < 576 ? "" : initMap();
+	intViewportWidth < 576 ? '' : initMap();
 });
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
+	$('#map').css('height', '410px');
 	checkDivDisplay(clickedLocation);
 });

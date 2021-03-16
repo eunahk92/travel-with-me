@@ -53,56 +53,26 @@
             </div>
         </div>
         <div class="section" id="recommendationsSection" data-anchor="recommendations">
-            <div class="recommendationListContainer">
-                <p class="smallText text-center">[CLICK ON THE LOCATION TO VIEW]</p>
-                <p class="text-start"><i class="fab fa-centos"></i>  US</p>
-                <div class="usLocations">
-                    <!-- JS will populate -->
-                </div><br/>
-                <p class="text-start"><i class="fab fa-centos"></i>  INTERNATIONAL</p>
-                <div class="internationalLocations">
-                    <!-- JS will populate -->
-                </div>
-            </div>
-            <div id="map" class="d-none d-md-block">
-                <!-- google map -->
-            </div> 
-            <div id="tripContent" class="row" style="display: none">
-                <div class="tripDetails row">
-                    <!-- JS will populate -->
-                    <div id="tripContent-eateries" class="col-md-4">
-                        <div class="row">
-                            <h3 class="recommendationsDivTitles">Indulge</h3>
-                            <p class="smallText mb-0">[PLACE'S I'VE TRIED]</p>
-                            <span class="tripContent-border"></span>
-                        </div>
-                        <div class="row">
-                            <div id="tripContent-eateries-list"></div>
-                        </div>
+            <div class="container-md">
+                <div id="map" class="d-none d-md-block">
+                    <!-- google map -->
+                </div> 
+                <p class="smallText text-center my-1">[CLICK ON THE LOCATION OR PIN TO VIEW DETAILS]</p>
+                <div class="row recommendationListTitles">
+                    <div class="col-md-4">
+                        <p class="text-center m-0"><i class="fas fa-grip-lines"></i> N AMERICA <i class="fas fa-grip-lines"></i></p>
                     </div>
-                    <div id="tripContent-adventures" class="col-md-4">
-                        <div class="row">
-                            <h3 class="recommendationsDivTitles">Explore</h3>
-                            <p class="smallText mb-0">[PLACE'S I'VE BEEN/ SEEN]</p>
-                            <span class="tripContent-border"></span>
-                        </div>
-                        <div class="row">
-                            <div id="tripContent-adventures-list"></div>
-                        </div>
+                    <div class="col-md-4">
+                        <p class="text-center m-0"><i class="fas fa-grip-lines"></i> EUROPE <i class="fas fa-grip-lines"></i></p>
                     </div>
-                    <div id="tripContent-extras" class="col-md-4">
-                        <div class="row">
-                            <h3 class="recommendationsDivTitles">Extras</h3>
-                            <p class="smallText mb-0">[OTHER POPULAR SPOTS TO TRY]</p>
-                            <span class="tripContent-border"></span>
-                        </div>
-                        <div class="row">
-                            <div id="tripContent-extra-list"></div>
-                        </div>
+                    <div class="col-md-4">
+                        <p class="text-center m-0"><i class="fas fa-grip-lines"></i> ASIA <i class="fas fa-grip-lines"></i></p>
                     </div>
                 </div>
-                <div id="locationNameDiv" class="row">
-                    <h2 class="text-end" id="locationTitle" data-city="city"></h2>
+                <div class="recommendationListContainer row">
+                    <div class="col-md-4 usLocations mx-auto"></div>
+                    <div class="col-md-4 europeLocations mx-auto"></div>
+                    <div class="col-md-4 asiaLocations mx-auto"></div>
                 </div>
             </div>
         </div> 
@@ -114,6 +84,44 @@
                     <img src="./assets/photos/IMG_4177.jpg" alt="Eunah in Chang Mai" class="picBoxes">
                     <img src="./assets/photos/IMG_0626.jpg" alt="Eunah in Maui" class="picBoxes"> 
                     <img src="./assets/photos/IMG_7412.jpg" alt="Eunah in Ayutthaya" class="picBoxes"> 
+                </div>
+            </div>
+            <div id="locationNameDiv" class="row">
+                    <div id="tripContent" class="row" style="display: none">
+                        <div class="tripDetails row">
+                            <!-- JS will populate -->
+                            <div id="tripContent-eateries" class="col-md-4">
+                                <div class="row">
+                                    <h3 class="recommendationsDivTitles">Indulge</h3>
+                                    <p class="smallText mb-0">[PLACE'S I'VE TRIED]</p>
+                                    <span class="tripContent-border"></span>
+                                </div>
+                                <div class="row">
+                                    <div id="tripContent-eateries-list"></div>
+                                </div>
+                            </div>
+                            <div id="tripContent-adventures" class="col-md-4">
+                                <div class="row">
+                                    <h3 class="recommendationsDivTitles">Explore</h3>
+                                    <p class="smallText mb-0">[PLACE'S I'VE BEEN/ SEEN]</p>
+                                    <span class="tripContent-border"></span>
+                                </div>
+                                <div class="row">
+                                    <div id="tripContent-adventures-list"></div>
+                                </div>
+                            </div>
+                            <div id="tripContent-extras" class="col-md-4">
+                                <div class="row">
+                                    <h3 class="recommendationsDivTitles">Extras</h3>
+                                    <p class="smallText mb-0">[OTHER POPULAR SPOTS TO TRY]</p>
+                                    <span class="tripContent-border"></span>
+                                </div>
+                                <div class="row">
+                                    <div id="tripContent-extra-list"></div>
+                                </div>
+                            </div>
+                        </div>
+                    <h2 class="text-end" id="locationTitle" data-city="city"></h2>
                 </div>
             </div>
         </div>

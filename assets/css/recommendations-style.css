@@ -1,18 +1,12 @@
 /* 
 Color scheme 1 :
-	6ba292 - teal green
-	e4fde1 - mint green
-	ffdc7c - light yellow
-	ff9b71 - salmon
-	dd614a - coral 
-*/
-/* 
-Color scheme 2 :
-	f4f2f0 - white
-	d7d2ce - light brown
-	d3c0b2 - light pink
-	a99282 - brown
-	857b74 - dark brown
+	Olive: A3BCB6
+	Green Leaf: 39603D
+	Brown Grey: 3C403D
+	Tanly: DADED4
+	Gainsboro: dce1da rgb(220,225,218)
+	Slate gray: 69827e rgb(105,130,126)
+	
 */
 
 /* Centering bottom pagination dots */
@@ -40,18 +34,11 @@ h2 {
 .wrapper { display: inline; }
 
 /* Location list section */
-.recommendationListContainer { 
-	width: 16%;
-	min-height: 300px;
-	text-align: center;
-	margin-left: 20px;
+.recommendationListContainer, .recommendationListTitles {
+	width: 70%;
+	margin-left: auto;
 	margin-right: auto;
-	padding: 5px;
-	color: #212629;
-	float: left;
-	overflow: scroll;
-	font-family: 'Lato', sans-serif;
-;}
+}
 
 .recommendationListContainer a {
 	display: block; 
@@ -104,7 +91,7 @@ h2 {
 
 #tripContent a {
 	display: block;
-	color: #4A3728;
+	color: #DADED4;
 	text-decoration: none;
 }
 
@@ -121,13 +108,13 @@ h2 {
 	margin-right: auto;
 	float: right;
 	padding: 50px 25px 50px 25px;
-	background-color: #d3c0b2;
+	background-color: rgb(178,194,179);
 }
 
 .picContainer {
 	display: flex; 
 	padding: 4px;
-	background-color: #d3c0b2;
+	background-color: rgb(178,194,179);
 	border: 1px solid #f4f2f0;
 }
 
@@ -142,7 +129,7 @@ h2 {
 /* Google maps */
 #map {
 	width: 70%;
-	height: 410px;
+	height: 550px;
 	margin-left: auto;
 	margin-right: auto;
 	border-left: 17px solid rgba(255,255,255,0.95);
