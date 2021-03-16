@@ -76,6 +76,50 @@
             </div>
         </div> 
         <div class="section" id="extraSection" data-anchor="extra">
+            <div id="locationNameDiv" class="row">
+                <div id="tripContent" class="row" style="display: none">
+                    <div class="tripDetails row">
+                        <!-- JS will populate -->
+                        <div id="tripContent-eateries" class="col-md-4">
+                            <div class="row">
+                                <h3 class="recommendationsDivTitles">Indulge</h3>
+                                <p class="smallText mb-0">[PLACE'S I'VE TRIED]</p>
+                                <span class="tripContent-border"></span>
+                            </div>
+                            <div class="row">
+                                <div id="tripContent-eateries-list"></div>
+                            </div>
+                        </div>
+                        <div id="tripContent-adventures" class="col-md-4">
+                            <div class="row">
+                                <h3 class="recommendationsDivTitles">Explore</h3>
+                                <p class="smallText mb-0">[PLACE'S I'VE BEEN/ SEEN]</p>
+                                <span class="tripContent-border"></span>
+                            </div>
+                            <div class="row">
+                                <div id="tripContent-adventures-list"></div>
+                            </div>
+                        </div>
+                        <div id="tripContent-extras" class="col-md-4">
+                            <div class="row">
+                                <h3 class="recommendationsDivTitles">Extras</h3>
+                                <p class="smallText mb-0">[OTHER POPULAR SPOTS TO TRY]</p>
+                                <span class="tripContent-border"></span>
+                            </div>
+                            <div class="row">
+                                <div id="tripContent-extra-list"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 class="text-end" id="locationTitle" data-city="city"></h2>
+                </div>
+            </div>
+            <div id="scrollDownDirectionDiv" class="mb-5">
+                <p class="verticalText">scroll down</p>
+                <i class="fas fa-angle-double-down fa-2x"></i>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
             <div class="picContainer">
                 <img src="./assets/photos/IMG_0645.jpg" alt="Eunah in Maui" class="picBoxes">
                 <img src="./assets/photos/IMG_9241.jpg" alt="Eunah in Phi Phi Islands" class="picBoxes">
@@ -83,47 +127,9 @@
                 <img src="./assets/photos/IMG_0626.jpg" alt="Eunah in Maui" class="picBoxes"> 
                 <img src="./assets/photos/IMG_7412.jpg" alt="Eunah in Ayutthaya" class="picBoxes"> 
             </div>
-            <div id="locationNameDiv" class="row">
-                    <div id="tripContent" class="row" style="display: none">
-                        <div class="tripDetails row">
-                            <!-- JS will populate -->
-                            <div id="tripContent-eateries" class="col-md-4">
-                                <div class="row">
-                                    <h3 class="recommendationsDivTitles">Indulge</h3>
-                                    <p class="smallText mb-0">[PLACE'S I'VE TRIED]</p>
-                                    <span class="tripContent-border"></span>
-                                </div>
-                                <div class="row">
-                                    <div id="tripContent-eateries-list"></div>
-                                </div>
-                            </div>
-                            <div id="tripContent-adventures" class="col-md-4">
-                                <div class="row">
-                                    <h3 class="recommendationsDivTitles">Explore</h3>
-                                    <p class="smallText mb-0">[PLACE'S I'VE BEEN/ SEEN]</p>
-                                    <span class="tripContent-border"></span>
-                                </div>
-                                <div class="row">
-                                    <div id="tripContent-adventures-list"></div>
-                                </div>
-                            </div>
-                            <div id="tripContent-extras" class="col-md-4">
-                                <div class="row">
-                                    <h3 class="recommendationsDivTitles">Extras</h3>
-                                    <p class="smallText mb-0">[OTHER POPULAR SPOTS TO TRY]</p>
-                                    <span class="tripContent-border"></span>
-                                </div>
-                                <div class="row">
-                                    <div id="tripContent-extra-list"></div>
-                                </div>
-                            </div>
-                        </div>
-                    <h2 class="text-end" id="locationTitle" data-city="city"></h2>
-                </div>
-            </div>
         </div>
     </div>
-
+    
     <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCVSbsCoys4-y9UHlX6z93OzyWKnOgnTGw"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
     <script type="text/javascript" src="https://rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>

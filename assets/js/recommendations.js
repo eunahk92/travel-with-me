@@ -303,6 +303,5 @@ $(document).ready(() => {
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
-	$('#map').css('height', '410px');
 	checkDivDisplay(clickedLocation);
 });

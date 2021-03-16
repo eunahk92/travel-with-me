@@ -60,14 +60,14 @@ h2 {
 	margin-right: auto;
 }
 
-#locationNameDiv {
+/* #locationNameDiv {
 	clear: right;
 	width: 100%;
 	position: absolute;
 	bottom: 0;
 	padding: 5px;
 	margin-bottom: 10px;
-}
+} */
 
 .tripContent-border { 
 	width: 75%;
@@ -95,9 +95,7 @@ h2 {
 /* Pictures Section */
 .picContainer {
 	display: flex;
-	position: absolute;
 	justify-content: space-evenly;
-	bottom: 0;
 	padding: 5px;
 	background-color: rgb(178,194,179);
 	border: 1px solid #f4f2f0; 
