@@ -1,5 +1,7 @@
 const geocoder = new google.maps.Geocoder();
 let map, query;
+const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let labelIndex = 0;
 const locationsArray = [
 	{
 		title: "Honolulu,Hawaii",
@@ -15,7 +17,7 @@ const locationsArray = [
 				address: "66-472 Kamehameha Hwy, Haleiwa, HI 96712",
 				types: ["seafood"],
 				commentary: "My recommendation: Try the Shrimp Scampi Plate!",
-				category: "toEat"
+				category: "toEat",
 			},
 			{
 				name: "Ahi Assassins Fish Co.",
@@ -171,6 +173,7 @@ async function renderMap(array, location) {
 	try {
 		await locationsArray.forEach(city => {
 			if (city.title == location) {
+				map.removeMarkers();
 				map.setZoom(10);
 				let latLng = new google.maps.LatLng(city.coord.lat, city.coord.long);
 				map.panTo(latLng);
@@ -185,6 +188,7 @@ async function renderMap(array, location) {
 						lat: lat,
 						lng: long,
 						title: spot,
+						label: labels[labelIndex++ % labels.length],
 						click: function(e) {
 							console.log(`${spot} lat is ${lat} and long is ${long}`);
 						}
@@ -195,22 +199,40 @@ async function renderMap(array, location) {
     } catch (err) { if (err) throw (err) }
 };
 
-checkDivDisplay = (location) => {
-	let dataValue = $('#locationTitle').attr('data-city');
-	let pageObj = fullpage_api.getActiveSection();
-	if ($("#tripContent").css('display') == 'none') {
-		$("#tripContent").css('display', 'block');
-		renderLocationContent(location);
-		fullpage_api.moveTo(3);
-	} else if ($("#tripContent").css('display') == 'block' && dataValue == location) {
-		$("#tripContent").css('display', 'none'); 
-		fullpage_api.moveTo(4);
- 	} else if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
-		$("#tripContent").css('display', 'block');
-		renderLocationContent(location);
-		fullpage_api.moveTo(3);
-	} 
+attachSecretMessage = (marker, secretMessage) => {
+	const infowindow = new google.maps.InfoWindow({
+	  content: secretMessage,
+	});
+	marker.addListener("click", () => {
+		map.setZoom(8);
+    	map.setCenter(marker.getPosition());
+	  infowindow.open(marker.get("map"), marker);
+	});
 };
+
+renderMarkerLabelText = () => {
+
+};
+
+// async function checkDivDisplay(location) {
+// 	try {
+// 		let dataValue = $('#locationTitle').attr('data-city');
+// 		let pageObj = await fullpage_api.getActiveSection();
+// 		if ($("#tripContent").css('display') == 'none') {
+// 			$("#tripContent").css('display', 'block');
+// 			await fullpage_api.moveSectionDown();
+// 			await renderLocationContent(location);
+// 		} 
+// 		if ($("#tripContent").css('display') == 'block' && pageObj.index === 3) {
+// 			await fullpage_api.moveTo(2);
+// 		}
+// 		if ($("#tripContent").css('display') == 'block' && dataValue != location) {	
+// 			$("#tripContent").css('display', 'block');
+// 			await fullpage_api.moveSectionDown();
+// 			await renderLocationContent(location);
+// 		} 
+//     } catch (err) { if (err) throw (err) }
+// };
 
 renderListOfRecommendations = (array) => {
 	array.forEach(spot => {
@@ -307,5 +329,18 @@ $(document).ready(() => {
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
-	checkDivDisplay(clickedLocation);
+	let dataValue = $('#locationTitle').attr('data-city');
+	if ($("#tripContent").css('display') == 'none') {
+		$("#tripContent").css('display', 'block');
+		fullpage_api.moveSectionDown();
+		renderLocationContent(clickedLocation);
+	} 
+	if ($("#tripContent").css('display') == 'block' && dataValue == clickedLocation) {
+		fullpage_api.moveTo(2);
+	}
+	if ($("#tripContent").css('display') == 'block' && dataValue != clickedLocation) {	
+		$("#tripContent").css('display', 'block');
+		fullpage_api.moveSectionDown();
+		renderLocationContent(clickedLocation);
+	} 
 });

@@ -8,6 +8,10 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCVSbsCoys4-y9UHlX6z93OzyWKnOgnTGw"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
+    <script type="text/javascript" src="https://rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
     <link href="./assets/css/main-style.css" rel="stylesheet">
     <link href="./assets/css/recommendations-style.css" rel="stylesheet">
 </head>
@@ -80,6 +84,10 @@
         <div class="section fp-auto-height" id="tripDetailsSection">
             <div id="tripContent" class="row" style="display: none">
                 <div class="tripDetails row">
+                    <!-- <div id="scrollDownDirectionDiv" class="mb-5">
+                        <i class="fas fa-angle-double-up fa-2x"></i>
+                        <p class="verticalTextUp">scroll up</p>
+                    </div> -->
                     <!-- JS will populate -->
                     <div id="tripContent-eateries" class="col-md-4">
                         <div class="row">
@@ -115,7 +123,7 @@
                 <h2 class="text-end" id="locationTitle" data-city="city"></h2>
             </div>
         </div>
-        <div class="section fp-auto-height" id="picFooter">
+        <!-- <div class="section fp-auto-height" id="picFooter">
             <div class="picContainer">
                 <img src="./assets/photos/IMG_0645.jpg" alt="Eunah in Maui" class="picBoxes">
                 <img src="./assets/photos/IMG_9241.jpg" alt="Eunah in Phi Phi Islands" class="picBoxes">
@@ -123,13 +131,9 @@
                 <img src="./assets/photos/IMG_0626.jpg" alt="Eunah in Maui" class="picBoxes"> 
                 <img src="./assets/photos/IMG_7412.jpg" alt="Eunah in Ayutthaya" class="picBoxes"> 
             </div>
-        </div>
+        </div> -->
     </div>
     
-    <script type="text/javascript" src="https://maps.google.com/maps/api/js?key=AIzaSyCVSbsCoys4-y9UHlX6z93OzyWKnOgnTGw"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gmaps.js/0.4.25/gmaps.min.js"></script>
-    <script type="text/javascript" src="https://rawgit.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/vendors/scrolloverflow.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.1.0/fullpage.extensions.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
