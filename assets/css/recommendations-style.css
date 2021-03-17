@@ -38,6 +38,14 @@ h2 {
 	font-size: small;
 }
 
+.numberCircle2 {
+    border-radius: 50%;
+    text-align: center;
+	padding: 1px;
+    border: 2px solid #dce1da;
+	font-size: smaller;
+}
+
 /* Wrapper for whole section */
 .wrapper { display: inline; }
 
@@ -76,7 +84,7 @@ h2 {
 
 #locationTitle {
 	clear: right;
-	width: 100%;
+	width: fit-content;
 	position: absolute;
 	bottom: 0;
 	right: 5px;

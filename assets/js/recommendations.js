@@ -1,5 +1,5 @@
 const geocoder = new google.maps.Geocoder();
-let map, query;
+let map;
 const locationsArray = [
     {
 		title: "Honolulu,Hawaii",
@@ -301,7 +301,7 @@ const locationsArray = [
             },
             {
 				name: "Coex Mall",
-				address: "",
+				address: "513 Yeongdong-daero, Samseong 1(il)-dong, Gangnam-gu, Seoul, South Korea",
 				commentary: "Korea's largest underground shopping mall!",
 				tips: [],
 				category: "",
@@ -310,7 +310,7 @@ const locationsArray = [
             },
             {
 				name: "Starfield Coex Library",
-				address: "513, Yeongdong-daero, Gangnam-gu Starfield COEX Mall, Seoul 06164 South Korea",
+				address: "513 Yeongdong-daero, Samseong 1(il)-dong, Gangnam-gu, Seoul, South Korea",
 				commentary: "Inside Coex Mall: THE most beautiful library EVER. Over 50,000 books and 2 stories. You've probably seen this library in K-dramas (like Record of Youth).",
 				tips: [],
 				category: "toDo",
@@ -319,7 +319,7 @@ const locationsArray = [
             },
             {
 				name: "Seoul City Wall Trail",
-				address: "",
+				address: "622-83 Changsin-dong, Jongno-gu, Seoul, South Korea",
 				commentary: "Usually seen in K-Dramas where they go and sit on the wall! 'The Fortress Wall of Seoul' with a skyline view of the city and mountains. Recommend going during sunset.",
 				tips: [],
 				category: "toDo",
@@ -328,7 +328,7 @@ const locationsArray = [
             },
             {
 				name: "Namdaemun Market",
-				address: "21, Namdaemunsijang 4-gil, Jung-gu, Seoul",
+				address: "21 Namdaemunsijang 4-gil, Hoehyeon-dong, Jung-gu, Seoul, South Korea",
 				commentary: "Largest traditional market",
 				tips: ["FYI market is closed on Sunday"],
 				category: "toDo",
@@ -348,7 +348,7 @@ const locationsArray = [
             },
             {
 				name: "Banpo Bridge",
-				address: "Banpo 2(i)-dong, Seoul, South Korea",
+				address: "Banpo 2(i)-dong, Seocho-gu, Seoul, South Korea",
 				commentary: "2 tier bridge over the famous Han River.",
 				tips: [
                     "Watch the Rainbow Fountain Show (best location for best view is from Banpo Hangang Park!): Check the times online (usually once at noon and a few at night)."
@@ -485,16 +485,21 @@ async function renderMap(array, location) {
 };
 
 renderGoogleLinks = (address) => {
-	const query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
+	let query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
 	const link = `https://www.google.com/maps/search/?api=1&query=${query}`
 	return link;
 };
 
-renderListOfRecommendations = (array) => {
+renderListOfRecommendations = (array, location) => {
 	array.forEach(spot => {
-		console.log(spot);
 		let { name, address, types, category, label } = spot;
-		const query = renderGoogleLinks(address);
+		let query;
+		if (address.includes('-')) {
+			let param = name.concat(location)
+			query = renderGoogleLinks(param);
+		} else {
+			query = renderGoogleLinks(address);
+		}
 		let icons = renderIcons(types);
 		icons = icons.toString().replaceAll(',', '');
 		const li = `
@@ -547,7 +552,7 @@ renderLocationContent = (location) => {
 	});
 	renderMap(markers, location);
 	$('#locationTitle').text(title);
-	renderListOfRecommendations(recommendations);
+	renderListOfRecommendations(recommendations, location);
 };
 
 renderIcons = (array) => {
@@ -587,7 +592,11 @@ renderIcons = (array) => {
 };
 
 renderMarkerLabelsForLi = (num) => {
-	return `<span class="numberCircle">${num}</span>`
+	if (num >= 10) {
+		return `<span class="numberCircle2">${num}</span>`
+	} else {
+		return `<span class="numberCircle">${num}</span>`
+	}
 };
 
 renderRecommendationsPage = (location) => {
