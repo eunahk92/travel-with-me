@@ -229,7 +229,7 @@ const locationsArray = [
             },
             {
 				name: "Itaewon Land Sauna",
-				address: "",
+				address: "732-20 Hannam-dong, Yongsan-gu, Seoul, South Korea",
 				commentary: "A less touristy jimjilbang (sauna). They have a big traditional oak wood sauna",
 				tips: [],
 				category: "toDo",
@@ -245,7 +245,7 @@ const locationsArray = [
                     "I recommend taking the cable car up and taking the stairs down."
                 ],
 				category: "toDo",
-				types: ["sightsee"],
+				types: ["sightsee", "eat", "shop"],
 				label: '',
             },
             {
@@ -262,19 +262,19 @@ const locationsArray = [
             },
             {
 				name: "Bukchon Hanok Village",
-				address: "",
+				address: "31-112 Gahoe-dong, Jongno-gu, Seoul, South Korea",
 				commentary: "Well preserved, traditional, Korean village: taking a walk around the village is like being transported back in time.",
 				tips: [
                     "Stop by the Tourist Info Center and get a map (shows you all the main points to see).",
                     ""
                 ],
 				category: "toDo",
-				types: ["sightsee"],
+				types: ["sightsee", "eat", "shop"],
 				label: '',
             },
             {
 				name: "Lotte World",
-				address: "",
+				address: "240 Olympic-ro, Jamsil-dong, Songpa-gu, Seoul, South Korea",
 				commentary: "It's like Disney world but not Disney. A day's worth activities: world's largest indoor theme park, shopping malls, outdoor amusement park, sports facilities, and more!",
 				tips: [],
 				category: "toDo",
@@ -297,15 +297,6 @@ const locationsArray = [
 				tips: [],
 				category: "toDo",
 				types: ["shop", "eat"],
-				label: '',
-            },
-            {
-				name: "Coex Mall",
-				address: "513 Yeongdong-daero, Samseong 1(il)-dong, Gangnam-gu, Seoul, South Korea",
-				commentary: "Korea's largest underground shopping mall!",
-				tips: [],
-				category: "",
-				types: [""],
 				label: '',
             },
             {
@@ -337,7 +328,7 @@ const locationsArray = [
             },
             {
 				name: "Changdeok Palace",
-				address: "",
+				address: "99 Yulgok-ro, Waryong-dong, Jongno-gu, Seoul, South Korea",
 				commentary: "Part of the Five Grand Palaces made by the Joseon Dynasty King. The rear garden at the palace was done to create the ideal resting place for the royal family members.",
 				tips: [
                     "PREBOOK tickets online to avoid lines (~2.50)"
@@ -427,19 +418,21 @@ const locationsArray = [
     },
 ];
 
-renderMarkerLabelsForMap = (arr, location) => {
-	arr.forEach(obj => {
-		let reccomIndex = arr.indexOf(obj);
-		let labelIndex = reccomIndex + 1;
-		obj.label = labelIndex.toString();
-		const locationObj = locationsArray.filter(x => x.title == location);
-		const cityIndex = locationsArray.indexOf(locationObj[0]);
-		locationObj[0].recommendations.forEach(y => {
-			if (y.address == obj.address) {
-				locationsArray[cityIndex].recommendations[reccomIndex].label = labelIndex;
-			}
+async function renderMarkerLabelsForMap(arr, location) {
+	try {
+		await arr.forEach(obj => {
+			let reccomIndex = arr.indexOf(obj);
+			let labelIndex = reccomIndex + 1;
+			obj.label = labelIndex.toString();
+			const locationObj = locationsArray.filter(x => x.title == location);
+			const cityIndex = locationsArray.indexOf(locationObj[0]);
+			locationObj[0].recommendations.forEach(y => {
+				if (y.address == obj.address) {
+					locationsArray[cityIndex].recommendations[reccomIndex].label = labelIndex;
+				}
+			});
 		});
-	});
+	} catch (err) { if (err) throw (err) }
 };
 
 async function renderMap(array, location) {
