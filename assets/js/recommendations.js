@@ -372,14 +372,14 @@ const locationsArray = [
 		title: "Dubai, UAE",
 		continent: "Asia",
 		coord: {
-			lat: 24.4539,
-			long: 54.3773
+			lat: 25.2442856,
+			long: 55.2858641
         },
 		recommendations: [
             {
-				name: "Hallgrimskirkja Church",
-				address: "Hallgrímstorg 1, 101 Reykjavík, Iceland",
-				commentary: "Beautiful church/ unique",
+				name: "Jumeirah Mosque",
+				address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
+				commentary: "mosque",
 				tips: [],
 				category: "toDo",
 				types: ["sightsee"],
@@ -427,17 +427,24 @@ const locationsArray = [
     },
 ];
 
-generateLabels = (arr) => {
-	console.log(arr);
+renderMarkerLabelsForMap = (arr, location) => {
 	arr.forEach(obj => {
-		let index = arr.indexOf(obj) + 1;
-		obj.label = index.toString();
-	})
-}
+		let reccomIndex = arr.indexOf(obj);
+		let labelIndex = reccomIndex + 1;
+		obj.label = labelIndex.toString();
+		const locationObj = locationsArray.filter(x => x.title == location);
+		const cityIndex = locationsArray.indexOf(locationObj[0]);
+		locationObj[0].recommendations.forEach(y => {
+			if (y.address == obj.address) {
+				locationsArray[cityIndex].recommendations[reccomIndex].label = labelIndex;
+			}
+		});
+	});
+};
 
 async function renderMap(array, location) {
 	try {
-		await generateLabels(array);
+		await renderMarkerLabelsForMap(array, location);
 		await locationsArray.forEach(city => {
 			if (city.title == location) {
 				map.removeMarkers();
@@ -457,7 +464,7 @@ async function renderMap(array, location) {
 				if (status == google.maps.GeocoderStatus.OK) {
 					let lat = results[0].geometry.location.lat();
 					let long = results[0].geometry.location.lng();
-					let m = map.addMarker({
+					map.addMarker({
 						lat: lat,
 						lng: long,
 						title: spot.address,
@@ -471,7 +478,6 @@ async function renderMap(array, location) {
 							map.panTo(latLng);
 						}
 					});
-					console.log(m)
 				} 
 			}); 
 		});
@@ -479,21 +485,22 @@ async function renderMap(array, location) {
 };
 
 renderGoogleLinks = (address) => {
-	let query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
-	let link = `https://www.google.com/maps/search/?api=1&query=${query}`
+	const query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
+	const link = `https://www.google.com/maps/search/?api=1&query=${query}`
 	return link;
 };
 
 renderListOfRecommendations = (array) => {
 	array.forEach(spot => {
-		let { name, address, types, category } = spot;
-		let query = renderGoogleLinks(address);
+		console.log(spot);
+		let { name, address, types, category, label } = spot;
+		const query = renderGoogleLinks(address);
 		let icons = renderIcons(types);
 		icons = icons.toString().replaceAll(',', '');
-		let li = `
+		const li = `
 			<div class="row d-flex justify-content-start m-0 p-0">
 				<a href="${query}" target="_blank" class="recommendationLink mr-3">
-					<small>${name} ${icons}</small>
+					<small>${label ? renderMarkerLabelsForLi(label) : ''} ${name} ${icons}</small>
 				</a>
 			</div>`
 		switch (category) {
@@ -513,9 +520,7 @@ renderListOfRecommendations = (array) => {
 renderLocationLinks = () => {
 	locationsArray.forEach(location => {
 		const locationLink = `
-			<a class="locationLink"><small>
-					${location.title}
-			</small></a>
+			<a class="locationLink"><small>${location.title}</small></a>
 		`
 		if (location.continent === 'North America') {
 			$('.usLocations').append(locationLink);
@@ -537,7 +542,7 @@ renderLocationContent = (location) => {
 	const { title, recommendations } = res[0];
 	recommendations.forEach(spot => {
 		if (spot.address) {
-			markers.push({ address: spot.address, marker: spot.label })
+			markers.push({ address: spot.address })
 		}
 	});
 	renderMap(markers, location);
@@ -582,7 +587,7 @@ renderIcons = (array) => {
 };
 
 renderMarkerLabelsForLi = (num) => {
-	return `<div class="numberCircle">${num}</div>`
+	return `<span class="numberCircle">${num}</span>`
 };
 
 renderRecommendationsPage = (location) => {
@@ -592,11 +597,9 @@ renderRecommendationsPage = (location) => {
 		$('.pictureSection').css('display', 'none');
 		fullpage_api.moveSectionDown();
 		renderLocationContent(location);
-	} 
-	if ($('#tripContent').css('display') == 'block' && dataValue == location) {
+	} else if ($('#tripContent').css('display') == 'block' && dataValue == location) {
 		fullpage_api.moveTo(2);
-	}
-	if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
+	} else if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
 		fullpage_api.moveSectionDown();
 		renderLocationContent(location);
 	} 

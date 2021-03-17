@@ -31,12 +31,10 @@ h2 {
 
 .numberCircle {
     border-radius: 50%;
-    width: fit-content;
-    height: auto;
-    padding: 5px;
-    border: 2px solid #DADED4;
-    color: #DADED4;
     text-align: center;
+	padding-left: 4px;
+	padding-right: 4px;
+    border: 2px solid #dce1da;
 	font-size: small;
 }
 
@@ -61,6 +59,10 @@ h2 {
 .recommendationListContainer a:hover { 
 	color: #dce1da; 
 	font-weight: bold; 
+}
+
+.smGoogleLogo {
+	size: 4px;
 }
 
 /* Trip content section */
