@@ -16,6 +16,10 @@ const locationsArray = [
 				label: '',
 				commentary: "My recommendation: Try the Shrimp Scampi Plate!",
 				category: "toEat",
+				coord: {
+					lat: 21.5807083,
+					long: -158.1050234
+				},
             },
             {
 				name: "Ahi Assassins Fish Co.",
@@ -23,7 +27,11 @@ const locationsArray = [
 				types: ["seafood"],
 				label: '',
 				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix). Offered in delicious different flavors.",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.2925559,
+					long: -157.8223049
+				},
             },
             {
 				name: "Leonard’s Bakery",
@@ -31,7 +39,11 @@ const locationsArray = [
 				types: ["dessert"],
 				label: '',
 				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them.",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.2849227,
+					long: -157.8132698
+				},
             },
             {
 				name: "Musubi Cafe Iyasume",
@@ -39,7 +51,11 @@ const locationsArray = [
 				types: ["snack"],
 				label: '',
 				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks to chow down on.",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.2770925,
+					long: -157.7863744
+				},
             },
             {
 				name: "MATSUMOTO’S SHAVE ICE",
@@ -47,15 +63,23 @@ const locationsArray = [
 				types: ["dessert"],
 				label: '',
 				commentary: "",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.5911105,
+					long: -158.1028563
+				},
             },
             {
 				name: "Waiola Shave Ice",
-				address: "",
+				address: "2135 Waiola St, Honolulu, HI 96826",
 				types: ["dessert"],
 				label: '',
 				commentary: "",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.2924603,
+					long: -157.8286388
+				},
             },
             {
 				name: "Haleʻiwa Bowls",
@@ -63,7 +87,11 @@ const locationsArray = [
 				types: ["snack"],
 				label: '',
 				commentary: "",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.5927306,
+					long: -158.1032127
+				},
             },
             {
 				name: "Marukame Udon Waikiki",
@@ -71,7 +99,11 @@ const locationsArray = [
 				types: ["Japanese"],
 				label: '',
 				commentary: "Really delicious, authentic Japanese Udon noodles",
-				category: "toEat"
+				category: "toEat",
+				coord: {
+					lat: 21.2796049,
+					long: -157.8258319
+				},
             },
             {
 				name: "Waimea Bay, North Shore",
@@ -80,6 +112,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["beach", "surfing"],
 				label: '',
+				coord: {
+					lat: 21.639903,
+					long: -158.062769
+				},
             },
             {
 				name: "Dole Pineapple Plantation",
@@ -88,6 +124,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["tour", "activity", "shop", "eat"],
 				label: '',
+				coord: {
+					lat: 21.5260075,
+					long: -158.0377136 
+				},
             },
             {
 				name: "Diamond Head",
@@ -96,6 +136,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["hike"],
 				label: '',
+				coord: {
+					lat: 21.261983,
+					long: -157.8059987
+				},
             },
             {
 				name: "Hanauma Bay",
@@ -104,22 +148,34 @@ const locationsArray = [
 				category: "toDo",
 				types: ["snorkel", "beach"],
 				label: '',
+				coord: {
+					lat: 21.2725925,
+					long: -157.6971959
+				},
             },
             {
 				name: "Hanauma Bay Lookout",
-				address: "",
+				address: "7514-7538 Kalanianaʻole Hwy, Honolulu, HI 96825",
 				commentary: "There is also Hanauma Bay Lookout if you don't want to go for a dip with a hiking trail nearby!",
 				category: "toDo",
 				types: ["hike"],
 				label: '',
+				coord: {
+					lat: 21.2751805,
+					long: -157.6958748
+				},
             },
             {
 				name: "Koko Crater Trail",
-				address: "",
+				address: "7604 Koko Head Park Rd #7602, Honolulu, HI 96825",
 				commentary: "",
 				category: "toDo",
 				types: ["hike"],
 				label: '',
+				coord: {
+					lat: 21.2808481,
+					long: -157.6920035
+				},
             },
             {
 				name: "Ala Moana Mall",
@@ -128,14 +184,22 @@ const locationsArray = [
 				category: "toDo",
 				types: [ "shop", "eat"],
 				label: '',
+				coord: {
+					lat: 21.291298,
+					long: -157.8433791
+				},
             },
             {
 				name: "Waikiki Beach",
-				address: "",
+				address: "Waikiki Beach, Honolulu, HI 96815",
 				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach. A lot of beautiful beaches (Waikiki beach, Kuhio Beach, Kahanamoku Beach) to choose from. This is also where the more mainland restaurant brands will be.",
 				category: "toDo",
 				types: ["beach", "shop", "eat"],
 				label: '',
+				coord: {
+					lat: 21.2762651,
+					long: -157.8271082
+				},
             }
         ]
     },
@@ -158,6 +222,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 64.1420229,
+					long: -21.9265493
+				},
             },
             {
 				name: "Blue Lagoon",
@@ -168,6 +236,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["spa"],
 				label: '',
+				coord: {
+					lat: 63.8830498,
+					long: -22.4306755
+				},
             },
             {
 				name: "Thingvellir National Park Silfra Fissure",
@@ -179,6 +251,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["snorkel", "hike"],
 				label: '',
+				coord: {
+					lat: 64.25591960000001,
+					long: -21.1295497
+				},
             },
             {
 				name: "Harpa Concert Hall",
@@ -188,6 +264,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 64.15041,
+					long: -21.932082
+				},
             },
             {
 				name: "Gullfoss Waterfall",
@@ -197,6 +277,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 64.3270716,
+					long: -20.1199478
+				},
             },
             {
 				name: "Solheimasandur Plane Wreck",
@@ -206,6 +290,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 63.4186315,
+					long: -19.0060479
+				},
             },
         ]
     },
@@ -226,6 +314,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["spa"],
 				label: '',
+				coord: {
+					lat: 37.5273486,
+					long: 126.9640848
+				},
             },
             {
 				name: "Itaewon Land Sauna",
@@ -235,6 +327,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["spa"],
 				label: '',
+				coord: {
+					lat: 37.534083,
+					long: 126.9972736
+				},
             },
             {
 				name: "N Seoul Tower",
@@ -247,6 +343,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee", "eat", "shop"],
 				label: '',
+				coord: {
+					lat: 37.5509473,
+					long: 126.9892965
+				},
             },
             {
 				name: "Gyeongbokgung Palace",
@@ -259,6 +359,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 37.5773616,
+					long: 126.9766844
+				},
             },
             {
 				name: "Bukchon Hanok Village",
@@ -271,6 +375,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee", "eat", "shop"],
 				label: '',
+				coord: {
+					lat: 37.5833149,
+					long: 126.9829637
+				},
             },
             {
 				name: "Lotte World",
@@ -280,6 +388,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee", "shop", "eat"],
 				label: '',
+				coord: {
+					lat: 37.5111158,
+					long: 127.098167
+				},
             },
             {
 				name: "Bukhansan National Park",
@@ -289,6 +401,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["hike"],
 				label: '',
+				coord: {
+					lat: 37.6197679,
+					long: 126.9955839
+				},
             },
             {
 				name: "Myeongdong Market",
@@ -298,6 +414,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["shop", "eat"],
 				label: '',
+				coord: {
+					lat: 37.55998,
+					long: 126.9858296
+				},
             },
             {
 				name: "Starfield Coex Library",
@@ -307,6 +427,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee", "shop"],
 				label: '',
+				coord: {
+					lat: 37.51168500000001,
+					long: 127.0593394
+				},
             },
             {
 				name: "Seoul City Wall Trail",
@@ -316,6 +440,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 37.5779633,
+					long: 127.0084459
+				},
             },
             {
 				name: "Namdaemun Market",
@@ -325,6 +453,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["shop","eat"],
 				label: '',
+				coord: {
+					lat: 37.55914730000001,
+					long: 126.977641
+				},
             },
             {
 				name: "Changdeok Palace",
@@ -336,6 +468,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 37.5794309,
+					long: 126.9910426
+				},
             },
             {
 				name: "Banpo Bridge",
@@ -347,6 +483,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 37.5044869,
+					long: 126.9944423
+				},
             },
             {
 				name: "Mugyodong Bugeokukjib",
@@ -356,6 +496,10 @@ const locationsArray = [
 				category: "extra",
 				types: ["eat"],
 				label: '',
+				coord: {
+					lat: 37.5677037,
+					long: 126.9798457
+				},
             },
         ]
     },
@@ -375,6 +519,10 @@ const locationsArray = [
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
+				coord: {
+					lat: 37.5509473,
+					long: 126.9892965
+				},
             }
         ]
     },
@@ -423,11 +571,11 @@ async function renderMarkerLabelsForMap(arr, location) {
 		await arr.forEach(obj => {
 			let reccomIndex = arr.indexOf(obj);
 			let labelIndex = reccomIndex + 1;
-			obj.label = labelIndex.toString();
-			const locationObj = locationsArray.filter(x => x.title == location);
+			obj.label = labelIndex.toString(); // for label prop
+			const locationObj = locationsArray.filter(x => x.title == location); // find city obj 
 			const cityIndex = locationsArray.indexOf(locationObj[0]);
 			locationObj[0].recommendations.forEach(y => {
-				if (y.address == obj.address) {
+				if (y.name == obj.name) {
 					locationsArray[cityIndex].recommendations[reccomIndex].label = labelIndex;
 				}
 			});
@@ -453,28 +601,55 @@ async function renderMap(array, location) {
 			}
 		});
 		await array.forEach(spot => {
-			geocoder.geocode( { 'address': spot.address }, function(results, status) {
-				if (status == google.maps.GeocoderStatus.OK) {
-					let lat = results[0].geometry.location.lat();
-					let long = results[0].geometry.location.lng();
-					map.addMarker({
-						lat: lat,
-						lng: long,
-						title: spot.address,
-						label: spot.label,
-						infoWindow: {
-							content: `${spot.address} lat is ${lat} and long is ${long}`
-						},
-						click: function(e) {
-							let latLng = new google.maps.LatLng(lat, long);
-							map.setZoom(13);
-							map.panTo(latLng);
-						}
-					});
-				} 
-			}); 
+			const { coords, name, label } = spot;
+			console.log(spot)
+				map.addMarker({
+					lat: coords.lat,
+					lng: coords.long,
+					title: name,
+					label: label,
+					infoWindow: {
+						content: `lat is ${coords.lat} and long is ${coords.long}`
+					},
+					click: function(e) {
+						let latLng = new google.maps.LatLng(lat, long);
+						map.setZoom(13);
+						map.panTo(latLng);
+					}
+				});
 		});
     } catch (err) { if (err) throw (err) }
+};
+
+// generate Lat and Long for new entries
+// moved this out of the renderMap due to google query limit 
+generateGeocode = (arr) => {
+	arr.forEach(location => {
+		geocoder.geocode( { 'address': location.address }, function(results, status) {
+			if (status == google.maps.GeocoderStatus.OK) {
+				let lat = results[0].geometry.location.lat();
+				let long = results[0].geometry.location.lng();
+				map.addMarker({
+					lat: lat,
+					lng: long,
+					title: location.address,
+					label: location.label,
+					infoWindow: {
+						content: `lat is ${lat} and long is ${long}`
+					},
+					click: function(e) {
+						let latLng = new google.maps.LatLng(lat, long);
+						map.setZoom(13);
+						map.panTo(latLng);
+						console.log(`${location.address}
+						${lat}
+						${long}
+						`)
+					}
+				});
+			} 
+		}); 
+	});
 };
 
 renderGoogleLinks = (address) => {
@@ -488,7 +663,7 @@ renderListOfRecommendations = (array, location) => {
 		let { name, address, types, category, label } = spot;
 		let query;
 		if (address.includes('-')) {
-			let param = name.concat(location)
+			let param = name.concat(location);
 			query = renderGoogleLinks(param);
 		} else {
 			query = renderGoogleLinks(address);
@@ -539,9 +714,7 @@ renderLocationContent = (location) => {
 	let res = locationsArray.filter(city => city.title == location);
 	const { title, recommendations } = res[0];
 	recommendations.forEach(spot => {
-		if (spot.address) {
-			markers.push({ address: spot.address })
-		}
+		markers.push({ name: spot.name, coords: spot.coord })
 	});
 	renderMap(markers, location);
 	$('#locationTitle').text(title);
