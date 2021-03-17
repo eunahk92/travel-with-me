@@ -2,7 +2,7 @@ const geocoder = new google.maps.Geocoder();
 let map;
 const locationsArray = [
     {
-		title: "Honolulu,Hawaii",
+		name: "Honolulu,Hawaii",
 		continent: 'North America',
 		coord: {
 			lat: 21.5010,
@@ -204,7 +204,7 @@ const locationsArray = [
         ]
     },
     {
-		title: "Iceland",
+		name: "Iceland",
 		continent: "Europe",
 		coord: {
 			lat: 65.03270,
@@ -298,7 +298,7 @@ const locationsArray = [
         ]
     },
     {
-		title: "Seoul, Korea",
+		name: "Seoul, Korea",
 		continent: "Asia",
 		coord: {
 			lat: 37.5509473,
@@ -504,7 +504,7 @@ const locationsArray = [
         ]
     },
     {
-		title: "Dubai, UAE",
+		name: "Dubai, UAE",
 		continent: "Asia",
 		coord: {
 			lat: 25.2442856,
@@ -527,7 +527,7 @@ const locationsArray = [
         ]
     },
     {
-		title: "Italy, Rome",
+		name: "Italy, Rome",
 		continent: "Europe",
 		coord: {
 			lat: 41.9028,
@@ -546,7 +546,7 @@ const locationsArray = [
         ]
     },
     {
-		title: "Orlando, Florida",
+		name: "Orlando, Florida",
 		continent: "North America",
 		coord: {
 			lat: 28.5383,
@@ -572,7 +572,7 @@ async function renderMarkerLabelsForMap(arr, location) {
 			let reccomIndex = arr.indexOf(obj);
 			let labelIndex = reccomIndex + 1;
 			obj.label = labelIndex.toString(); // for label prop
-			const locationObj = locationsArray.filter(x => x.title == location); // find city obj 
+			const locationObj = locationsArray.filter(x => x.name == location); // find city obj 
 			const cityIndex = locationsArray.indexOf(locationObj[0]);
 			locationObj[0].recommendations.forEach(y => {
 				if (y.name == obj.name) {
@@ -587,7 +587,7 @@ async function renderMap(array, location) {
 	try {
 		await renderMarkerLabelsForMap(array, location);
 		await locationsArray.forEach(city => {
-			if (city.title == location) {
+			if (city.name == location) {
 				map.removeMarkers();
 				if (location.includes('Hawaii')) {
 					map.setZoom(10);
@@ -612,7 +612,7 @@ async function renderMap(array, location) {
 						content: `lat is ${coords.lat} and long is ${coords.long}`
 					},
 					click: function(e) {
-						let latLng = new google.maps.LatLng(lat, long);
+						let latLng = new google.maps.LatLng(coords.lat, coords.long);
 						map.setZoom(13);
 						map.panTo(latLng);
 					}
@@ -658,8 +658,19 @@ renderGoogleLinks = (address) => {
 	return link;
 };
 
+sortLocationsAlphabetically = (arr) => {
+	arr.sort((a, b) => {
+        if (a.name === b.name) {
+          return a.name > b.name ? 1 : -1
+        }
+        return a.name > b.name ? 1 : -1
+	});
+	return arr;
+};
+
 renderListOfRecommendations = (array, location) => {
-	array.forEach(spot => {
+	const sortedArr = sortLocationsAlphabetically(array);
+	sortedArr.forEach(spot => {
 		let { name, address, types, category, label } = spot;
 		let query;
 		if (address.includes('-')) {
@@ -691,9 +702,10 @@ renderListOfRecommendations = (array, location) => {
 };
 
 renderLocationLinks = () => {
-	locationsArray.forEach(location => {
+	const sortedArr = sortLocationsAlphabetically(locationsArray);
+	sortedArr.forEach(location => {
 		const locationLink = `
-			<a class="locationLink"><small>${location.title}</small></a>
+			<a class="locationLink"><small>${location.name}</small></a>
 		`
 		if (location.continent === 'North America') {
 			$('.usLocations').append(locationLink);
@@ -711,13 +723,13 @@ renderLocationContent = (location) => {
 	$('#tripContent-adventures-list').empty();
 	$('#tripContent-extra-list').empty();
 	let markers = [];
-	let res = locationsArray.filter(city => city.title == location);
-	const { title, recommendations } = res[0];
+	let res = locationsArray.filter(city => city.name == location);
+	const { name, recommendations } = res[0];
 	recommendations.forEach(spot => {
 		markers.push({ name: spot.name, coords: spot.coord })
 	});
 	renderMap(markers, location);
-	$('#locationTitle').text(title);
+	$('#locationTitle').text(name);
 	renderListOfRecommendations(recommendations, location);
 };
 
@@ -792,7 +804,7 @@ initMap = () => {
 		map.addMarker({
 			lat: city.coord.lat,
 			lng: city.coord.long,
-			title: city.title,
+			title: city.name,
 			label: city.recommendations.length.toString(),
 			click: function(e) {
 				renderRecommendationsPage(e.title);
