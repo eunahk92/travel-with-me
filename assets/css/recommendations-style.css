@@ -89,7 +89,7 @@ h2 {
 
 #locationTitle { font-family: 'Lato', sans-serif; }
 
-#tripContent-eateries, #tripContent-adventures, #tripContent-extra {
+#tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
 	margin: 0;
 	height: 300px;
 	overflow: scroll;
@@ -107,11 +107,23 @@ h2 {
 }
 
 /* Pictures Section */
+.pictureSection {
+	width: 80%;
+	display: flex;
+	align-items: center;
+	width: 100vw;
+	margin-left: auto;
+	margin-right: auto;
+	float: right;
+	padding: 25px;
+	background-color: #4E6A6A;
+}
+
 .picContainer {
 	display: flex;
 	justify-content: space-evenly;
 	padding: 5px;
-	background-color: rgb(178,194,179);
+	background-color: #4E6A6A;
 	border: 1px solid #f4f2f0; 
 }
 
@@ -155,4 +167,10 @@ h2 {
 		border: 2px solid rgba(255,255,255,0.95);
 		width: 100%;
 	}
+	#tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
+		margin: 0;
+		height: 180px;
+		overflow: scroll;
+	}
+	
 }
