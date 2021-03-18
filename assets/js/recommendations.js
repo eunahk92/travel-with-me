@@ -1,22 +1,56 @@
 const geocoder = new google.maps.Geocoder();
 let map;
-const listPage = $(document.querySelector('#tripDetailsSection'))
+const listPage = $(document.querySelector('#tripDetailsSection'));
+const categoryArr = [
+	{ type: "seafood", icon: `<i class="fas fa-fish"></i>` },
+	{ type: "dessert", icon: `<i class="fas fa-ice-cream"></i>` },
+	{ type: "hike", icon: `<i class="fas fa-hiking"></i>` },
+	{ type: "shop", icon: `<i class="fas fa-shopping-bag"></i>` },
+	{ type: "eat", icon: `<i class="fas fa-utensils"></i>` },
+	{ type: "snorkel", icon: `<i class="fas fa-swimmer"></i>` },
+	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt"></i>` },
+	{ type: "coffee", icon: `<i class="fas fa-coffee"></i>` },
+	{ type: "sightsee", icon: `<i class="fas fa-camera-retro"></i>` },
+	{ type: "spa", icon: `<i class="fas fa-spa"></i>` },
+	{ type: "asian", icon: `<i class="material-icons">ramen_dining</i>` },
+	{ type: "local", icon: `<i class="material-icons">local_dining</i>` },
+	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
+	{ type: "pastry", icon: `<i class="fas fa-bread-slice"></i>` },
+	
+];
 const locationsArray = [
     {
 		name: "Honolulu,Hawaii",
 		continent: 'North America',
+		cityTips: [
+			"This delicious treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic."
+		],
 		coord: {
 			lat: 21.5010,
 			long: -158.0377136
         },
 		recommendations: [
+			// Most updated obj properties:
+			// {
+				// name: "",
+				// address: "",
+				// commentary: "",
+				// tips: [""],
+				// category: "",
+				// types: ["",""],
+				// label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+			// }
             {
 				name: "Giovanni Shrimp Truck",
 				address: "66-472 Kamehameha Hwy, Haleiwa, HI 96712",
+				commentary: "Food truck style, not many seats",
+				tips: ["Try the Shrimp Scampi Plate!"],
+				category: "toEat",
 				types: ["seafood"],
 				label: '',
-				commentary: "My recommendation: Try the Shrimp Scampi Plate!",
-				category: "toEat",
 				coord: {
 					lat: 21.5807083,
 					long: -158.1050234
@@ -25,10 +59,11 @@ const locationsArray = [
             {
 				name: "Ahi Assassins Fish Co.",
 				address: "2570 S Beretania St 2nd Fl, Honolulu, HI 96826",
+				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix).",
+				tips: [],
+				category: "toEat",
 				types: ["seafood"],
 				label: '',
-				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix). Offered in delicious different flavors.",
-				category: "toEat",
 				coord: {
 					lat: 21.2925559,
 					long: -157.8223049
@@ -37,10 +72,11 @@ const locationsArray = [
             {
 				name: "Leonard’s Bakery",
 				address: "933 Kapahulu Ave, Honolulu, HI 96816",
-				types: ["dessert"],
-				label: '',
-				commentary: "Similar to chinese donuts, sugary doughs. Recommendation: Try some plain, try some with fillings in them.",
+				commentary: "Similar to chinese donuts, sugary doughs.",
+				tips: ["Try one with filling in it!"],
 				category: "toEat",
+				types: ["pastry"],
+				label: '',
 				coord: {
 					lat: 21.2849227,
 					long: -157.8132698
@@ -49,10 +85,11 @@ const locationsArray = [
             {
 				name: "Musubi Cafe Iyasume",
 				address: "4211 Waialae Avenue, #G19, Honolulu, HI 96816",
-				types: ["snack"],
-				label: '',
 				commentary: "Whether you get spam musubi from Musubi Cafe Iyasume or get them from the local gas station, these are great snacks to chow down on.",
+				tips: [],
 				category: "toEat",
+				types: ["local"],
+				label: '',
 				coord: {
 					lat: 21.2770925,
 					long: -157.7863744
@@ -61,10 +98,11 @@ const locationsArray = [
             {
 				name: "MATSUMOTO’S SHAVE ICE",
 				address: "66-111 Kamehameha Hwy 605, Haleiwa, HI 96712", 
+				commentary: "Try either here or Waiola, or both!",
+				tips: [],
+				category: "toEat",
 				types: ["dessert"],
 				label: '',
-				commentary: "",
-				category: "toEat",
 				coord: {
 					lat: 21.5911105,
 					long: -158.1028563
@@ -73,10 +111,11 @@ const locationsArray = [
             {
 				name: "Waiola Shave Ice",
 				address: "2135 Waiola St, Honolulu, HI 96826",
+				commentary: "",
+				tips: [""],
+				category: "toEat",
 				types: ["dessert"],
 				label: '',
-				commentary: "",
-				category: "toEat",
 				coord: {
 					lat: 21.2924603,
 					long: -157.8286388
@@ -85,10 +124,11 @@ const locationsArray = [
             {
 				name: "Haleʻiwa Bowls",
 				address: "66-030 Kamehameha Hwy, Haleiwa, HI 96712",
-				types: ["snack"],
-				label: '',
 				commentary: "",
+				tips: [],
 				category: "toEat",
+				types: ["local"],
+				label: '',
 				coord: {
 					lat: 21.5927306,
 					long: -158.1032127
@@ -97,10 +137,11 @@ const locationsArray = [
             {
 				name: "Marukame Udon Waikiki",
 				address: "2310 Kūhiō Ave. 124, Honolulu, HI 96815",
-				types: ["Japanese"],
-				label: '',
 				commentary: "Really delicious, authentic Japanese Udon noodles",
+				tips: [],
 				category: "toEat",
+				types: ["asian"],
+				label: '',
 				coord: {
 					lat: 21.2796049,
 					long: -157.8258319
@@ -110,6 +151,7 @@ const locationsArray = [
 				name: "Waimea Bay, North Shore",
 				address: "61-31 Kamehameha Hwy, Haleiwa, HI 96712",
 				commentary: "Popular beach away from Waikiki tourists. Great for surfing and dolphins and turtle spottings!",
+				tips: [],
 				category: "toDo",
 				types: ["beach", "surfing"],
 				label: '',
@@ -122,18 +164,59 @@ const locationsArray = [
 				name: "Dole Pineapple Plantation",
 				address: "64-1550 Kamehameha Hwy, Wahiawa, HI 96786",
 				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! Recommendation: You have to try the delicious pineapple soft serve and there is also a pineapple maze you can partake in.",
+				tips: [],
 				category: "toDo",
-				types: ["tour", "activity", "shop", "eat"],
+				types: ["tour", "shop", "eat"],
 				label: '',
 				coord: {
 					lat: 21.5260075,
 					long: -158.0377136 
 				},
             },
+			{
+				name: "The ManiFest",
+				address: "32 N Hotel St, Honolulu, HI 96817",
+				commentary: "A coffee shop by day and a bar by night!",
+				tips: [""],
+				category: "extra",
+				types: ["coffee", "bar"],
+				label: '',
+				coord: {
+					lat: 21.3114794,
+					long: -157.8622457
+				}
+			},
+			{
+				name: "Bubbies Homemade Desserts",
+				address: "7192 Kalanianaʻole Hwy d103, Honolulu, HI 96825",
+				commentary: "Known for their handmade ice cream and mochi!",
+				tips: ["I recommend their homemade mochi ice cream"],
+				category: "toEat",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 21.2785713,
+					long: -157.7048431
+				}
+			},
+			{
+				name: "Lucky Belly",
+				address: "50 N Hotel St, Honolulu, HI 96817",
+				commentary: "",
+				tips: ["My favorites were pork belly bao, oxtail dumplings, & the gyoza."],
+				category: "toEat",
+				types: ["asian"],
+				label: '',
+				coord: {
+					lat: 21.3117452,
+					long: -157.8623772
+				}
+			},
             {
 				name: "Diamond Head",
 				address: "Diamond Head, Honolulu, HI 96815",
 				commentary: "Diamond Head is the iconic former volcano right off of Waikiki Beach. Hike up the trail and take a seat at one of the pill boxes up top to enjoy the view and breeze, or go to Kahala Lookout or Diamond Head lookout for one of the best views.",
+				tips: [],
 				category: "toDo",
 				types: ["hike"],
 				label: '',
@@ -146,6 +229,7 @@ const locationsArray = [
 				name: "Hanauma Bay",
 				address: "7455 Kalanianaʻole Hwy, Honolulu, HI 96825",
 				commentary: "One of the most famous places on the entire island for Snorkel. There is also Hanauma Bay Lookout if you don't want to go for a dip!",
+				tips: [],
 				category: "toDo",
 				types: ["snorkel", "beach"],
 				label: '',
@@ -154,10 +238,76 @@ const locationsArray = [
 					long: -157.6971959
 				},
             },
+			{
+				name: "Rainbow Drive-In",
+				address: "3308 Kanaina Ave, Honolulu, HI 96815",
+				commentary: "Iconic spot that serves local Hawaiian plates!",
+				tips: [],
+				category: "toEat",
+				types: ["local", ""],
+				label: '',
+				coord: {
+					lat: 21.2759342,
+					long: -157.8145272
+				},
+            },
+			{
+				name: "Hawaiian Crown Cafe",
+				address: "159 Ka’iulani Ave 105, Honolulu, HI 96815",
+				commentary: "Farm-to-table cafe & store serving up healthy & delicious items.",
+				tips: [],
+				category: "",
+				types: ["coffee", ""],
+				label: '',
+				coord: {
+					lat: 21.2772182,
+					long: -157.8241953
+				},
+            },
+			{
+				name: "Kamehameha Bakery",
+				address: "1284 Kalani St Unit D106, Honolulu, HI 96817",
+				commentary: "Local favorite for pastries.",
+				tips: ["Try the Poi donuts!!"],
+				category: "toEat",
+				types: ["pastry"],
+				label: '',
+				coord: {
+					lat: 21.3214786,
+					long: -157.8760417
+				}
+			},
+			{
+				name: "Kualoa Ranch",
+				address: "49-560 Kamehameha Hwy, Kaneohe, HI 96744",
+				commentary: "Private 4,000 acre nature reserve & cattle ranch where JURASSIC PARK was filmed! & the show Five-0. There are a lot of things to do here: zipline, ATV, horseback, boat cruise, helicopter ride, jungle jeep expedition, etc.",
+				tips: ["All day affair, pack appropriately", "Book a package for the outdoor adventures/ tour."],
+				category: "extra",
+				types: ["hike", "shop"],
+				label: '',
+				coord: {
+					lat: 21.520742,
+					long: -157.837278
+				}
+			},
+			{
+				name: "Hideout at the Laylow",
+				address: "2299 Kuhio Ave, Honolulu, HI 96815",
+				commentary: "The Laylow in general is Instagram heaven and the Hideout is no exception. Food is good here too but at a minimum, stop by for a drink and snap some pics!",
+				tips: [],
+				category: "toEat",
+				types: ["eat", "drink"],
+				label: '',
+				coord: {
+					lat: 21.2792893,
+					long: -157.8264033
+				},
+            },
             {
 				name: "Hanauma Bay Lookout",
 				address: "7514-7538 Kalanianaʻole Hwy, Honolulu, HI 96825",
 				commentary: "There is also Hanauma Bay Lookout if you don't want to go for a dip with a hiking trail nearby!",
+				tips: [],
 				category: "toDo",
 				types: ["hike"],
 				label: '',
@@ -170,6 +320,7 @@ const locationsArray = [
 				name: "Koko Crater Trail",
 				address: "7604 Koko Head Park Rd #7602, Honolulu, HI 96825",
 				commentary: "",
+				tips: [],
 				category: "toDo",
 				types: ["hike"],
 				label: '',
@@ -182,6 +333,7 @@ const locationsArray = [
 				name: "Ala Moana Mall",
 				address: "1450 Ala Moana Blvd, Honolulu, HI 96814",
 				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but even bigger.",
+				tips: [],
 				category: "toDo",
 				types: [ "shop", "eat"],
 				label: '',
@@ -194,6 +346,7 @@ const locationsArray = [
 				name: "Waikiki Beach",
 				address: "Waikiki Beach, Honolulu, HI 96815",
 				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach. A lot of beautiful beaches (Waikiki beach, Kuhio Beach, Kahanamoku Beach) to choose from. This is also where the more mainland restaurant brands will be.",
+				tips: [],
 				category: "toDo",
 				types: ["beach", "shop", "eat"],
 				label: '',
@@ -220,6 +373,7 @@ const locationsArray = [
 				name: "Hallgrimskirkja Church",
 				address: "Hallgrímstorg 1, 101 Reykjavík, Iceland",
 				commentary: "Beautiful church/ unique",
+				tips: [],
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
@@ -613,6 +767,7 @@ async function renderMap(array, location) {
 		});
 		await array.forEach(spot => {
 			const { coords, name, label } = spot;
+			if (coords) {
 				map.addMarker({
 					lat: coords.lat,
 					lng: coords.long,
@@ -627,38 +782,24 @@ async function renderMap(array, location) {
 						map.panTo(latLng);
 					}
 				});
+			}
 		});
     } catch (err) { if (err) throw (err) }
 };
 
 // generate Lat and Long for new entries
 // moved this out of the renderMap due to google query limit 
-generateGeocode = (arr) => {
-	arr.forEach(location => {
-		geocoder.geocode( { 'address': location.address }, function(results, status) {
-			if (status == google.maps.GeocoderStatus.OK) {
-				let lat = results[0].geometry.location.lat();
-				let long = results[0].geometry.location.lng();
-				map.addMarker({
-					lat: lat,
-					lng: long,
-					title: location.address,
-					label: location.label,
-					infoWindow: {
-						content: `lat is ${lat} and long is ${long}`
-					},
-					click: function(e) {
-						let latLng = new google.maps.LatLng(lat, long);
-						map.setZoom(13);
-						map.panTo(latLng);
-						console.log(`${location.address}
-						${lat}
-						${long}
-						`)
-					}
-				});
-			} 
-		}); 
+generateGeocode = (array) => {
+	array.forEach(location => {
+		if (!location.coord) {
+			geocoder.geocode( { 'address': location.address }, function(results, status) {
+				if (status == google.maps.GeocoderStatus.OK) {
+					let lat = results[0].geometry.location.lat();
+					let long = results[0].geometry.location.lng();
+					console.log(`${location.name} lat is ${lat} and long is ${long}`)
+				} 
+			}); 
+		}
 	});
 };
 
@@ -680,6 +821,7 @@ sortLocationsAlphabetically = (arr) => {
 
 renderListOfRecommendations = (array, location) => {
 	const sortedArr = sortLocationsAlphabetically(array);
+	generateGeocode(sortedArr);
 	sortedArr.forEach(spot => {
 		let { name, address, types, category, label } = spot;
 		let query;
@@ -747,36 +889,8 @@ renderLocationContent = (location) => {
 renderIcons = (array) => {
 	let icons = [];
 	array.forEach(type => {
-		switch (type) {
-			case 'seafood':
-				icons.push(`<i class="fas fa-fish"></i>`);
-				break;
-			case 'dessert':
-				icons.push(`<i class="fas fa-ice-cream"></i>`);
-				break;
-			case 'hike':
-				icons.push(`<i class="fas fa-hiking"></i>`);
-				break;
-			case 'shop':
-				icons.push(`<i class="fas fa-shopping-bag"></i>`);
-				break;
-			case 'eat':
-				icons.push(`<i class="fas fa-utensils"></i>`);
-				break;
-			case 'snorkel':
-				icons.push(`<i class="fas fa-swimmer"></i>`);
-				break;
-			case 'bar':
-				icons.push(`<i class="fas fa-glass-martini-alt"></i>`);
-				break;
-			case 'sightsee': 
-				icons.push(`<i class="fas fa-camera-retro"></i>`);
-				break;
-			case 'spa': 
-				icons.push(`<i class="fas fa-spa"></i>`);
-				break;
-		}	
-	})
+		categoryArr.forEach(cat => {if (cat.type === type) icons.push(cat.icon)});
+	});
 	return icons;
 };
 
