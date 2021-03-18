@@ -18,7 +18,7 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-transparent text-uppercase fixed-top">
+        <nav class="navbar navbar-expand-lg text-uppercase fixed-top">
             <div class="container p-1">
                 <h4 class="mx-auto d-lg-none mb-0">Travel-With-Me | Eunah</h4>
                 <ul id="navbar">
@@ -42,15 +42,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-7 col-md-push-5">
+                <div class="col-md-7 col-md-push-5 d-none d-md-block">
                     <div class="decorativeEmptyBox1"></div>
                     <div class="decorativeEmptyBox2"></div>
-                    <h1 class="d-none d-md-block">H<span class="fontColorChange">E</span></h1>
-                    <h1 class="d-none d-md-block">LLO.</h1>
-                    <h1 class="d-md-none">H<span class="fontColorChange">E</span>LLO</h1>
+                    <h1>H<span class="fontColorChange">E</span></h1>
+                    <h1>LLO.</h1>
+                </div>
+                <div class="col-md-7 col-md-push-5 d-md-none">
+                    <h1 class="mobileWord">H<span class="fontColorChange">E</span>LLO</h1>
                 </div>
             </div>
-            <div id="scrollDownDirectionDiv" class="mb-5">
+            <div id="scrollDownDirectionDiv" class="mb-3">
                 <p class="verticalText">scroll down</p>
                 <i class="fas fa-angle-double-down fa-2x"></i>
             </div>
@@ -63,50 +65,60 @@
                     </div> 
                 </div>
                 <p class="smallText text-center my-1">[CLICK ON THE LOCATION OR PIN TO VIEW DETAILS]</p>
-                <div class="recommendationListContainer row">
-                    <div class="col-md-4 usLocations mx-auto">
+                <div class="recommendationListContainer row row-cols-2 row-cols-md-3">
+                    <div class="col usLocations mx-auto">
                         <p class="text-center m-0"><i class="fas fa-grip-lines"></i> N AMERICA <i class="fas fa-grip-lines"></i></p>
                     </div>
-                    <div class="col-md-4 europeLocations mx-auto">
+                    <div class="col europeLocations mx-auto">
                         <p class="text-center m-0"><i class="fas fa-grip-lines"></i> EUROPE <i class="fas fa-grip-lines"></i></p>
                     </div>
-                    <div class="col-md-4 asiaLocations mx-auto">
+                    <div class="col asiaLocations mx-auto">
                         <p class="text-center m-0"><i class="fas fa-grip-lines"></i> ASIA <i class="fas fa-grip-lines"></i></p>
                     </div>
                 </div>
             </div>
-            <div id="scrollDownDirectionDiv" class="mb-5">
+            <div id="scrollDownDirectionDiv" class="mb-3">
                 <p class="verticalText">scroll down</p>
                 <i class="fas fa-angle-double-down fa-2x"></i>
             </div>
         </div> 
-        <div class="section fp-auto-height" id="tripDetailsSection">
+        <div class="section" id="tripDetailsSection">
             <div id="tripContent" class="row" style="display: none">
-                <div class="tripDetails row">
-                    <div id="tripContent-eateries" class="col-md-4">
+                <div class="tripDetails row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    <div id="tripContent-tips" class="col">
                         <div class="row">
-                            <h3 class="recommendationsDivTitles">Indulge</h3>
-                            <p class="smallText mb-0">[PLACE'S I'VE TRIED]</p>
+                            <h3 class="recommendationsDivTitles">travel tips</h3>
+                            <p class="smallText my-0">[PLACE'S I'VE TRIED]</p>
+                            <span class="tripContent-border"></span>
+                        </div>
+                        <div class="row">
+                            <div id="tripContent-tips-list"></div>
+                        </div>
+                    </div>
+                    <div id="tripContent-eateries" class="col">
+                        <div class="row">
+                            <h3 class="recommendationsDivTitles">indulge</h3>
+                            <p class="smallText my-0">[PLACE'S I'VE TRIED]</p>
                             <span class="tripContent-border"></span>
                         </div>
                         <div class="row">
                             <div id="tripContent-eateries-list"></div>
                         </div>
                     </div>
-                    <div id="tripContent-adventures" class="col-md-4">
+                    <div id="tripContent-adventures" class="col">
                         <div class="row">
-                            <h3 class="recommendationsDivTitles">Explore</h3>
-                            <p class="smallText mb-0">[PLACE'S I'VE BEEN/ SEEN]</p>
+                            <h3 class="recommendationsDivTitles">explore</h3>
+                            <p class="smallText my-0">[PLACE'S I'VE BEEN/ SEEN]</p>
                             <span class="tripContent-border"></span>
                         </div>
                         <div class="row">
                             <div id="tripContent-adventures-list"></div>
                         </div>
                     </div>
-                    <div id="tripContent-extras" class="col-md-4">
+                    <div id="tripContent-extras" class="col">
                         <div class="row">
-                            <h3 class="recommendationsDivTitles">Extras</h3>
-                            <p class="smallText mb-0">[OTHER POPULAR SPOTS TO TRY]</p>
+                            <h3 class="recommendationsDivTitles">extras</h3>
+                            <p class="smallText my-0">[OTHER POPULAR SPOTS TO TRY]</p>
                             <span class="tripContent-border"></span>
                         </div>
                         <div class="row">

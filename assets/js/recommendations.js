@@ -1,5 +1,6 @@
 const geocoder = new google.maps.Geocoder();
 let map;
+const listPage = $(document.querySelector('#tripDetailsSection'))
 const locationsArray = [
     {
 		name: "Honolulu,Hawaii",
@@ -298,7 +299,7 @@ const locationsArray = [
         ]
     },
     {
-		name: "Seoul, Korea",
+		name: "Seoul,Korea",
 		continent: "Asia",
 		coord: {
 			lat: 37.5509473,
@@ -504,7 +505,7 @@ const locationsArray = [
         ]
     },
     {
-		name: "Dubai, UAE",
+		name: "Dubai,UAE",
 		continent: "Asia",
 		coord: {
 			lat: 25.2442856,
@@ -520,8 +521,8 @@ const locationsArray = [
 				types: ["sightsee"],
 				label: '',
 				coord: {
-					lat: 37.5509473,
-					long: 126.9892965
+					lat: 25.2338,
+					long: 55.2655
 				},
             }
         ]
@@ -546,11 +547,11 @@ const locationsArray = [
         ]
     },
     {
-		name: "Orlando, Florida",
+		name: "Atlanta,Georgia",
 		continent: "North America",
 		coord: {
-			lat: 28.5383,
-			long: 81.3792
+			lat: 33.7490,
+			long: 84.3880
         },
 		recommendations: [
             {
@@ -565,6 +566,16 @@ const locationsArray = [
         ]
     },
 ];
+
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
 
 async function renderMarkerLabelsForMap(arr, location) {
 	try {
@@ -602,7 +613,6 @@ async function renderMap(array, location) {
 		});
 		await array.forEach(spot => {
 			const { coords, name, label } = spot;
-			console.log(spot)
 				map.addMarker({
 					lat: coords.lat,
 					lng: coords.long,
@@ -730,6 +740,7 @@ renderLocationContent = (location) => {
 	});
 	renderMap(markers, location);
 	$('#locationTitle').text(name);
+	$('#verticalLocationTitle').text(name);
 	renderListOfRecommendations(recommendations, location);
 };
 
@@ -782,13 +793,17 @@ renderRecommendationsPage = (location) => {
 	if ($('#tripContent').css('display') == 'none') {
 		$('#tripContent').css('display', 'block');
 		$('.pictureSection').css('display', 'none');
-		fullpage_api.moveSectionDown();
 		renderLocationContent(location);
+		fullpage_api.moveSectionDown();
+		fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue == location) {
 		fullpage_api.moveTo(2);
+		fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
-		fullpage_api.moveSectionDown();
 		renderLocationContent(location);
+		fullpage_api.moveSectionDown();
+		fullpage_api.setAutoScrolling(false);
+
 	} 
 };
 
@@ -814,11 +829,14 @@ initMap = () => {
 };
 
 $(document).ready(() => {
-	// let intViewportWidth = window.innerWidth;
+	let intViewportWidth = window.innerWidth;
+	if (intViewportWidth > 576) {
+		$('#tripDetailsSection').addClass('fp-auto-height');
+	} 
+	console.log(intViewportWidth)
 	renderLocationLinks();
 	initMap();
 });
-
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();

@@ -23,9 +23,9 @@ Color scheme 1 :
 }
 
 h2 {
-	font-size: 6rem;
+	font-size: 4rem; 
+	letter-spacing: -.2rem;
 	line-height: 2rem;
-	letter-spacing: -.5rem;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -69,40 +69,18 @@ h2 {
 	font-weight: bold; 
 }
 
-.smGoogleLogo {
-	size: 4px;
+/* Trip content section */
+.tripDetails {
+	margin: 0;
+	padding: 0;
 }
 
-/* Trip content section */
 #tripContent {
 	clear: right;
 	width: 100%;
 	padding: 5px;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-#locationTitle {
-	clear: right;
-	width: fit-content;
-	position: absolute;
-	bottom: 0;
-	right: 5px;
-	padding: 5px;
-	margin-bottom: 20px;
-}
-
-.tripContent-border { 
-	width: 75%;
-	border-bottom: 2px solid white; 
-}
-
-#locationTitle { font-family: 'Lato', sans-serif; }
-
-#tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
-	margin: 0;
-	height: 300px;
-	overflow: scroll;
 }
 
 #tripContent a {
@@ -114,6 +92,32 @@ h2 {
 #tripContent a:hover {
 	color: whitesmoke;
 	font-weight: bold;
+}
+
+#locationTitle {
+	writing-mode:vertical-lr;
+	transform: rotate(-180deg);
+	margin: 0; 
+	position: absolute;
+	right: 0;
+	bottom: 10px;
+	width: 300px;
+	text-align: center;
+}
+
+.tripContent-border { 
+	width: 75%;
+	border-bottom: 2px solid white; 
+}
+
+#locationTitle { font-family: 'Lato', sans-serif; }
+
+#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
+	margin: 0;
+	padding: 0;
+	height: 300px;
+	overflow: scroll;
+	overflow-y: scroll;
 }
 
 /* Pictures Section */
@@ -177,10 +181,17 @@ h2 {
 		border: 2px solid rgba(255,255,255,0.95);
 		width: 100%;
 	}
-	#tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
-		margin: 0;
-		height: 180px;
+	#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
+		margin-bottom: 10px;
+		padding: 0;
+		max-height: 100px;
+		width: 90%;
 		overflow: scroll;
+		overflow-y: scroll;
 	}
-	
+	#locationTitle {
+		bottom: 50px;
+		width: 250px;
+		text-align: center;
+	}
 }

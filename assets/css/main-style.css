@@ -19,15 +19,19 @@ h1 {
 	font-family: 'Lato', sans-serif;
 }
 
+.mobileWord {
+	line-height: 8rem;
+}
+
 .verticalText {
-	writing-mode:vertical-rl;
-	transform: rotate(-180deg);
+	writing-mode:vertical-lr;
+	transform: rotate(180deg);
 	margin: 0;
 }
 
 .verticalTextUp {
 	writing-mode:vertical-lr;
-	transform: rotate(180deg);
+	/* transform: rotate(180deg); */
 	margin: 0;
 }
 
