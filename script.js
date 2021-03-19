@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
-        sectionsColor: [ 'rgb(178,194,179)', 'rgb(105,130,126)', '#4E6A6A'],
+        sectionsColor: ['#1F858F', '#F24C4E', 'rgb(255,204,103)'],
         fitToSection: true,
         autoScrolling: true,
         resetSliders: true,

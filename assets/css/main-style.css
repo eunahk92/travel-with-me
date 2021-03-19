@@ -36,7 +36,7 @@ h1 {
 }
 
 .fontColorChange { 
-	color: rgb(60, 82, 78);
+	color: rgb(255,204,103);
 	text-align: start;
 }
 
@@ -69,14 +69,14 @@ ul {
 
 .navLinks a, .navLinks h4 {
 	display: block;
-	color: #212529;
+	color:  rgb(255,204,103);
 	text-align: center;
 	padding: 10px 16px;
 	text-decoration: none;
 }
 
 .navLinks a:hover {
-	color: #DADED4;
+	color:  #414141;
 	border-bottom: 2px solid white;
 }
 
@@ -94,13 +94,13 @@ div i {
 
 /* Image styling */
 #eunahsDiv img {
-	width: 60%;
+	max-width: 400px;
 	border: 20px solid rgba(255,255,255,0.95);
 }
 
 #polaroidDiv {
 	height: 100px;
-	width: 60%;
+	width: 400px;
 	background-color: rgba(255,255,255,0.95);
 }
 

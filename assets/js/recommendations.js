@@ -721,16 +721,6 @@ const locationsArray = [
     },
 ];
 
-function isInViewport(element) {
-    const rect = element.getBoundingClientRect();
-    return (
-        rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-    );
-}
-
 async function renderMarkerLabelsForMap(arr, location) {
 	try {
 		await arr.forEach(obj => {
@@ -809,7 +799,7 @@ renderGoogleLinks = (address) => {
 	return link;
 };
 
-sortLocationsAlphabetically = (arr) => {
+sortAlphabetically = (arr) => {
 	arr.sort((a, b) => {
         if (a.name === b.name) {
           return a.name > b.name ? 1 : -1
@@ -820,7 +810,7 @@ sortLocationsAlphabetically = (arr) => {
 };
 
 renderListOfRecommendations = (array, location) => {
-	const sortedArr = sortLocationsAlphabetically(array);
+	const sortedArr = sortAlphabetically(array);
 	generateGeocode(sortedArr);
 	sortedArr.forEach(spot => {
 		let { name, address, types, category, label } = spot;
@@ -853,8 +843,20 @@ renderListOfRecommendations = (array, location) => {
 	})
 };
 
+renderLocationTips = (arr) => {
+	if (arr) {
+		arr.forEach(tip => {
+			const index = arr.indexOf(tip) + 1;
+			const li = `
+				<small>${renderMarkerLabelsForLi(index)} ${tip}</small>
+			`
+			$("#tripContent-tips-list").append(li);
+		});
+	} else return;
+};
+
 renderLocationLinks = () => {
-	const sortedArr = sortLocationsAlphabetically(locationsArray);
+	const sortedArr = sortAlphabetically(locationsArray);
 	sortedArr.forEach(location => {
 		const locationLink = `
 			<a class="locationLink"><small>${location.name}</small></a>
@@ -870,19 +872,20 @@ renderLocationLinks = () => {
 };
 
 renderLocationContent = (location) => {
-	$('#locationTitle').attr('data-city', location);
+	$('.locationTitle').attr('data-city', location);
 	$('#tripContent-eateries-list').empty();
 	$('#tripContent-adventures-list').empty();
 	$('#tripContent-extra-list').empty();
+	$('#tripContent-tips-list').empty();
 	let markers = [];
 	let res = locationsArray.filter(city => city.name == location);
-	const { name, recommendations } = res[0];
+	const { name, recommendations, cityTips } = res[0];
 	recommendations.forEach(spot => {
 		markers.push({ name: spot.name, coords: spot.coord })
 	});
 	renderMap(markers, location);
-	$('#locationTitle').text(name);
-	$('#verticalLocationTitle').text(name);
+	$('.locationTitle').text(name);
+	renderLocationTips(cityTips);
 	renderListOfRecommendations(recommendations, location);
 };
 
@@ -894,11 +897,11 @@ renderIcons = (array) => {
 	return icons;
 };
 
-renderMarkerLabelsForLi = (num) => {
-	if (num >= 10) {
-		return `<span class="numberCircle2">${num}</span>`
+renderMarkerLabelsForLi = (index) => {
+	if (index >= 10) {
+		return `<span class="numberCircle2">${index}</span>`
 	} else {
-		return `<span class="numberCircle">${num}</span>`
+		return `<span class="numberCircle">${index}</span>`
 	}
 };
 
@@ -943,11 +946,19 @@ initMap = () => {
 };
 
 $(document).ready(() => {
+	let title = `
+		<h2 class="text-end locationTitle" id="locationTitleV" data-city="city"></h2>
+	`
+	let title2 = `
+		<h2 class="text-end locationTitle" id="locationTitleH" data-city="city"></h2>
+	`
 	let intViewportWidth = window.innerWidth;
 	if (intViewportWidth > 576) {
 		$('#tripDetailsSection').addClass('fp-auto-height');
-	} 
-	console.log(intViewportWidth)
+		$('#recommendationsSection').append(title2)
+	} else {
+		$('#tripContent').append(title);
+	}
 	renderLocationLinks();
 	initMap();
 });
