@@ -2,20 +2,20 @@ const geocoder = new google.maps.Geocoder();
 let map;
 const listPage = $(document.querySelector('#tripDetailsSection'));
 const categoryArr = [
-	{ type: "seafood", icon: `<i class="fas fa-fish"></i>` },
-	{ type: "dessert", icon: `<i class="fas fa-ice-cream"></i>` },
-	{ type: "hike", icon: `<i class="fas fa-hiking"></i>` },
-	{ type: "shop", icon: `<i class="fas fa-shopping-bag"></i>` },
-	{ type: "eat", icon: `<i class="fas fa-utensils"></i>` },
-	{ type: "snorkel", icon: `<i class="fas fa-swimmer"></i>` },
-	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt"></i>` },
-	{ type: "coffee", icon: `<i class="fas fa-coffee"></i>` },
-	{ type: "sightsee", icon: `<i class="fas fa-camera-retro"></i>` },
-	{ type: "spa", icon: `<i class="fas fa-spa"></i>` },
-	{ type: "asian", icon: `<i class="material-icons">ramen_dining</i>` },
-	{ type: "local", icon: `<i class="material-icons">local_dining</i>` },
-	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
-	{ type: "pastry", icon: `<i class="fas fa-bread-slice"></i>` },
+	{ type: "seafood", icon: `<i class="fas fa-fish" alt="key: seafood"></i>` },
+	{ type: "dessert", icon: `<i class="fas fa-ice-cream" alt="key: dessert"></i>` },
+	{ type: "hike", icon: `<i class="fas fa-hiking" alt="key: hike"></i>` },
+	{ type: "shop", icon: `<i class="fas fa-shopping-bag" alt="key: shop"></i>` },
+	{ type: "eat", icon: `<i class="fas fa-utensils" alt="key: eat"></i>` },
+	{ type: "snorkel", icon: `<i class="fas fa-swimmer" alt="key: snorkel"></i>` },
+	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt" alt="key: bar"></i>` },
+	{ type: "coffee", icon: `<i class="fas fa-coffee" alt="key: coffee"></i>` },
+	{ type: "sightsee", icon: `<i class="fas fa-camera-retro" alt="key: sightsee"></i>` },
+	{ type: "spa", icon: `<i class="fas fa-spa" alt="key: spa"></i>` },
+	{ type: "asian", icon: `<i class="material-icons" alt="key: asian food">ramen_dining</i>` },
+	{ type: "local", icon: `<i class="material-icons" alt="key: local food">local_dining</i>` },
+	{ type: "beach", icon: `<i class="fas fa-umbrella-beach" alt="key: beach"></i>` },
+	{ type: "pastry", icon: `<i class="fas fa-bread-slice" alt="key: pastry"></i>` },
 	
 ];
 const locationsArray = [
@@ -23,7 +23,7 @@ const locationsArray = [
 		name: "Honolulu,Hawaii",
 		continent: 'North America',
 		cityTips: [
-			"This delicious treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic."
+			"The delicious Hawaiian treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic.", "Traffic! There is only 1 major highway so expect heavy traffic during rush hour.", ""
 		],
 		coord: {
 			lat: 21.5010,
@@ -42,7 +42,8 @@ const locationsArray = [
 				// coord: {
 				// 	lat: 0,
 				// 	long: 0
-			// }
+				// }
+			//},
             {
 				name: "Giovanni Shrimp Truck",
 				address: "66-472 Kamehameha Hwy, Haleiwa, HI 96712",
@@ -56,6 +57,19 @@ const locationsArray = [
 					long: -158.1050234
 				},
             },
+			{
+				name: "Pearl Harbor National Memorial",
+				address: "1 Arizona Memorial Pl, Honolulu, HI 96818",
+				commentary: "",
+				tips: ["Book your tickets ahead of time! It gets packed."],
+				category: "toDo",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 21.3665445,
+					long: -157.9393778
+				}
+			},
             {
 				name: "Ahi Assassins Fish Co.",
 				address: "2570 S Beretania St 2nd Fl, Honolulu, HI 96826",
@@ -69,6 +83,19 @@ const locationsArray = [
 					long: -157.8223049
 				},
             },
+			{
+				name: "Koko Crater Railway Trail",
+				address: "7604 Koko Head Park Rd #7602, Honolulu, HI 96825",
+				commentary: "Better known as 'Koko Head Stairs' as it's basically a StairMasters workout. The abandoned railway is used as the stairs that you hike up. Take a seat at one of the pillbox bunkers at the top and enjoy the view!",
+				tips: ["Park at Koko Head District Park parking lot & you'll find signs that lead you to the trail.", "Don't forget to take a picture with the Koko Crater Arch (an unbelievable rock formation on the edge of the crater)."],
+				category: "toDo",
+				types: ["hike"],
+				label: '',
+				coord: {
+					lat: 21.2808481,
+					long: -157.6920035
+				}
+			},
             {
 				name: "Leonard’s Bakery",
 				address: "933 Kapahulu Ave, Honolulu, HI 96816",
@@ -147,6 +174,19 @@ const locationsArray = [
 					long: -157.8258319
 				},
             },
+			{
+				name: "Manoa Falls",
+				address: "Na Ala Hele: Aihualama Trail, Honolulu, HI 96822",
+				commentary: "Can be from 1-2 hours long and leads to a beautiful large waterfall.",
+				tips: ["Don't swim in the water under the waterfall!! High risk of being infected with Leptospirosis...", "Great self hike but recommend booking a tour if you're interested in the explanation of local floral and fauna that's unique to Ohau."],
+				category: "",
+				types: ["hike"],
+				label: '',
+				coord: {
+					lat: 21.3413975,
+					long: -157.7996972
+				}
+			},
             {
 				name: "Waimea Bay, North Shore",
 				address: "61-31 Kamehameha Hwy, Haleiwa, HI 96712",
@@ -225,6 +265,19 @@ const locationsArray = [
 					long: -157.8059987
 				},
             },
+			{
+				name: "Lanikai Pillbox Hike",
+				address: "265 Kaelepulu Dr, Kailua, HI 96734",
+				commentary: "One of the easier/ shorter trails to hike that offer a panoramic view of Lanikai Beach. 2 Pillbox's that you can hangout at, at the top.",
+				tips: ["Recommend a sunrise or sunset hike!"],
+				category: "toDo",
+				types: ["hike"],
+				label: '',
+				coord: {
+					lat: 21.3903466,
+					long: -157.7191491
+				}
+			},
             {
 				name: "Hanauma Bay",
 				address: "7455 Kalanianaʻole Hwy, Honolulu, HI 96825",
@@ -314,19 +367,6 @@ const locationsArray = [
 				coord: {
 					lat: 21.2751805,
 					long: -157.6958748
-				},
-            },
-            {
-				name: "Koko Crater Trail",
-				address: "7604 Koko Head Park Rd #7602, Honolulu, HI 96825",
-				commentary: "",
-				tips: [],
-				category: "toDo",
-				types: ["hike"],
-				label: '',
-				coord: {
-					lat: 21.2808481,
-					long: -157.6920035
 				},
             },
             {
@@ -848,7 +888,7 @@ renderLocationTips = (arr) => {
 		arr.forEach(tip => {
 			const index = arr.indexOf(tip) + 1;
 			const li = `
-				<small>${renderMarkerLabelsForLi(index)} ${tip}</small>
+				<p class="smallText">${renderMarkerLabelsForLi(index)} ${tip}</p>
 			`
 			$("#tripContent-tips-list").append(li);
 		});
@@ -887,7 +927,17 @@ renderLocationContent = (location) => {
 	$('.locationTitle').text(name);
 	renderLocationTips(cityTips);
 	renderListOfRecommendations(recommendations, location);
+	// renderLegend(categoryArr);
 };
+
+// renderLegend = (categoryArray) => {
+// 	categoryArray.forEach(cat => {
+// 		const li = `
+// 			${cat.icon} <small>${cat.type}</small>
+// 		`
+// 		$('#legendContainer').append(li);
+// 	})
+// }
 
 renderIcons = (array) => {
 	let icons = [];

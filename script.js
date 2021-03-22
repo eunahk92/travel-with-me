@@ -10,7 +10,13 @@ $(document).ready(function() {
         slidesNavigation: true,
         slidesNavPosition: "bottom",      
         menu: true,
+        onLeave: function(origin, destination, direction){
+            var leavingSection = this;
+            if(origin.index == 1 && direction == 'up'){
+                fullpage_api.setAutoScrolling(true);
+            }
+        },
         scrollOverflow: true,
-        normalScrollElements: ['#tripContent-tips-list', '#tripContent-eateries-list', '#tripContent-adventures-list', '#tripContent-extra-list', '#map']
+        normalScrollElements: '#tripContent'
     });
 });
