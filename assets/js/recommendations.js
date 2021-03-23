@@ -4,20 +4,20 @@ let map;
 let markers = [];
 const listPage = $(document.querySelector('#tripDetailsSection'));
 const categoryArr = [
-	{ type: "seafood", icon: `<i class="fas fa-fish" alt="key: seafood"></i>` },
-	{ type: "dessert", icon: `<i class="fas fa-ice-cream" alt="key: dessert"></i>` },
-	{ type: "hike", icon: `<i class="fas fa-hiking" alt="key: hike"></i>` },
-	{ type: "shop", icon: `<i class="fas fa-shopping-bag" alt="key: shop"></i>` },
-	{ type: "eat", icon: `<i class="fas fa-utensils" alt="key: eat"></i>` },
-	{ type: "snorkel", icon: `<i class="fas fa-swimmer" alt="key: snorkel"></i>` },
-	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt" alt="key: bar"></i>` },
-	{ type: "coffee", icon: `<i class="fas fa-coffee" alt="key: coffee"></i>` },
-	{ type: "sightsee", icon: `<i class="fas fa-camera-retro" alt="key: sightsee"></i>` },
-	{ type: "spa", icon: `<i class="fas fa-spa" alt="key: spa"></i>` },
-	{ type: "asian", icon: `<i class="material-icons" alt="key: asian food">ramen_dining</i>` },
-	{ type: "local", icon: `<i class="material-icons" alt="key: local food">local_dining</i>` },
-	{ type: "beach", icon: `<i class="fas fa-umbrella-beach" alt="key: beach"></i>` },
-	{ type: "pastry", icon: `<i class="fas fa-bread-slice" alt="key: pastry"></i>` },
+	{ type: "seafood", icon: `<i class="fas fa-fish"></i>` },
+	{ type: "dessert", icon: `<i class="fas fa-ice-cream"></i>` },
+	{ type: "hike", icon: `<i class="fas fa-hiking"></i>` },
+	{ type: "shop", icon: `<i class="fas fa-shopping-bag"></i>` },
+	{ type: "eat", icon: `<i class="fas fa-utensils"></i>` },
+	{ type: "snorkel", icon: `<i class="fas fa-swimmer"></i>` },
+	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt"></i>` },
+	{ type: "coffee", icon: `<i class="fas fa-coffee"></i>` },
+	{ type: "sightsee", icon: `<i class="fas fa-camera-retro"></i>` },
+	{ type: "spa", icon: `<i class="fas fa-spa"></i>` },
+	{ type: "asian", icon: `<i class="material-icons">ramen_dining</i>` },
+	{ type: "local", icon: `<i class="material-icons">local_dining</i>` },
+	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
+	{ type: "pastry", icon: `<i class="fas fa-bread-slice"></i>` },
 	
 ];
 const locationsArray = [
@@ -831,7 +831,7 @@ async function renderMap(array, location) {
 								<i class="far fa-comments mx-1"></i>${commentary}<br><br>
 								${tips ? tips.map(tip => 
 									`[<b>Tip ${tips.indexOf(tip) +1}</b>]${tip}<br>`
-									) : ""}
+									).join('') : ""}
 							</div>
 							<p>lat is ${coord.lat} and long is ${coord.long}</p>
 						`
@@ -950,17 +950,15 @@ renderLocationContent = (location) => {
 	$('.locationTitle').text(name);
 	renderLocationTips(cityTips);
 	renderListOfRecommendations(recommendations, location);
-	// renderLegend(categoryArr);
+	renderLegend(categoryArr);
 };
 
-// renderLegend = (categoryArray) => {
-// 	categoryArray.forEach(cat => {
-// 		const li = `
-// 			${cat.icon} <small>${cat.type}</small>
-// 		`
-// 		$('#legendContainer').append(li);
-// 	})
-// }
+renderLegend = (categoryArray) => {
+	let content = categoryArray.map(cat => {
+		return `<div class="clearfix">${cat.icon} <p class="smallText mx-2 p-0 float-end text-start">${cat.type}</p></div>`
+	}).join('');
+	$('.popover-dismiss').attr('data-bs-content', content)
+};
 
 renderIcons = (array) => {
 	let icons = [];
