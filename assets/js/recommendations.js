@@ -245,13 +245,26 @@ const locationsArray = [
 				name: "Lucky Belly",
 				address: "50 N Hotel St, Honolulu, HI 96817",
 				commentary: "",
-				tips: ["My favorites were pork belly bao, oxtail dumplings, & the gyoza."],
-				category: "toEat",
+				tips: ["Friend's favorite were pork belly bao, oxtail dumplings, & the gyoza."],
+				category: "extra",
 				types: ["asian"],
 				label: '',
 				coord: {
 					lat: 21.3117452,
 					long: -157.8623772
+				}
+			},
+			{
+				name: "The Pig and The Lady",
+				address: "83 N King St, Honolulu, HI 96817",
+				commentary: "",
+				tips: ["Friend's favorite were pork belly bao, oxtail dumplings, & the gyoza."],
+				category: "toEat",
+				types: ["asian"],
+				label: '',
+				coord: {
+					lat: 21.3114491,
+					long: -157.8636749
 				}
 			},
             {
@@ -763,12 +776,15 @@ const locationsArray = [
     },
 ];
 
+var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+	trigger: 'focus'
+});
+
 async function renderMarkerLabelsForMap(arr, location) {
 	try {
 		await arr.forEach(obj => {
 			let reccomIndex = arr.indexOf(obj);
 			let labelIndex = reccomIndex + 1;
-			obj.label = labelIndex.toString(); // for label prop
 			const locationObj = locationsArray.filter(x => x.name == location); // find city obj 
 			const cityIndex = locationsArray.indexOf(locationObj[0]);
 			locationObj[0].recommendations.forEach(y => {
@@ -799,19 +815,29 @@ async function renderMap(array, location) {
 			}
 		});
 		await array.forEach(spot => {
-			const { coords, name, label } = spot;
-			if (coords) {
+			const { coord, name, label, address, commentary, tips } = spot;
+			if (coord) {
 				let m = map.addMarker({
-					lat: coords.lat,
-					lng: coords.long,
+					lat: coord.lat,
+					lng: coord.long,
 					title: name,
-					label: label,
+					label: label.toString(),
 					infoWindow: {
-						content: `${name} - lat is ${coords.lat} and long is ${coords.long}`
+						maxWidth: 400,
+						content: `
+							<h4 class="text-center">${name}</h4> 
+							<div class="d-flex align-content-start flex-wrap">
+								<p><i class="fas fa-map-pin mx-1"></i>${address}<br>
+								<i class="far fa-comments mx-1"></i>${commentary}<br><br>
+								${tips ? tips.map(tip => 
+									`[<b>Tip ${tips.indexOf(tip) +1}</b>]${tip}<br>`
+									) : ""}
+							</div>
+							<p>lat is ${coord.lat} and long is ${coord.long}</p>
+						`
 					},
 					click: function(e) {
-						let latLng = new google.maps.LatLng(coords.lat, coords.long);
-						map.setZoom(13);
+						let latLng = new google.maps.LatLng(coord.lat, coord.long);
 						map.panTo(latLng);
 					}
 				});
@@ -885,7 +911,7 @@ renderLocationTips = (arr) => {
 		arr.forEach(tip => {
 			const index = arr.indexOf(tip) + 1;
 			const li = `
-				<p class="smallText">${renderMarkerLabelsForLi(index)} ${tip}</p>
+				<p class="smallText"><i class="fas fa-ellipsis-v mx-1"></i>${tip}</p>
 			`
 			$("#tripContent-tips-list").append(li);
 		});
@@ -918,7 +944,7 @@ renderLocationContent = (location) => {
 	let res = locationsArray.filter(city => city.name == location);
 	const { name, recommendations, cityTips } = res[0];
 	recommendations.forEach(spot => {
-		markers.push({ name: spot.name, coords: spot.coord })
+		markers.push(spot)
 	});
 	renderMap(markers, location);
 	$('.locationTitle').text(name);
@@ -1023,7 +1049,7 @@ $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e =
 			let i = markers.indexOf(marker);
 			// const latLng = new google.maps.LatLng(marker.lat, marker.long);
 			fullpage_api.moveSectionUp();
-			map.setZoom(20);
+			map.setZoom(15);
 			map.panTo(marker.getPosition());		
 			google.maps.event.trigger(markers[i], 'click');
 		}

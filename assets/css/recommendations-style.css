@@ -130,22 +130,20 @@ h2 {
 }
 
 .tripContent-border { 
-	width: 75%;
+	width: 95%;
 	border-bottom: 2px solid whitesmoke; 
 }
 
 #tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
 	margin: 0;
 	padding: 0;
-	height: 300px;
+	width: 90%;
 	overflow: scroll;
 	overflow-y: scroll;
 }
 
-/* Legend Section */
-#legendContainer {
-	width: 100%;
-}
+#tripContent-eateries-list, #tripContent-adventures-list { height: 300px; }
+#tripContent-extra-list, #tripContent-tips-list { height: 220px; }
 
 /* Pictures Section */
 .pictureSection {
@@ -178,7 +176,7 @@ h2 {
 
 /* Google maps */
 #map {
-	width: 70%;
+	width: 80%;
 	height: 550px;
 	margin-left: auto;
 	margin-right: auto;
