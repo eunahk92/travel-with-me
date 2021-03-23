@@ -225,4 +225,8 @@ h2 {
 		width: 250px;
 		text-align: center;
 	}
+	.tripContent-border { 
+		width: 85%;
+		border-bottom: 2px solid whitesmoke; 
+	}
 }

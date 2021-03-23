@@ -5,19 +5,19 @@ let markers = [];
 const listPage = $(document.querySelector('#tripDetailsSection'));
 const categoryArr = [
 	{ type: "seafood", icon: `<i class="fas fa-fish"></i>` },
-	{ type: "dessert", icon: `<i class="fas fa-ice-cream"></i>` },
-	{ type: "hike", icon: `<i class="fas fa-hiking"></i>` },
-	{ type: "shop", icon: `<i class="fas fa-shopping-bag"></i>` },
-	{ type: "eat", icon: `<i class="fas fa-utensils"></i>` },
-	{ type: "snorkel", icon: `<i class="fas fa-swimmer"></i>` },
+	{ type: "desserts", icon: `<i class="fas fa-ice-cream"></i>` },
+	{ type: "hiking", icon: `<i class="fas fa-hiking"></i>` },
+	{ type: "shopping", icon: `<i class="fas fa-shopping-bag"></i>` },
+	{ type: "eating", icon: `<i class="fas fa-utensils"></i>` },
+	{ type: "snorkeling", icon: `<i class="fas fa-swimmer"></i>` },
 	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt"></i>` },
 	{ type: "coffee", icon: `<i class="fas fa-coffee"></i>` },
 	{ type: "sightsee", icon: `<i class="fas fa-camera-retro"></i>` },
 	{ type: "spa", icon: `<i class="fas fa-spa"></i>` },
-	{ type: "asian", icon: `<i class="material-icons">ramen_dining</i>` },
-	{ type: "local", icon: `<i class="material-icons">local_dining</i>` },
+	{ type: "asian food", icon: `<i class="material-icons">ramen_dining</i>` },
+	{ type: "local food", icon: `<i class="material-icons">local_dining</i>` },
 	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
-	{ type: "pastry", icon: `<i class="fas fa-bread-slice"></i>` },
+	{ type: "pastries", icon: `<i class="fas fa-bread-slice"></i>` },
 	
 ];
 const locationsArray = [
@@ -32,20 +32,6 @@ const locationsArray = [
 			long: -158.0377136
         },
 		recommendations: [
-			// Most updated obj properties:
-			// {
-				// name: "",
-				// address: "",
-				// commentary: "",
-				// tips: [""],
-				// category: "",
-				// types: ["",""],
-				// label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
-			//},
             {
 				name: "Giovanni Shrimp Truck",
 				address: "66-472 Kamehameha Hwy, Haleiwa, HI 96712",
@@ -91,7 +77,7 @@ const locationsArray = [
 				commentary: "Better known as 'Koko Head Stairs' as it's basically a StairMasters workout. The abandoned railway is used as the stairs that you hike up. Take a seat at one of the pillbox bunkers at the top and enjoy the view!",
 				tips: ["Park at Koko Head District Park parking lot & you'll find signs that lead you to the trail.", "Don't forget to take a picture with the Koko Crater Arch (an unbelievable rock formation on the edge of the crater)."],
 				category: "toDo",
-				types: ["hike"],
+				types: ["hiking"],
 				label: '',
 				coord: {
 					lat: 21.2808481,
@@ -104,7 +90,7 @@ const locationsArray = [
 				commentary: "Similar to chinese donuts, sugary doughs.",
 				tips: ["Try one with filling in it!"],
 				category: "toEat",
-				types: ["pastry"],
+				types: ["pastries"],
 				label: '',
 				coord: {
 					lat: 21.2849227,
@@ -130,7 +116,7 @@ const locationsArray = [
 				commentary: "Try either here or Waiola, or both!",
 				tips: [],
 				category: "toEat",
-				types: ["dessert"],
+				types: ["desserts"],
 				label: '',
 				coord: {
 					lat: 21.5911105,
@@ -143,7 +129,7 @@ const locationsArray = [
 				commentary: "",
 				tips: [""],
 				category: "toEat",
-				types: ["dessert"],
+				types: ["desserts"],
 				label: '',
 				coord: {
 					lat: 21.2924603,
@@ -181,8 +167,8 @@ const locationsArray = [
 				address: "Na Ala Hele: Aihualama Trail, Honolulu, HI 96822",
 				commentary: "Can be from 1-2 hours long and leads to a beautiful large waterfall.",
 				tips: ["Don't swim in the water under the waterfall!! High risk of being infected with Leptospirosis...", "Great self hike but recommend booking a tour if you're interested in the explanation of local floral and fauna that's unique to Ohau."],
-				category: "",
-				types: ["hike"],
+				category: "toDo",
+				types: ["hiking"],
 				label: '',
 				coord: {
 					lat: 21.3413975,
@@ -205,10 +191,10 @@ const locationsArray = [
             {
 				name: "Dole Pineapple Plantation",
 				address: "64-1550 Kamehameha Hwy, Wahiawa, HI 96786",
-				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! Recommendation: You have to try the delicious pineapple soft serve and there is also a pineapple maze you can partake in.",
-				tips: [],
+				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! There is a pineapple maze (world's largest maze?) and little shops and dessert spots.",
+				tips: ["Recommendation: You have to try the delicious pineapple soft serve"],
 				category: "toDo",
-				types: ["tour", "shop", "eat"],
+				types: ["tour", "shopping", "eating"],
 				label: '',
 				coord: {
 					lat: 21.5260075,
@@ -234,7 +220,7 @@ const locationsArray = [
 				commentary: "Known for their handmade ice cream and mochi!",
 				tips: ["I recommend their homemade mochi ice cream"],
 				category: "toEat",
-				types: ["dessert"],
+				types: ["desserts"],
 				label: '',
 				coord: {
 					lat: 21.2785713,
@@ -273,7 +259,7 @@ const locationsArray = [
 				commentary: "Diamond Head is the iconic former volcano right off of Waikiki Beach. Hike up the trail and take a seat at one of the pill boxes up top to enjoy the view and breeze, or go to Kahala Lookout or Diamond Head lookout for one of the best views.",
 				tips: [],
 				category: "toDo",
-				types: ["hike"],
+				types: ["hiking"],
 				label: '',
 				coord: {
 					lat: 21.261983,
@@ -286,7 +272,7 @@ const locationsArray = [
 				commentary: "One of the easier/ shorter trails to hike that offer a panoramic view of Lanikai Beach. 2 Pillbox's that you can hangout at, at the top.",
 				tips: ["Recommend a sunrise or sunset hike!"],
 				category: "toDo",
-				types: ["hike"],
+				types: ["hiking"],
 				label: '',
 				coord: {
 					lat: 21.3903466,
@@ -299,7 +285,7 @@ const locationsArray = [
 				commentary: "One of the most famous places on the entire island for Snorkel. There is also Hanauma Bay Lookout if you don't want to go for a dip!",
 				tips: [],
 				category: "toDo",
-				types: ["snorkel", "beach"],
+				types: ["snorkeling", "beach"],
 				label: '',
 				coord: {
 					lat: 21.2725925,
@@ -312,7 +298,7 @@ const locationsArray = [
 				commentary: "Iconic spot that serves local Hawaiian plates!",
 				tips: [],
 				category: "toEat",
-				types: ["local", ""],
+				types: ["local"],
 				label: '',
 				coord: {
 					lat: 21.2759342,
@@ -324,8 +310,8 @@ const locationsArray = [
 				address: "159 Ka’iulani Ave 105, Honolulu, HI 96815",
 				commentary: "Farm-to-table cafe & store serving up healthy & delicious items.",
 				tips: [],
-				category: "",
-				types: ["coffee", ""],
+				category: "toEat",
+				types: ["coffee"],
 				label: '',
 				coord: {
 					lat: 21.2772182,
@@ -338,7 +324,7 @@ const locationsArray = [
 				commentary: "Local favorite for pastries.",
 				tips: ["Try the Poi donuts!!"],
 				category: "toEat",
-				types: ["pastry"],
+				types: ["pastries"],
 				label: '',
 				coord: {
 					lat: 21.3214786,
@@ -351,7 +337,7 @@ const locationsArray = [
 				commentary: "Private 4,000 acre nature reserve & cattle ranch where JURASSIC PARK was filmed! & the show Five-0. There are a lot of things to do here: zipline, ATV, horseback, boat cruise, helicopter ride, jungle jeep expedition, etc.",
 				tips: ["All day affair, pack appropriately", "Book a package for the outdoor adventures/ tour."],
 				category: "extra",
-				types: ["hike", "shop"],
+				types: ["hiking", "shopping"],
 				label: '',
 				coord: {
 					lat: 21.520742,
@@ -364,7 +350,7 @@ const locationsArray = [
 				commentary: "The Laylow in general is Instagram heaven and the Hideout is no exception. Food is good here too but at a minimum, stop by for a drink and snap some pics!",
 				tips: [],
 				category: "toEat",
-				types: ["eat", "drink"],
+				types: ["eating", "bar"],
 				label: '',
 				coord: {
 					lat: 21.2792893,
@@ -377,7 +363,7 @@ const locationsArray = [
 				commentary: "There is also Hanauma Bay Lookout if you don't want to go for a dip with a hiking trail nearby!",
 				tips: [],
 				category: "toDo",
-				types: ["hike"],
+				types: ["hiking"],
 				label: '',
 				coord: {
 					lat: 21.2751805,
@@ -390,7 +376,7 @@ const locationsArray = [
 				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but even bigger.",
 				tips: [],
 				category: "toDo",
-				types: [ "shop", "eat"],
+				types: [ "shopping", "eating"],
 				label: '',
 				coord: {
 					lat: 21.291298,
@@ -403,7 +389,7 @@ const locationsArray = [
 				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach. A lot of beautiful beaches (Waikiki beach, Kuhio Beach, Kahanamoku Beach) to choose from. This is also where the more mainland restaurant brands will be.",
 				tips: [],
 				category: "toDo",
-				types: ["beach", "shop", "eat"],
+				types: ["beach", "shopping", "eating"],
 				label: '',
 				coord: {
 					lat: 21.2762651,
@@ -459,7 +445,7 @@ const locationsArray = [
                     "Book through a company and they will provide wet suit and gear. I don't know if you can do it without booking a tour."
                 ],
 				category: "toDo",
-				types: ["snorkel", "hike"],
+				types: ["snorkeling", "hiking"],
 				label: '',
 				coord: {
 					lat: 64.25591960000001,
@@ -551,7 +537,7 @@ const locationsArray = [
                     "I recommend taking the cable car up and taking the stairs down."
                 ],
 				category: "toDo",
-				types: ["sightsee", "eat", "shop"],
+				types: ["sightsee", "eating", "shopping"],
 				label: '',
 				coord: {
 					lat: 37.5509473,
@@ -583,7 +569,7 @@ const locationsArray = [
                     ""
                 ],
 				category: "toDo",
-				types: ["sightsee", "eat", "shop"],
+				types: ["sightsee", "eating", "shopping"],
 				label: '',
 				coord: {
 					lat: 37.5833149,
@@ -596,7 +582,7 @@ const locationsArray = [
 				commentary: "It's like Disney world but not Disney. A day's worth activities: world's largest indoor theme park, shopping malls, outdoor amusement park, sports facilities, and more!",
 				tips: [],
 				category: "toDo",
-				types: ["sightsee", "shop", "eat"],
+				types: ["sightsee", "shopping", "eating"],
 				label: '',
 				coord: {
 					lat: 37.5111158,
@@ -609,7 +595,7 @@ const locationsArray = [
 				commentary: "Hike up Bukhansan Mountain (follow markers for levels of hike).",
 				tips: [],
 				category: "toDo",
-				types: ["hike"],
+				types: ["hiking"],
 				label: '',
 				coord: {
 					lat: 37.6197679,
@@ -622,7 +608,7 @@ const locationsArray = [
 				commentary: "Myeongdong Market is one of South Korea’s prime shopping districts – you’ll find department stores, shopping malls, and independent shops, together with a host of trendy restaurants and cafes.",
 				tips: [],
 				category: "toDo",
-				types: ["shop", "eat"],
+				types: ["shopping", "eating"],
 				label: '',
 				coord: {
 					lat: 37.55998,
@@ -635,7 +621,7 @@ const locationsArray = [
 				commentary: "Inside Coex Mall: THE most beautiful library EVER. Over 50,000 books and 2 stories. You've probably seen this library in K-dramas (like Record of Youth).",
 				tips: [],
 				category: "toDo",
-				types: ["sightsee", "shop"],
+				types: ["sightsee", "shopping"],
 				label: '',
 				coord: {
 					lat: 37.51168500000001,
@@ -661,7 +647,7 @@ const locationsArray = [
 				commentary: "Largest traditional market",
 				tips: ["FYI market is closed on Sunday"],
 				category: "toDo",
-				types: ["shop","eat"],
+				types: ["shopping","eating"],
 				label: '',
 				coord: {
 					lat: 37.55914730000001,
@@ -704,7 +690,7 @@ const locationsArray = [
 				commentary: "Very unique experience: They serve only one local dish per day, there is no menu and the meal comes with many small side dishes to combine with the entree.",
 				tips: [],
 				category: "extra",
-				types: ["eat"],
+				types: ["eating"],
 				label: '',
 				coord: {
 					lat: 37.5677037,
@@ -737,41 +723,395 @@ const locationsArray = [
         ]
     },
     {
-		name: "Italy, Rome",
+		name: "Italy,Rome",
 		continent: "Europe",
+		cityTips: [
+
+		],
 		coord: {
 			lat: 41.9028,
 			long: 12.4964
         },
 		recommendations: [
+			// Most updated obj properties:
+			// {
+				// name: "",
+				// address: "",
+				// commentary: "",
+				// tips: [""],
+				// category: "",
+				// types: ["",""],
+				// label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			//},
             {
-				name: "Hallgrimskirkja Church",
-				address: "Hallgrímstorg 1, 101 Reykjavík, Iceland",
-				commentary: "Beautiful church/ unique",
-				tips: [],
-				category: "toDo",
-				types: ["sightsee"],
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
 				label: '',
-            }
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
+        ]
+    },
+	{
+		name: "Orlando,Florida",
+		continent: "North America",
+		cityTips: [
+			""
+		],
+		coord: {
+			lat: 28.3852,
+			long: -81.3792
+        },
+		recommendations: [
+			// Most updated obj properties:
+			// {
+				// name: "",
+				// address: "",
+				// commentary: "",
+				// tips: [""],
+				// category: "",
+				// types: ["",""],
+				// label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			//},
+            {
+				name: "The Guesthouse",
+				address: "1321 N Mills Ave, Orlando, FL 32803",
+				commentary: "Delicious craft cocktails",
+				tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!"],
+				category: "toEat",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 28.5629081,
+					long: -81.36421419999999
+				}
+			},
+			{
+				name: "Tori Tori",
+				address: "720 N Mills Ave, Orlando, FL 32803",
+				commentary: "Japanese pub with delicious craft cocktails",
+				tips: ["They don't take reserverations, it's first come, first serve", "My favorite dish is the Salmon or Crab fried rice!"],
+				category: "toEat",
+				types: ["asian", "bar"],
+				label: '',
+				coord: {
+					lat: 28.5539774,
+					long: -81.36475399999999
+				}
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
         ]
     },
     {
-		name: "Atlanta,Georgia",
+		name: "Maui, Hawaii",
 		continent: "North America",
+		cityTips: [
+			"(Road to Hana tip) Download GyPSy audio guide for Road to Hana! It is $6.99 but it will be worth it 100%. Load it up on your phone before you go so it follows along your trip. It's a self guided tour audio with turn by turn directions!", "(Road to Hana tip) Leave early, like 5am early: it's an all day affair and you don't want to get stuck on the winding roads at night. I recommend being back in Paia by sunset or a little after, Road to Hana roads are scary at night for the unexperienced", "(Road to Hana tip) Plan your stops to make most of your time, there's a lot of stops along the way so make sure to see the ones you want!", "(Road to Hana tip) PREPARE: Gas up, pack snacks and drinks, and don't forget toilteries", "(Road to Hana tip) Plan extra time for unexpected stops along the way (for pics or unplanned trails)", "(Road to Hana tip) Rule of thumb for driving on this road: if you see somesone behind you driving faster, pull over to the next available side of the road and let them pass (locals drive on this road every day too) but for your safety, please don't drive like the locals! Drive slow and safe, there's nothing wrong with that!", "(Road to Hana tip) Hana is on the 'wet' side of the island, so prepare for light showers or muddy hikes. Which also means prepare the bug spray."
+		],
 		coord: {
-			lat: 33.7490,
-			long: 84.3880
+			lat: 20.7984,
+			long: -156.3319
         },
 		recommendations: [
-            {
-				name: "Hallgrimskirkja Church",
-				address: "Hallgrímstorg 1, 101 Reykjavík, Iceland",
-				commentary: "Beautiful church/ unique",
-				tips: [],
+			{
+				name: "Molokini Crater",
+				address: "Maui, HI 96708",
+				commentary: "Remains of a volcanic eruption that is now a GORGEOUS spot for snorkeling/ scuba diving.",
+				tips: ["Need to book a tour as you can only reach it by boat"],
+				category: "toDo",
+				types: ["snorkeling"],
+				label: '',
+				coord: {
+					lat: 0,
+					long: 0
+				}
+			},
+			{
+				name: "Maui Brewing Company",
+				address: "605 Lipoa Pkwy, Kihei, HI 96753",
+				commentary: "1 of the 2 biggest breweries on Maui",
+				tips: [""],
+				category: "toEat",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 20.7494953,
+					long: -156.4378451
+				}
+			},
+			{
+				name: "Kohola Brewery",
+				address: "910 HI-30 #55, Lahaina, HI 96761",
+				commentary: "1 of the 2 biggest breweries on Maui",
+				tips: [""],
+				category: "toEat",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 20.8815705,
+					long: -156.6786294
+				}
+			},
+			{
+				name: "Haleakala Crater",
+				address: "Mile Marker 41 Hana Hwy, Hana, HI 96713",
+				commentary: "",
+				tips: [""],
+				category: "toDo",
+				types: ["hiking", "sightsee"],
+				label: '',
+				coord: {
+					lat: 20.9178805,
+					long: -156.2657185
+				}
+			},
+			{
+				name: "Wai’anapanapa Black Sand Beach",
+				address: "Waianapanapa, Hana, HI 96713",
+				commentary: "",
+				tips: ["starting in 2021 you will need to make advanced reservations for entry and parking at this famous beach"],
+				category: "toDo",
+				types: ["sightsee", "beach"],
+				label: '',
+				coord: {
+					lat: 20.7865103,
+					long: -156.0026796
+				}
+			},
+			{
+				name: "Ululani’s Shave Ice",
+				address: "61 S Kihei Rd, Kihei, HI 96753",
+				commentary: "Best shave ice on Maui and known for their unique flavors!",
+				tips: [""],
+				category: "toEat",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 20.7819153,
+					long: -156.4625842
+				}
+			},
+			{
+				name: "Mama’s Fish House",
+				address: "799 Poho Pl, Paia, HI 96779",
+				commentary: "Very famous restaurant with fresh seafood and a great view",
+				tips: ["Make reservations! Everyone that does the Hana Road stops here to eat"],
+				category: "toEat",
+				types: ["seafood"],
+				label: '',
+				coord: {
+					lat: 20.9289879,
+					long: -156.3670266
+				}
+			},
+			{
+				name: "Aunty Sandy's Banana Bread",
+				address: "210 Keanae Rd, Ke‘Anae, HI 96708",
+				commentary: "BEST BANANA BREAD HANDS DOWN!",
+				tips: [""],
+				category: "toEat",
+				types: ["pastries"],
+				label: '',
+				coord: {
+					lat: 20.8631696,
+					long: -156.1472777
+				}
+			},
+			{
+				name: "Paia Town",
+				address: "",
+				commentary: "The last city you'll see when doing Road to Hana!",
+				tips: [""],
+				category: "toDo",
+				types: ["shopping", "eating"],
+				label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			},
+			{
+				name: "Waikamoi Nature Trail",
+				address: "HI-360, Haiku, HI 96708",
+				commentary: "2 hiking options: the longer route and the shorter route (whichever you have time for!)",
+				tips: ["If you're short on time on the Road to Hana, do the shorter one"],
+				category: "toDo",
+				types: ["hiking", "sightsee"],
+				label: '',
+				coord: {
+					lat: 20.8559388,
+					long: -156.1602646
+				}
+			},
+			{
+				name: "Ka Haku Smoke Shack",
+				address: "10301 Hana Hwy, Haiku, HI 96708",
+				commentary: "It may look run down and shady, but their food is delicious! Each plate comes with a free coconut.",
+				tips: ["The grilled chicken is amazing"],
+				category: "toEat",
+				types: ["local"],
+				label: '',
+				coord: {
+					lat: 20.9145089,
+					long: -156.2563433
+				}
+			},
+			{
+				name: "Garden of Eden",
+				address: "10600 Hana Hwy, Haiku, HI 96708",
+				commentary: "Beautiful garden and arboretum that overlooks the waters. A little pricey but very stunning.",
+				tips: [""],
 				category: "toDo",
 				types: ["sightsee"],
 				label: '',
-            }
+				coord: {
+					lat: 20.8686482,
+					long: -156.1798823
+				}
+			},
+			{
+				name: "Seven Sacred Pools",
+				address: "Hana, HI 96713",
+				commentary: "7 swimming holes connected by waterfalls",
+				tips: ["Get there early as possible, it's usually packed"],
+				category: "toDo",
+				types: ["hiking", "swimming"],
+				label: '',
+				coord: {
+					lat: 20.6633583,
+					long: -156.0446149
+				}
+			},
+			{
+				name: "Pīpīwai Trail",
+				address: "Hana, HI 96713",
+				commentary: "About 4 mile trail - Known for their bamboo trees in their tropical rainforest.",
+				tips: [""],
+				category: "toDo",
+				types: ["hiking", "sightsee"],
+				label: '',
+				coord: {
+					lat: 20.6633583,
+					long: -156.0514384
+				}
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			},
+			{
+				name: "",
+				address: "",
+				commentary: "",
+				tips: [""],
+				category: "",
+				types: ["",""],
+				label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			},
         ]
     },
 ];
@@ -805,7 +1145,7 @@ async function renderMap(array, location) {
 				map.removeMarkers();
 				if (location.includes('Hawaii')) {
 					map.setZoom(10);
-				} else if (location.includes('Iceland')) {
+				} else if (location.includes('Iceland') || location.includes('Orlando')) {
 					map.setZoom(6);
 				} else {
 					map.setZoom(12);
@@ -963,7 +1303,7 @@ renderLegend = (categoryArray) => {
 renderIcons = (array) => {
 	let icons = [];
 	array.forEach(type => {
-		categoryArr.forEach(cat => {if (cat.type === type) icons.push(cat.icon)});
+		categoryArr.forEach(cat => {if (cat.type.includes(type)) icons.push(cat.icon)});
 	});
 	return icons;
 };
@@ -1025,7 +1365,6 @@ $(document).ready(() => {
 	`
 	let intViewportWidth = window.innerWidth;
 	if (intViewportWidth > 576) {
-		$('#tripDetailsSection').addClass('fp-auto-height');
 		$('#recommendationsSection').append(title2)
 	} else {
 		$('#tripContent').append(title);
