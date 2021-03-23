@@ -1,5 +1,7 @@
 const geocoder = new google.maps.Geocoder();
+let infowindow = new google.maps.InfoWindow();
 let map;
+let markers = [];
 const listPage = $(document.querySelector('#tripDetailsSection'));
 const categoryArr = [
 	{ type: "seafood", icon: `<i class="fas fa-fish" alt="key: seafood"></i>` },
@@ -780,6 +782,7 @@ async function renderMarkerLabelsForMap(arr, location) {
 
 async function renderMap(array, location) {
 	try {
+		markers = [];
 		await renderMarkerLabelsForMap(array, location);
 		await locationsArray.forEach(city => {
 			if (city.name == location) {
@@ -798,13 +801,13 @@ async function renderMap(array, location) {
 		await array.forEach(spot => {
 			const { coords, name, label } = spot;
 			if (coords) {
-				map.addMarker({
+				let m = map.addMarker({
 					lat: coords.lat,
 					lng: coords.long,
 					title: name,
 					label: label,
 					infoWindow: {
-						content: `lat is ${coords.lat} and long is ${coords.long}`
+						content: `${name} - lat is ${coords.lat} and long is ${coords.long}`
 					},
 					click: function(e) {
 						let latLng = new google.maps.LatLng(coords.lat, coords.long);
@@ -812,6 +815,7 @@ async function renderMap(array, location) {
 						map.panTo(latLng);
 					}
 				});
+				markers.push(m);
 			}
 		});
     } catch (err) { if (err) throw (err) }
@@ -853,19 +857,12 @@ renderListOfRecommendations = (array, location) => {
 	const sortedArr = sortAlphabetically(array);
 	generateGeocode(sortedArr);
 	sortedArr.forEach(spot => {
-		let { name, address, types, category, label } = spot;
-		let query;
-		if (address.includes('-')) {
-			let param = name.concat(location);
-			query = renderGoogleLinks(param);
-		} else {
-			query = renderGoogleLinks(address);
-		}
+		let { name, types, category, label } = spot;
 		let icons = renderIcons(types);
 		icons = icons.toString().replaceAll(',', '');
 		const li = `
 			<div class="row d-flex justify-content-start m-0 p-0">
-				<a href="${query}" target="_blank" class="recommendationLink mr-3">
+				<a href="#recommendationsSection" class="recommendationLink mr-3" data-label=${label}>
 					<small>${label ? renderMarkerLabelsForLi(label) : ''} ${name} ${icons}</small>
 				</a>
 			</div>`
@@ -1016,4 +1013,19 @@ $(document).ready(() => {
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
 	renderRecommendationsPage(clickedLocation);
+});
+
+$(document.querySelector('#tripContent')).on('click', '.recommendationLink', e => {
+	const clicked = $(e.currentTarget).data('label');
+	infowindow.close();
+	markers.forEach(marker => {
+		if (marker.label == clicked) {
+			let i = markers.indexOf(marker);
+			// const latLng = new google.maps.LatLng(marker.lat, marker.long);
+			fullpage_api.moveSectionUp();
+			map.setZoom(20);
+			map.panTo(marker.getPosition());		
+			google.maps.event.trigger(markers[i], 'click');
+		}
+	});
 });
