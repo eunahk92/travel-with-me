@@ -17,6 +17,7 @@ $(document).ready(function() {
             }
         },
         scrollOverflow: true,
-        normalScrollElements: '#tripContent'
+        normalScrollElements: '#tripContent',
+        normalScrollElements: '#map'
     });
 });

@@ -3,6 +3,7 @@ Color scheme 1 :
 	YELLOW: rgb(255,204,103),
 	CORAL PINK: #F24C4E,
 	TEAL BLUE: #1F858F;
+	ASH BLACK: #414141;
 */
 
 /* Centering bottom pagination dots */
@@ -40,17 +41,6 @@ h2 {
 	padding: 1px;
     border: 2px solid #1F858F;
 	font-size: smaller;
-}
-
-.rounded-pill {
-    font-size: min(max(1rem, 1.5vw), 20px);
-    writing-mode:vertical-rl;
-	transform: rotate(-180deg);
-    left: 0%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
 }
 
 /* Wrapper for whole section */
@@ -113,7 +103,7 @@ h2 {
 	transform: rotate(-180deg);
 	margin: 0; 
 	right: 0;
-	bottom: 10px;
+	bottom: 30px;
 	width: fit-content;
 	text-align: center;
 	position: absolute;
@@ -129,21 +119,38 @@ h2 {
 	margin-bottom: 15px;
 }
 
+.popover-dismiss {
+	width: auto;
+}
+
 .tripContent-border { 
 	width: 95%;
 	border-bottom: 2px solid whitesmoke; 
 }
 
-#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
+#tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extras-list, #tripContent-tips-list {
 	margin: 0;
 	padding: 0;
 	width: 90%;
-	overflow: scroll;
-	overflow-y: scroll;
+	height: 300px;
+	overflow-y: auto;
 }
 
-#tripContent-eateries-list, #tripContent-adventures-list { height: 300px; }
-#tripContent-extra-list, #tripContent-tips-list { height: 220px; }
+/* Scroll bar in content section */
+.frame::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.frame::-webkit-scrollbar:vertical {
+    width: 11px;
+}
+
+.frame::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    border: 2px solid rgb(255,204,103); 
+    background-color: rgba(0, 0, 0, .5);
+}
+
 
 /* Pictures Section */
 .pictureSection {
@@ -212,13 +219,12 @@ h2 {
 		border: 2px solid rgba(255,255,255,0.95);
 		width: 100%;
 	}
-	#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extra-list {
+	#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extras-list {
 		margin-bottom: 10px;
 		padding: 0;
 		max-height: 100px;
 		width: 90%;
-		overflow: scroll;
-		overflow-y: scroll;
+		overflow-y: auto;
 	}
 	#locationTitle {
 		bottom: 50px;
