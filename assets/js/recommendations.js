@@ -24,7 +24,7 @@ const locationsArray = [
 		name: "Honolulu,Hawaii",
 		continent: 'North America',
 		cityTips: [
-			"The delicious Hawaiian treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic.", "Traffic! There is only 1 major highway so expect heavy traffic during rush hour.", ""
+			"The delicious Hawaiian treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic.", "Traffic, traffic, traffic... Beware! Expect heavy traffic during rush hour."
 		],
 		coord: {
 			lat: 21.5010,
@@ -87,7 +87,7 @@ const locationsArray = [
 				name: "Leonard’s Bakery",
 				address: "933 Kapahulu Ave, Honolulu, HI 96816",
 				commentary: "Similar to chinese donuts, sugary doughs.",
-				tips: ["Try one with filling in it!"],
+				tips: ["Try one with filling in it, you won't regret it."],
 				category: "foodAndDrinks",
 				types: ["pastries"],
 				label: '',
@@ -112,7 +112,7 @@ const locationsArray = [
             {
 				name: "MATSUMOTO’S SHAVE ICE",
 				address: "66-111 Kamehameha Hwy 605, Haleiwa, HI 96712", 
-				commentary: "Try either here or Waiola, or both!",
+				commentary: "Try either here or the shave ice at Waiola, or both!",
 				tips: [],
 				category: "foodAndDrinks",
 				types: ["desserts"],
@@ -125,8 +125,8 @@ const locationsArray = [
             {
 				name: "Waiola Shave Ice",
 				address: "2135 Waiola St, Honolulu, HI 96826",
-				commentary: "",
-				tips: [""],
+				commentary: "Another great spot for shave ice",
+				tips: [],
 				category: "foodAndDrinks",
 				types: ["desserts"],
 				label: '',
@@ -138,7 +138,7 @@ const locationsArray = [
             {
 				name: "Haleʻiwa Bowls",
 				address: "66-030 Kamehameha Hwy, Haleiwa, HI 96712",
-				commentary: "",
+				commentary: "Love their acai bowls",
 				tips: [],
 				category: "foodAndDrinks",
 				types: ["local"],
@@ -151,10 +151,10 @@ const locationsArray = [
             {
 				name: "Marukame Udon Waikiki",
 				address: "2310 Kūhiō Ave. 124, Honolulu, HI 96815",
-				commentary: "Really delicious, authentic Japanese Udon noodles",
+				commentary: "Authentic Japanese Udon noodles",
 				tips: [],
 				category: "foodAndDrinks",
-				types: [""],
+				types: [],
 				label: '',
 				coord: {
 					lat: 21.2796049,
@@ -177,7 +177,7 @@ const locationsArray = [
             {
 				name: "Waimea Bay, North Shore",
 				address: "61-31 Kamehameha Hwy, Haleiwa, HI 96712",
-				commentary: "Popular beach away from Waikiki tourists. Great for surfing and dolphins and turtle spottings!",
+				commentary: "Popular beach away from Waikiki tourists. Great for surfing and dolphins and turtle spotings!",
 				tips: [],
 				category: "adventures",
 				types: ["beach", "surfing"],
@@ -204,7 +204,7 @@ const locationsArray = [
 				name: "The ManiFest",
 				address: "32 N Hotel St, Honolulu, HI 96817",
 				commentary: "A coffee shop by day and a bar by night!",
-				tips: [""],
+				tips: [],
 				category: "extra",
 				types: ["coffee", "bar"],
 				label: '',
@@ -230,9 +230,9 @@ const locationsArray = [
 				name: "Lucky Belly",
 				address: "50 N Hotel St, Honolulu, HI 96817",
 				commentary: "",
-				tips: ["Friend's favorite were pork belly bao, oxtail dumplings, & the gyoza."],
+				tips: ["Friend recommended the pork belly bao, oxtail dumplings, & the gyoza."],
 				category: "extra",
-				types: [""],
+				types: [],
 				label: '',
 				coord: {
 					lat: 21.3117452,
@@ -243,9 +243,9 @@ const locationsArray = [
 				name: "The Pig and The Lady",
 				address: "83 N King St, Honolulu, HI 96817",
 				commentary: "",
-				tips: ["Friend's favorite were pork belly bao, oxtail dumplings, & the gyoza."],
+				tips: [],
 				category: "foodAndDrinks",
-				types: [""],
+				types: [],
 				label: '',
 				coord: {
 					lat: 21.3114491,
@@ -499,7 +499,7 @@ const locationsArray = [
 			long: 126.9892965
         },
 		cityTips: [
-			"Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so buy from convenience store and pregame.", "No open-container laws in Korea so you'll see people drinking anywhere, but DON'T drive while intoxicated!!"
+			"Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies."
 		],
 		recommendations: [
             {
@@ -699,69 +699,69 @@ const locationsArray = [
             },
         ]
     },
-    {
-		name: "Dubai,UAE",
-		continent: "Asia",
-		coord: {
-			lat: 25.2442856,
-			long: 55.2858641
-        },
-		recommendations: [
-            {
-				name: "Jumeirah Mosque",
-				address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
-				commentary: "mosque",
-				tips: [],
-				category: "adventures",
-				types: ["sightsee"],
-				label: '',
-				coord: {
-					lat: 25.2338,
-					long: 55.2655
-				},
-            }
-        ]
-    },
-    {
-		name: "Italy,Rome",
-		continent: "Europe",
-		cityTips: [
+    // {
+	// 	name: "Dubai,UAE",
+	// 	continent: "Asia",
+	// 	coord: {
+	// 		lat: 25.2442856,
+	// 		long: 55.2858641
+    //     },
+	// 	recommendations: [
+    //         {
+	// 			name: "Jumeirah Mosque",
+	// 			address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
+	// 			commentary: "mosque",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 25.2338,
+	// 				long: 55.2655
+	// 			},
+    //         }
+    //     ]
+    // },
+    // {
+	// 	name: "Italy,Rome",
+	// 	continent: "Europe",
+	// 	cityTips: [
 
-		],
-		coord: {
-			lat: 41.9028,
-			long: 12.4964
-        },
-		recommendations: [
-			// Most updated obj properties:
-			// {
-				// name: "",
-				// address: "",
-				// commentary: "",
-				// tips: [""],
-				// category: "",
-				// types: [],
-				// label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
-			//},
-            {
-				name: "",
-				address: "",
-				commentary: "",
-				tips: [""],
-				category: "",
-				types: [],
-				label: '',
-				coord: {
-					lat: 0,
-					long: 0
-				}
-			},
-        ]
-    },
+	// 	],
+	// 	coord: {
+	// 		lat: 41.9028,
+	// 		long: 12.4964
+    //     },
+	// 	recommendations: [
+	// 		// Most updated obj properties:
+	// 		// {
+	// 			// name: "",
+	// 			// address: "",
+	// 			// commentary: "",
+	// 			// tips: [""],
+	// 			// category: "",
+	// 			// types: [],
+	// 			// label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		//},
+    //         {
+	// 			name: "",
+	// 			address: "",
+	// 			commentary: "",
+	// 			tips: [""],
+	// 			category: "",
+	// 			types: [],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 0,
+	// 				long: 0
+	// 			}
+	// 		},
+    //     ]
+    // },
 	{
 		name: "Orlando,Florida",
 		continent: "North America",
@@ -1219,31 +1219,42 @@ sortAlphabetically = (arr) => {
 	return arr;
 };
 
-renderListOfRecommendations = (array, location) => {
-	const sortedArr = sortAlphabetically(array);
-	generateGeocode(sortedArr);
-	sortedArr.forEach(spot => {
-		let { name, types, category, label } = spot;
-		let icons = renderIcons(types);
-		if (icons) icons = icons.toString().replaceAll(',', '');
-		const li = `
-			<div class="row d-flex justify-content-start m-0 p-0">
-				<a href="#recommendationsSection" class="recommendationLink mr-3" data-label=${label}>
-					<small>${label ? renderMarkerLabelsForLi(label) : ''} ${name} ${icons ? icons : ''}</small>
-				</a>
-			</div>`
-		switch (category) {
-			case "foodAndDrinks":
-				$("#tripContent-eateries-list").append(li);
-				break;
-			case "adventures":
-				$("#tripContent-adventures-list").append(li);
-				break;
-			case "extra":
-				$("#tripContent-extras-list").append(li);
-				break;
-		};
-	})
+renderListOfRecommendations = async (array, location) => {
+	try {
+		let eateriesCounter = 0;
+		let extrasCounter = 0;
+		const sortedArr = sortAlphabetically(array);
+		generateGeocode(sortedArr);
+		await sortedArr.forEach(spot => {
+			let { name, types, category, label } = spot;
+			let icons = renderIcons(types);
+			if (icons) icons = icons.toString().replaceAll(',', '');
+			const li = `
+				<div class="row d-flex justify-content-start m-0 p-0">
+					<a href="#recommendationsSection" class="recommendationLink mr-3" data-label=${label}>
+						<small>${label ? renderMarkerLabelsForLi(label) : ''} ${name} ${icons ? icons : ''}</small>
+					</a>
+				</div>`
+			switch (category) {
+				case "foodAndDrinks":
+					$("#tripContent-eateries-list").append(li);
+					eateriesCounter++;
+					break;
+				case "adventures":
+					$("#tripContent-adventures-list").append(li);
+					break;
+				case "extra":
+					$("#tripContent-extras-list").append(li);
+					extrasCounter++;
+					break;
+			};
+		});
+	if (!extrasCounter) {
+		$("#tripContent-extras-list").append(`<p class="mx-2 smallText">Recommend something new for me to try :)</p>`);
+	} else if (!eateriesCounter) {
+		$("#tripContent-eateries-list").append(`<p class="mx-2 smallText">soon to come...</p>`);
+	}
+	} catch { err => console.log(err)}
 };
 
 renderLocationTips = (arr) => {
@@ -1324,7 +1335,6 @@ renderRecommendationsPage = (location) => {
 	let dataValue = $('#locationTitle').attr('data-city');
 	if ($('#tripContent').css('display') == 'none') {
 		$('#tripContent').css('display', 'block');
-		$('.pictureSection').css('display', 'none');
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
 		fullpage_api.setAutoScrolling(false);
