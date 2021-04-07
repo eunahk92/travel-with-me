@@ -103,7 +103,7 @@ h2 {
 	transform: rotate(-180deg);
 	margin: 0; 
 	right: 0;
-	bottom: 30px;
+	bottom: 125px;
 	width: fit-content;
 	text-align: center;
 	position: absolute;
@@ -225,11 +225,6 @@ h2 {
 		max-height: 100px;
 		width: 90%;
 		overflow-y: auto;
-	}
-	#locationTitle {
-		bottom: 50px;
-		width: 250px;
-		text-align: center;
 	}
 	.tripContent-border { 
 		width: 85%;

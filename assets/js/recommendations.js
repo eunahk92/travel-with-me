@@ -2,6 +2,7 @@ const geocoder = new google.maps.Geocoder();
 let infowindow = new google.maps.InfoWindow();
 let map;
 let markers = [];
+let intViewportWidth = window.innerWidth;
 const listPage = $(document.querySelector('#tripDetailsSection'));
 const categoryArr = [
 	{ type: "desserts", icon: `<i class="fas fa-ice-cream"></i>` },
@@ -762,124 +763,124 @@ const locationsArray = [
 	// 		},
     //     ]
     // },
-	{
-		name: "Orlando,Florida",
-		continent: "North America",
-		cityTips: [
-			""
-		],
-		coord: {
-			lat: 28.3852,
-			long: -81.3792
-        },
-		recommendations: [
-			// Most updated obj properties:
-			// {
-				// name: "",
-				// address: "",
-				// commentary: "",
-				// tips: [""],
-				// category: "",
-				// types: ["",""],
-				// label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
-			//},
-			{
-				name: "The Wellborn",
-				address: "211 N Lucerne Cir W, Orlando, FL 32801",
-				commentary: "",
-				tips: ["Parking can be tough here so uber if you can."],
-				category: "foodAndDrinks",
-				types: ["bar"],
-				label: '',
-				coord: {
-					lat: 28.535778,
-					long: -81.3756003
-				}
-			},
-			{
-				name: "Tori Tori",
-				address: "720 N Mills Ave, Orlando, FL 32803",
-				commentary: "Japanese pub with delicious craft cocktails",
-				tips: ["They don't take reserverations, it's first come, first serve", "Recommend the Salmon or Crab fried rice!"],
-				category: "foodAndDrinks",
-				types: ["bar"],
-				label: '',
-				coord: {
-					lat: 28.5539774,
-					long: -81.36475399999999
-				}
-			},
-			{
-				name: "Santiago's Bodega",
-				address: "802 Virginia Dr, Orlando, FL 32803",
-				commentary: "Delicious brunch spot!",
-				tips: [""],
-				category: "foodAndDrinks",
-				types: ["bar"],
-				label: '',
-				coord: {
-					lat: 28.5638579,
-					long: -81.3671597
-				}
-			},
-            {
-				name: "The Guesthouse",
-				address: "1321 N Mills Ave, Orlando, FL 32803",
-				commentary: "Delicious craft cocktails",
-				tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!", "Street parking is available or the lot behind the building."],
-				category: "foodAndDrinks",
-				types: ["bar"],
-				label: '',
-				coord: {
-					lat: 28.5629081,
-					long: -81.36421419999999
-				}
-			},
-			{
-				name: "East End Market",
-				address: "3201 Corrine Dr, Orlando, FL 32803",
-				commentary: "A hipster spot that showcases local businesses! From fresh juice to freshly baked goods, check it out.",
-				tips: ["Gideon cookies is a MUST TRY!"],
-				category: "adventures",
-				types: ["bar", "local", "shopping", "eating", "dessert"],
-				label: '',
-				coord: {
-					lat: 28.5683585,
-					long: -81.3437659
-				}
-			},
-			{
-				name: "Hanson’s Shoe Repair",
-				address: "27 E Pine St, Orlando, FL 32801",
-				commentary: "Speakeasy bar with some of the best craft cocktails in town, hands down.",
-				tips: ["You need a password to get in: check their twitter."],
-				category: "foodAndDrinks",
-				types: ["bar"],
-				label: '',
-				coord: {
-					lat: 28.5415,
-					long: -81.3784136
-				}
-			},
-			{
-				name: "Kadence",
-				address: "1809 Winter Park Rd, Orlando, FL 32803",
-				commentary: "Small, reservations-only, Japanese restaurant featuring multi-course sushi meals plus sake (Omakase).",
-				tips: ["Must make reservations online"],
-				category: "foodAndDrinks",
-				types: [],
-				label: '',
-				coord: {
-					lat: 0,
-					long: 0
-				}
-			},
-        ]
-    },
+	// {
+	// 	name: "Orlando,Florida",
+	// 	continent: "North America",
+	// 	cityTips: [
+	// 		""
+	// 	],
+	// 	coord: {
+	// 		lat: 28.3852,
+	// 		long: -81.3792
+    //     },
+	// 	recommendations: [
+	// 		// Most updated obj properties:
+	// 		// {
+	// 			// name: "",
+	// 			// address: "",
+	// 			// commentary: "",
+	// 			// tips: [""],
+	// 			// category: "",
+	// 			// types: ["",""],
+	// 			// label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		//},
+	// 		{
+	// 			name: "The Wellborn",
+	// 			address: "211 N Lucerne Cir W, Orlando, FL 32801",
+	// 			commentary: "",
+	// 			tips: ["Parking can be tough here so uber if you can."],
+	// 			category: "foodAndDrinks",
+	// 			types: ["bar"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 28.535778,
+	// 				long: -81.3756003
+	// 			}
+	// 		},
+	// 		{
+	// 			name: "Tori Tori",
+	// 			address: "720 N Mills Ave, Orlando, FL 32803",
+	// 			commentary: "Japanese pub with delicious craft cocktails",
+	// 			tips: ["They don't take reserverations, it's first come, first serve", "Recommend the Salmon or Crab fried rice!"],
+	// 			category: "foodAndDrinks",
+	// 			types: ["bar"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 28.5539774,
+	// 				long: -81.36475399999999
+	// 			}
+	// 		},
+	// 		{
+	// 			name: "Santiago's Bodega",
+	// 			address: "802 Virginia Dr, Orlando, FL 32803",
+	// 			commentary: "Delicious brunch spot!",
+	// 			tips: [""],
+	// 			category: "foodAndDrinks",
+	// 			types: ["bar"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 28.5638579,
+	// 				long: -81.3671597
+	// 			}
+	// 		},
+    //         {
+	// 			name: "The Guesthouse",
+	// 			address: "1321 N Mills Ave, Orlando, FL 32803",
+	// 			commentary: "Delicious craft cocktails",
+	// 			tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!", "Street parking is available or the lot behind the building."],
+	// 			category: "foodAndDrinks",
+	// 			types: ["bar"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 28.5629081,
+	// 				long: -81.36421419999999
+	// 			}
+	// 		},
+	// 		{
+	// 			name: "East End Market",
+	// 			address: "3201 Corrine Dr, Orlando, FL 32803",
+	// 			commentary: "A hipster spot that showcases local businesses! From fresh juice to freshly baked goods, check it out.",
+	// 			tips: ["Gideon cookies is a MUST TRY!"],
+	// 			category: "adventures",
+	// 			types: ["bar", "local", "shopping", "eating", "dessert"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 28.5683585,
+	// 				long: -81.3437659
+	// 			}
+	// 		},
+	// 		{
+	// 			name: "Hanson’s Shoe Repair",
+	// 			address: "27 E Pine St, Orlando, FL 32801",
+	// 			commentary: "Speakeasy bar with some of the best craft cocktails in town, hands down.",
+	// 			tips: ["You need a password to get in: check their twitter."],
+	// 			category: "foodAndDrinks",
+	// 			types: ["bar"],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 28.5415,
+	// 				long: -81.3784136
+	// 			}
+	// 		},
+	// 		{
+	// 			name: "Kadence",
+	// 			address: "1809 Winter Park Rd, Orlando, FL 32803",
+	// 			commentary: "Small, reservations-only, Japanese restaurant featuring multi-course sushi meals plus sake (Omakase).",
+	// 			tips: ["Must make reservations online"],
+	// 			category: "foodAndDrinks",
+	// 			types: [],
+	// 			label: '',
+	// 			coord: {
+	// 				lat: 0,
+	// 				long: 0
+	// 			}
+	// 		},
+    //     ]
+    // },
     {
 		name: "Maui, Hawaii",
 		continent: "North America",
@@ -1377,9 +1378,8 @@ $(document).ready(() => {
 	let title2 = `
 		<h2 class="text-end locationTitle" id="locationTitleH" data-city="city"></h2>
 	`
-	let intViewportWidth = window.innerWidth;
 	if (intViewportWidth > 576) {
-		$('#recommendationsSection').append(title2)
+		$('#recommendationsSection').append(title2);
 	} else {
 		$('#tripContent').append(title);
 	}
@@ -1390,6 +1390,9 @@ $(document).ready(() => {
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
 	renderRecommendationsPage(clickedLocation);
+	if (intViewportWidth < 576) {
+		$('.pictureSection').css('display', 'none');
+	} 	
 });
 
 $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e => {
