@@ -10,12 +10,6 @@ $(document).ready(function() {
         slidesNavigation: true,
         slidesNavPosition: "bottom",      
         menu: true,
-        // onLeave: function(origin, destination, direction){
-        //     var leavingSection = this;
-        //     if(origin.index == 1 && direction == 'up'){
-        //         fullpage_api.setAutoScrolling(true);
-        //     }
-        // },
         scrollOverflow: true,
         normalScrollElements: '#tripContent',
         normalScrollElements: '#map',

@@ -1339,7 +1339,7 @@ renderRecommendationsPage = (location) => {
 		fullpage_api.moveSectionDown();
 		// fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue == location) {
-		fullpage_api.moveTo(2);
+		fullpage_api.moveSectionUp();
 		// fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
 		renderLocationContent(location);
@@ -1390,8 +1390,8 @@ $(document.querySelector('.recommendationListContainer')).on('click', '.location
 	let clickedLocation = e.target.innerText.trim();
 	renderRecommendationsPage(clickedLocation);
 	if (intViewportWidth < 576) {
-		$('.pictureSection').css('display', 'none');
-	} 	
+		$('#pictureSection').css('display', 'none');
+	}
 });
 
 $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e => {
@@ -1401,7 +1401,7 @@ $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e =
 		if (marker.label == clicked) {
 			let i = markers.indexOf(marker);
 			// const latLng = new google.maps.LatLng(marker.lat, marker.long);
-			fullpage_api.moveSectionUp();
+			// fullpage_api.moveSectionUp();
 			map.setZoom(15);
 			map.panTo(marker.getPosition());		
 			google.maps.event.trigger(markers[i], 'click');
