@@ -139,7 +139,7 @@ const locationsArray = [
             {
 				name: "Haleʻiwa Bowls",
 				address: "66-030 Kamehameha Hwy, Haleiwa, HI 96712",
-				commentary: "Love their acai bowls",
+				commentary: "A little hut known for their acai bowls",
 				tips: [],
 				category: "foodAndDrinks",
 				types: ["local"],
@@ -1174,7 +1174,6 @@ async function renderMap(array, location) {
 									`[<b>Tip ${tips.indexOf(tip) +1}</b>]${tip}<br>`
 									).join('') : ""}
 							</div>
-							<p>lat is ${coord.lat} and long is ${coord.long}</p>
 						`
 					},
 					click: function(e) {

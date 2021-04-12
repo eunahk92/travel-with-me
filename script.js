@@ -18,6 +18,7 @@ $(document).ready(function() {
         // },
         scrollOverflow: true,
         normalScrollElements: '#tripContent',
-        normalScrollElements: '#map'
+        normalScrollElements: '#map',
+        // paddingTop: '40px'
     });
 });
