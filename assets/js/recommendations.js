@@ -1337,14 +1337,14 @@ renderRecommendationsPage = (location) => {
 		$('#tripContent').css('display', 'block');
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
-		fullpage_api.setAutoScrolling(false);
+		// fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue == location) {
 		fullpage_api.moveTo(2);
-		fullpage_api.setAutoScrolling(false);
+		// fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
-		fullpage_api.setAutoScrolling(false);
+		// fullpage_api.setAutoScrolling(false);
 
 	} 
 };
