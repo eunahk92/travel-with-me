@@ -1382,7 +1382,7 @@ $(document).ready(() => {
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
 	$('.locationTitle').css('data-city', clickedLocation)
-	if (intViewportWidth < 576) {
+	if (intViewportWidth < 600) {
 		$('#pictureSection').css('display', 'none');
 	}
 	renderRecommendationsPage(clickedLocation);
