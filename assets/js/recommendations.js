@@ -1332,14 +1332,11 @@ renderMarkerLabelsForLi = (index) => {
 };
 
 renderRecommendationsPage = (location) => {
-	let dataValue = $('#locationTitle').attr('data-city');
 	if ($('#tripContent').css('display') == 'none') {
 		$('#tripContent').css('display', 'block');
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
-	} else if ($('#tripContent').css('display') == 'block' && dataValue == location) {
-		fullpage_api.moveSectionUp();
-	} else if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
+	} else {	
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
 	} 
@@ -1384,10 +1381,11 @@ $(document).ready(() => {
 
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
-	renderRecommendationsPage(clickedLocation);
+	$('.locationTitle').css('data-city', clickedLocation)
 	if (intViewportWidth < 576) {
 		$('#pictureSection').css('display', 'none');
 	}
+	renderRecommendationsPage(clickedLocation);
 });
 
 $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e => {

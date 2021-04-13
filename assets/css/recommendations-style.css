@@ -154,10 +154,10 @@ h2 {
 
 /* Pictures Section */
 #pictureSection {
-	width: 80%;
+	width: 100vw;
+	height: auto;
 	display: flex;
 	align-items: center;
-	width: 100vw;
 	margin-left: auto;
 	margin-right: auto;
 	float: right;
