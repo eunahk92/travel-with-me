@@ -1,9 +1,9 @@
 $(document).ready(function() {
     $('#fullpage').fullpage({
         sectionsColor: ['#1F858F', '#F24C4E', 'rgb(255,204,103)'],
-        fitToSection: true,
+        fitToSection: false,
         autoScrolling: false,
-        resetSliders: true,
+        // resetSliders: true,
         // vertical pagination dots:
         // navigation: true,
         // navigationPosition: 'right',

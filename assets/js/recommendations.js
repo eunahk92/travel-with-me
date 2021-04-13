@@ -1337,15 +1337,11 @@ renderRecommendationsPage = (location) => {
 		$('#tripContent').css('display', 'block');
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
-		// fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue == location) {
 		fullpage_api.moveSectionUp();
-		// fullpage_api.setAutoScrolling(false);
 	} else if ($('#tripContent').css('display') == 'block' && dataValue != location) {	
 		renderLocationContent(location);
 		fullpage_api.moveSectionDown();
-		// fullpage_api.setAutoScrolling(false);
-
 	} 
 };
 
@@ -1401,7 +1397,6 @@ $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e =
 		if (marker.label == clicked) {
 			let i = markers.indexOf(marker);
 			// const latLng = new google.maps.LatLng(marker.lat, marker.long);
-			// fullpage_api.moveSectionUp();
 			map.setZoom(15);
 			map.panTo(marker.getPosition());		
 			google.maps.event.trigger(markers[i], 'click');
