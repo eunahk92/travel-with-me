@@ -151,34 +151,17 @@ h2 {
     background-color: rgba(0, 0, 0, .5);
 }
 
-
 /* Pictures Section */
+.picContainer {
+	border: 1px solid whitesmoke;
+	padding: 10px;
+}
+
 #pictureSection {
-	width: 100vw;
-	height: auto;
-	display: flex;
-	align-items: center;
 	margin-left: auto;
 	margin-right: auto;
-	float: right;
-	padding: 25px;
 	background-color: rgb(255,204,103);
-}
-
-.picContainer {
-	display: flex;
-	justify-content: space-evenly;
-	padding: 5px;
-	background-color: rgb(255,204,103);
-	border: 1px solid whitesmoke; 
-}
-
-.picContainer img { 
-	display: inline; 
-	flex: 1; 
-	max-width: 19%;
-	height: auto;
-	padding: 3px;
+	padding: 20px;
 }
 
 /* Google maps */
@@ -204,10 +187,6 @@ h2 {
 	.recommendationListContainer { width: 100%; min-height: fit-content; }
 	.fp-controlArrow.fp-prev { border-width: 10.5px 14px 10.5px 0 }
 	.fp-controlArrow.fp-next { border-width: 10.5px 0 10.5px 14px; }
-	#pictureSection {
-		width: 100%;
-		padding: 5px;
-	}
 	h2 { font-size: 3.5rem; letter-spacing: -.2rem; }
 	#mapContainer {
 		width: 100%;
