@@ -1203,12 +1203,6 @@ generateGeocode = (array) => {
 	});
 };
 
-renderGoogleLinks = (address) => {
-	let query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
-	const link = `https://www.google.com/maps/search/?api=1&query=${query}`
-	return link;
-};
-
 sortAlphabetically = (arr) => {
 	arr.sort((a, b) => {
         if (a.name === b.name) {
