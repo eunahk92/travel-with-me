@@ -11,6 +11,5 @@ $(document).ready(function() {
         menu: true,
         normalScrollElements: '#tripContent',
         normalScrollElements: '#map',
-        responsiveHeight: windowsHeight
     });
 });
