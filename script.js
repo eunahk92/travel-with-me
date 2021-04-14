@@ -6,8 +6,7 @@ $(document).ready(function() {
         slidesNavigation: true,
         slidesNavPosition: "bottom",      
         menu: true,
-        scrollOverflow: true,
         normalScrollElements: '#tripContent',
-        normalScrollElements: '#map',
+        normalScrollElements: '#map'
     });
 });

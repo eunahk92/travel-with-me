@@ -1394,4 +1394,5 @@ $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e =
 			google.maps.event.trigger(markers[i], 'click');
 		}
 	});
+	fullpage_api.moveSectionUp();
 });
