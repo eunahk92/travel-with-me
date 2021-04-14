@@ -1259,6 +1259,58 @@ const locationsArray = [
 					long: 12.3401954
 				}
 			},
+			{
+				name: "Campanile Di San Marco",
+				address: "P.za San Marco, 30124 Venezia VE, Italy",
+				commentary: "Bell tower that sits in St. Mark's Square with a great view up top",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 45.4342798,
+					long: 12.338111
+				}
+			},
+			{
+				name: "Libreria Acqua Alta",
+				address: "Calle Lunga Santa Maria Formosa, 5176b, 30122 Venezia VE, Italy",
+				commentary: "Chaotic yet charming book shop, great instagram spot but also a great hidden gem, with a stiarcase made from old, vibrant books.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee", "shopping"],
+				label: '',
+				coord: {
+					lat: 45.43797980000001,
+					long: 12.342292
+				}
+			},
+			{
+				name: "A La Vecia Papussa",
+				address: "Fondamenta Misericordia, 2612, 30121 Venezia VE, Italy",
+				commentary: "A secret bar that is one of the local's favorites",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 45.4451216,
+					long: 12.3306499
+				}
+			},
+			{
+				name: "Dal Moro's",
+				address: "Calle Casseleria, 5324, 30122 Venezia VE, Italy",
+				commentary: "A great take out spot for fresh pasta",
+				tips: ["Try the squid ink pasta!"],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 45.4363112,
+					long: 12.3400581
+				}
+			},
 		]
 	},
 	{
@@ -1714,45 +1766,6 @@ const locationsArray = [
 					lat: 20.6633583,
 					long: -156.0514384
 				}
-			},
-			{
-				name: "",
-				address: "",
-				commentary: "",
-				tips: [""],
-				category: "",
-				types: [],
-				label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
-			},
-			{
-				name: "",
-				address: "",
-				commentary: "",
-				tips: [""],
-				category: "",
-				types: [],
-				label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
-			},
-			{
-				name: "",
-				address: "",
-				commentary: "",
-				tips: [""],
-				category: "",
-				types: [],
-				label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
 			},
         ]
     },
