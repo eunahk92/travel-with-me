@@ -18,7 +18,6 @@ const categoryArr = [
 	{ type: "local food/ drinks", icon: `<i class="fas fa-utensils"></i>` },
 	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
 	{ type: "pastries", icon: `<i class="fas fa-bread-slice"></i>` },
-	
 ];
 const locationsArray = [
     {
@@ -321,7 +320,7 @@ const locationsArray = [
 			{
 				name: "Lucky Belly",
 				address: "50 N Hotel St, Honolulu, HI 96817",
-				commentary: "",
+				commentary: "Asian Fusion Cuisine",
 				tips: ["Friend recommended the pork belly bao, oxtail dumplings, & the gyoza.", "San Francisco-inspired craft cocktails"],
 				category: "extra",
 				types: ["bar"],
@@ -1538,7 +1537,7 @@ initMap = () => {
 
 $(document).ready(() => {
 	let title = `
-		<h2 class="text-end locationTitle" id="locationTitleV" data-city="city"></h2>
+		<h2 class="text-center locationTitle" id="locationTitleV" data-city="city"></h2>
 	`
 	let title2 = `
 		<h2 class="text-end locationTitle" id="locationTitleH" data-city="city"></h2>
@@ -1546,7 +1545,7 @@ $(document).ready(() => {
 	if (intViewportWidth > 600) {
 		$('#recommendationsSection').append(title2);
 	} else {
-		$('#tripContent').append(title);
+		$('#cityName').append(title);
 	}
 	renderLocationLinks();
 	initMap();
@@ -1555,9 +1554,6 @@ $(document).ready(() => {
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
 	$('.locationTitle').css('data-city', clickedLocation)
-	if (intViewportWidth < 600) {
-		$('#pictureSection').css('display', 'none');
-	}
 	renderRecommendationsPage(clickedLocation);
 });
 
