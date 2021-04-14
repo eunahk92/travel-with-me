@@ -7,6 +7,7 @@ $(document).ready(function() {
         slidesNavPosition: "bottom",      
         menu: true,
         normalScrollElements: '#tripContent',
-        normalScrollElements: '#map'
+        normalScrollElements: '#map',
+        fixedElements: '#header'
     });
 });

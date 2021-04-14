@@ -1117,7 +1117,7 @@ const locationsArray = [
     },
 ];
 
-var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+let popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
 	trigger: 'focus'
 });
 
@@ -1158,6 +1158,7 @@ async function renderMap(array, location) {
 		await array.forEach(spot => {
 			const { coord, name, label, address, commentary, tips } = spot;
 			if (coord) {
+				let query = `${name} ${address}`
 				let m = map.addMarker({
 					lat: coord.lat,
 					lng: coord.long,
@@ -1165,14 +1166,19 @@ async function renderMap(array, location) {
 					label: label.toString(),
 					infoWindow: {
 						maxWidth: 400,
+						minWidth: 275,
 						content: `
 							<h4 class="text-center">${name}</h4> 
 							<div class="d-flex align-content-start flex-wrap">
 								<p><i class="fas fa-map-pin mx-1"></i>${address}<br>
 								<i class="far fa-comments mx-1"></i>${commentary}<br><br>
 								${tips ? tips.map(tip => 
-									`[<b>Tip ${tips.indexOf(tip) +1}</b>]${tip}<br>`
-									).join('') : ""}
+									`[<b>Tip ${tips.indexOf(tip) +1}</b>] ${tip}<br>`
+									).join('') : ""} 
+								</p>
+							</div>
+							<div class="d-flex justify-content-end">
+								<a href="${renderGoogleLinks(query)}">google me here</a>
 							</div>
 						`
 					},
@@ -1325,15 +1331,19 @@ renderMarkerLabelsForLi = (index) => {
 	}
 };
 
+renderGoogleLinks = (address) => {
+	let query = address.replaceAll(',', '%2C').replaceAll(' ', '+');
+	const link = `https://www.google.com/maps/search/?api=1&query=${query}`
+	return link;
+};
+
+
 renderRecommendationsPage = (location) => {
 	if ($('#tripContent').css('display') == 'none') {
 		$('#tripContent').css('display', 'block');
-		renderLocationContent(location);
-		fullpage_api.moveSectionDown();
-	} else {	
-		renderLocationContent(location);
-		fullpage_api.moveSectionDown();
-	} 
+	}
+	renderLocationContent(location);
+	fullpage_api.moveSectionDown();
 };
 
 initMap = () => {
@@ -1394,5 +1404,4 @@ $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e =
 			google.maps.event.trigger(markers[i], 'click');
 		}
 	});
-	fullpage_api.moveSectionUp();
 });

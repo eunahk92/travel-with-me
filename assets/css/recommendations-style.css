@@ -185,8 +185,6 @@ h2 {
 /* Media query for mobile screen until I can get clamp on font-size to work*/
 @media only screen and (max-width: 600px) {
 	.recommendationListContainer { width: 100%; min-height: fit-content; }
-	.fp-controlArrow.fp-prev { border-width: 10.5px 14px 10.5px 0 }
-	.fp-controlArrow.fp-next { border-width: 10.5px 0 10.5px 14px; }
 	h2 { font-size: 3.5rem; letter-spacing: -.2rem; }
 	#mapContainer {
 		width: 100%;
@@ -198,10 +196,17 @@ h2 {
 		border: 2px solid rgba(255,255,255,0.95);
 		width: 100%;
 	}
-	#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list, #tripContent-extras-list {
+	#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list {
 		margin-bottom: 10px;
 		padding: 0;
 		max-height: 130px;
+		width: 90%;
+		overflow-y: auto;
+	}
+	#tripContent-extras-list {
+		margin-bottom: 10px;
+		padding: 0;
+		max-height: 90px;
 		width: 90%;
 		overflow-y: auto;
 	}
@@ -209,4 +214,7 @@ h2 {
 		width: 85%;
 		border-bottom: 2px solid whitesmoke; 
 	}
+	.picContainer { padding: 2px; }
+	.picBoxes { padding: 2px; }
+	#pictureSection { padding: 10px; }
 }
