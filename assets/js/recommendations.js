@@ -574,7 +574,7 @@ const locationsArray = [
 			long: -20.1199478
         },
 		cityTips: [
-            "I recommend not getting accommodations in one city as you'll be doing a lot of driving back and forth. If you do, plan your days appropriately, gas ain't cheap.", "Look out for speed trap signs, and slow down if you see it!! They literally warn you that a speed trap device is approaching. If you see the sign, it's guaranteed there is one coming right up.", "Pack noodles and go grocery shopping for snacks/ sandwiches: meat and to-go food is very expensive.", "Prepay for a gas card and use it at gas pumps. Credit cards at gas stations will ask for a pin.", "Rent a car and make sure to get insurance, Iceland's weather has a mind of it's own."
+            "I recommend not getting accommodations in one city as you'll be doing a lot of driving back and forth. If you do, plan your days appropriately, gas ain't cheap.", "Look out for speed trap signs, and slow down if you see it!! They literally warn you that a speed trap device is approaching. If you see the sign, it's guaranteed there is one coming right up.", "Pack noodles and go grocery shopping for snacks/ sandwiches: meat and to-go food is very expensive.", "Don't have any food spots listed since we ate practically only ate gas station food, ramen noodles, and thai food (family style), due to tip #3", "Prepay for a gas card and use it at gas pumps. Credit cards at gas stations will ask for a pin.", "Rent a car and make sure to get insurance, Iceland's weather has a mind of it's own.", "If you see a spot ending with 'foss', it means 'falls' like waterfall."
         ],
 		recommendations: [
             {
@@ -605,11 +605,26 @@ const locationsArray = [
 				},
             },
             {
-				name: "Thingvellir National Park Silfra Fissure",
+				name: "Silfra Fissure at Thingvellir",
 				address: "Thingvellir, 801 Selfoss, Iceland",
 				commentary: "Snorkeling in Silfra Fissure is a MUST! Be prepared to go in water that is -16°(F). Silfra is said to have the clearest water in the world; feel free to have a sip of this pristine water at any point during your dive or snorkel (not kidding)!",
 				tips: [
                     "Book through a company and they will provide wet suit and gear. I don't know if you can do it without booking a tour."
+                ],
+				category: "adventures",
+				types: ["snorkeling", "hiking"],
+				label: '',
+				coord: {
+					lat: 64.25591960000001,
+					long: -21.1295497
+				},
+            },
+			{
+				name: "Thingvellir National Park",
+				address: "Thingvellir, 801 Selfoss, Iceland",
+				commentary: "This national park sits in a rift valley. This is where the tectonic plates of N America and Europe are drifting apart and you can see the results of mother nature doing it's work. If you want to dive between the 2 continental plates, look at my recommendation 'Silfra Fissure at Thingvellir'.",
+				tips: [
+                    "Look out for Öxará River - which falls off the side of one of the plates leading into a series of waterfalls in the Drekkingarhylur Pool", "You can walk alongside both plates"
                 ],
 				category: "adventures",
 				types: ["snorkeling", "hiking"],
@@ -656,6 +671,123 @@ const locationsArray = [
 				coord: {
 					lat: 63.4186315,
 					long: -19.0060479
+				},
+            },
+			{
+				name: "Strokkur",
+				address: "Haukadalsvegur, Iceland",
+				commentary: "a fountain-type geyser located in a geothermal area and erupts every 6-10 minutes",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 64.3193048,
+					long: -20.2930999
+				},
+            },
+			{
+				name: "Urridafoss Waterfall",
+				address: "Urriðafossvegur, Iceland",
+				commentary: "Iceland's most voluminous waterfall",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 63.905218,
+					long: -20.7061601
+				},
+            },
+			{
+				name: "Seljalandsfoss",
+				address: "Seljalandsfoss, Iceland",
+				commentary: "Breathtakingly beautiful and one of the best known waterfalls in Iceland (this is the one where you can walk behind the waterfall).",
+				tips: ["Bring a rain jacket - you WILL get wet"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 63.61562319999999,
+					long: -19.9885688
+				},
+            },
+			{
+				name: "Dyrhólaey",
+				address: "871 Vik, Iceland",
+				commentary: "'The Arch with the Hole' is what it's called",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 63.4186315,
+					long: -19.0060479
+				},
+            },
+			{
+				name: "Reynisfjara Black Sand Beach",
+				address: "Reynisfjara Black Sand Beach, Iceland",
+				commentary: "Enormous basalt stacks and black-sand made up of lava rocks, it's a beautiful site to see",
+				tips: ["Fun fact: The basalt stacks were featured in Game of Thrones"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 63.40574040000001,
+					long: -19.0716193
+				},
+            },
+			{
+				name: "Kerid Crater",
+				address: "Kerid Crater, Iceland",
+				commentary: "Volcanic crater lake that is surrounded by rare red volcanic rock",
+				tips: ["Fun fact: The basalt stacks were featured in Game of Thrones"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 64.0413,
+					long: -20.8851
+				},
+            },
+			{
+				name: "Vatnajokull Glacier",
+				address: "Vatnajokull, Iceland",
+				commentary: "Go ice cave exploring",
+				tips: ["You can only do this in winter really, for safety reasons (you don't want to get stuck in a melting ice cave, do you?)", "Book with tour group so they provide equipment and transportation!"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 64.42196899999999,
+					long: -16.7902035
+				},
+            },
+			{
+				name: "Fjadrargljufur Canyon",
+				address: "Fjadrargljufur Canyon, Iceland",
+				commentary: "This canyon is over 100 meters deep and is believed to be over 2 million years old",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 63.771279,
+					long: -18.1718158
+				},
+            },
+			{
+				name: "Olgerdin Brewery",
+				address: "Grjóthálsi 7-11, 110 Reykjavík, Iceland",
+				commentary: "Oldest brewery in all of Iceland!",
+				tips: ["Try some Icelandic beer or honey wine while you're there"],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 64.12327619999999,
+					long: -21.8020381
 				},
             },
         ]
@@ -868,31 +1000,86 @@ const locationsArray = [
             },
         ]
     },
+    {
+		name: "Dubai,UAE",
+		continent: "Asia",
+		coord: {
+			lat: 25.2442856,
+			long: 55.2858641
+        },
+		cityTips: [
+            "If you have time, I recommend booking a desert excursion - usually meet in the afternoon and get taken out to the dunes for sandboarding, camel rides, etc. (depending on what you booked)"
+        ],
+		recommendations: [
+            {
+				name: "Jumeirah Mosque",
+				address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
+				commentary: "mosque",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 25.2338,
+					long: 55.2655
+				},
+            },
+			{
+				name: "Burj Khalifa",
+				address: "1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - United Arab Emirates",
+				commentary: "The tallest building in the world and is equally impressive looking at it from the ground or at the top. Highly recommend going to the top and enjoying that 360 degree view of Dubai.",
+				tips: ["Book tickets in advance, they only allow x amount of people at a time."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 25.1975148,
+					long: 55.27487319999999
+				}
+			},
+			{
+				name: "Dubai Mall",
+				address: "Financial Center Street, Along Sheikh Zayed Road, Next to Burj Khalifa - Dubai - United Arab Emirates",
+				commentary: "One of the biggest shopping malls in the world and has so many activities inside the mall, aside from just shopping, like the aquarium, an indoor ski resort, etc.",
+				tips: ["Don't forget to see the iconic Dubai Mall Waterfall", "There is an extravagant (free) fountain show at the Dubai Fountains in front of the mall, recommend just seeing this at least once."],
+				category: "adventures",
+				types: ["sightsee", "shopping"],
+				label: '',
+				coord: {
+					lat: 25.198765,
+					long: 55.2796053
+				}
+			},
+			{
+				name: "Gold and Spice Souks",
+				address: "Gold Corner Building, 3rd Floor - Gold Souq - Deira - Dubai - United Arab Emirates",
+				commentary: "Traditional outdoor markets. There is the Gold Souk, famous for its bona fide gold jewerly shops, and few minutes down is the traiditonal Spice Souk, where almost every kind of spice and herb is available. Even if you don't buy anything, it's a great experience just strolling through them.",
+				tips: [],
+				category: "adventures",
+				types: ["shopping"],
+				label: '',
+				coord: {
+					lat: 25.2686016,
+					long: 55.2974063
+				}
+			},
+			{
+				name: "Dubai Frame",
+				address: "Zabeel Park Jogging Track - Za'abeelAl Kifaf - Dubai - United Arab Emirates",
+				commentary: "A huge picture-frame-like structure that is strategically placed to capture the city's skyline in the frame. There is an observation deck where you can get a great view of both Dubai's old and new town.",
+				tips: ["Buy tickets ahead of time to skip the lines."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 25.23556,
+					long: 55.3003639
+				}
+			}
+        ]
+    },
     // {
-	// 	name: "Dubai,UAE",
-	// 	continent: "Asia",
-	// 	coord: {
-	// 		lat: 25.2442856,
-	// 		long: 55.2858641
-    //     },
-	// 	recommendations: [
-    //         {
-	// 			name: "Jumeirah Mosque",
-	// 			address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
-	// 			commentary: "mosque",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 25.2338,
-	// 				long: 55.2655
-	// 			},
-    //         }
-    //     ]
-    // },
-    // {
-	// 	name: "Italy,Rome",
+	// 	name: "Rome,Italy",
 	// 	continent: "Europe",
 	// 	cityTips: [
 
@@ -907,7 +1094,7 @@ const locationsArray = [
 	// 			// name: "",
 	// 			// address: "",
 	// 			// commentary: "",
-	// 			// tips: [""],
+	// 			// tips: [],
 	// 			// category: "",
 	// 			// types: [],
 	// 			// label: '',
@@ -916,21 +1103,307 @@ const locationsArray = [
 	// 			// 	long: 0
 	// 			// }
 	// 		//},
-    //         {
-	// 			name: "",
+	// 		{
+	// 			name: "Colesseum",
 	// 			address: "",
 	// 			commentary: "",
-	// 			tips: [""],
-	// 			category: "",
-	// 			types: [],
+	// 			tips: ["Buy tickets ahead of time to skip lines (you can also get an audio tour guide)."],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
 	// 			label: '',
-	// 			coord: {
-	// 				lat: 0,
-	// 				long: 0
-	// 			}
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Palatine Hill",
+	// 			address: "",
+	// 			commentary: "",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Roman Forum",
+	// 			address: "",
+	// 			commentary: "",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Arch of Constantine",
+	// 			address: "",
+	// 			commentary: "",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Pantheon",
+	// 			address: "",
+	// 			commentary: "",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Trevi Fountain",
+	// 			address: "",
+	// 			commentary: "Like seen in the Lizzie Maguire Movie lol",
+	// 			tips: ["Gets VERY crowded and they don't allow you to sit on the fountain edge (unless you can do it before they yell at you)."],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Spanish Steps",
+	// 			address: "",
+	// 			commentary: "",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
+	// 		},
+	// 		{
+	// 			name: "Vatican City",
+	// 			address: "",
+	// 			commentary: "Prepare this to be an all day event",
+	// 			tips: [],
+	// 			category: "adventures",
+	// 			types: ["sightsee"],
+	// 			label: '',
+	// 			// coord: {
+	// 			// 	lat: 0,
+	// 			// 	long: 0
+	// 			// }
 	// 		},
     //     ]
     // },
+	{
+		name: "Venice,Italy",
+		continent: "Europe",
+		cityTips: [
+			"Get lost in Venice; I recommend just wandering around once in a while, you'll find a lot of hidden gems."
+		],
+		coord: {
+			lat: 45.4408,
+			long: 12.3155
+        },
+		recommendations: [
+			{
+				name: "Piazza San Marco",
+				address: "P.za San Marco, 30100 Venezia VE, Italy",
+				commentary: "St. Mark's Square: The heart of Venice. Holds 3 major sites: The Basilica di San Marco, The Torre dell'Orologio, and The Doges' Palace.",
+				tips: ["Recommend grabbing something to eat or some coffee at one of the side outdoor restaurants/ cafe and relaxing (or people watching)."],
+				category: "adventures",
+				types: ["sightsee", "eating", "coffee"],
+				label: '',
+				coord: {
+					lat: 45.4342798,
+					long: 12.338111
+				}
+			},
+			{
+				name: "Rialto Bridge",
+				address: "Sestiere San Polo, 30125 Venezia VE, Italy",
+				commentary: "Enjoy a beautiful view of the city while watching gondolas, vaporettos, and ferries travelling up and down the Grand Canal.",
+				tips: ["Gets very packed"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 45.4376436,
+					long: 12.3290729
+				}
+			},
+			{
+				name: "Bridge of Sighs",
+				address: "P.za San Marco, 1, 30124 Venezia VE, Italy",
+				commentary: "Inside the Doges' Palace, prisoners on their way to execution would have one final view of the city through this window. You can view the Bridge of Signs from inside and walk through it (and look through the window that shows a unique view of the city), or view the bridge from the outside, facing the Doges' Palace with the Grand Canyon behind you. Recommend both views, equally unique and esquiste",
+				tips: ["Book tickets ahead of time for Doges' Palace"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 45.4336664,
+					long: 12.3401954
+				}
+			},
+		]
+	},
+	{
+		name: "Florence,Italy",
+		continent: "Europe",
+		cityTips: [
+			"Don't leave without trying the Florentine Steak at least once! Usually offered at any restaurant around town. It's huge in size, some restaurants will state that it's for 2 people. Don't underestimate it.", "Not many food spots listed since I ate at any of the little shops in the piazzas I visited"
+		],
+		coord: {
+			lat: 43.7696,
+			long: 11.2558
+        },
+		recommendations: [
+			{
+				name: "Ponte Vecchio",
+				address: "7050 Catania Dr, Boynton Beach, FL 33472",
+				commentary: "One of the oldest bridges in Florence, and the most recognizable. It is filled with little shops and stalls.",
+				tips: ["The market is usally filled with people.", "Don't forget to get the views from the bridge, but also of the bridge on the outside."],
+				category: "adventures",
+				types: ["sightsee", "shopping"],
+				label: '',
+				coord: {
+					lat: 26.540574,
+					long: -80.1562465
+				}
+			},
+			{
+				name: "Duomo di Firenze",
+				address: "Piazza del Duomo, 50122 Firenze FI, Italy",
+				commentary: "Full name is Cattedrale di Santa Maria del Fiore, more commonly known as Duomo. It is easily one of the biggest buildings in Florence (can't miss it). It is as exquiste from the outside as it is from the inside.",
+				tips: ["Book a tour: they'll take you inside and to the top of the Duomo."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 43.7730912,
+					long: 11.2554649
+				}
+			},
+			{
+				name: "La Terrazza Bar",
+				address: "Vicolo dell'Oro, 6, 50123 Firenze FI, Italy",
+				commentary: "Rooftop bar perched within the Consorti Tower for great views while relaxing on some Tuscan wine.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 43.7687485,
+					long: 11.2533492
+				}
+			},
+			{
+				name: "Boboli Gardens",
+				address: "Piazza de' Pitti, 1, 50125 Firenze FI, Italy",
+				commentary: "A very serene spot with beautiful and intricate designs, if you want to get away from all the people and city vibes.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 43.7652537,
+					long: 11.2499219
+				}
+			},
+			{
+				name: "Tomb of Galileo",
+				address: "Piazza di Santa Croce, 16, 50122 Firenze FI, Italy",
+				commentary: "",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 43.7685641,
+					long: 11.2622774
+				}
+			},
+			{
+				name: "Piazza della Signoria",
+				address: "P.za della Signoria, 50122 Firenze FI, Italy",
+				commentary: "This Piazza is filled with statues, but most noteables are the 500-year-old Fountain of Neptune (can't miss this one, it's huge), Perseus with the head of Medusa, and Michelangelo's David (this one is a replica- original David is in Academia Gallery).",
+				tips: ["See if you can spot the signs for the execution site of Savonarola and the fire of the Vanities that occured in this Piazza."],
+				category: "adventures",
+				types: ["sightsee", "coffee", "eating"],
+				label: '',
+				coord: {
+					lat: 43.7695499,
+					long: 11.2560046
+				}
+			},
+			{
+				name: "Giotto's Bell Tower",
+				address: "Piazza del Duomo, 50122 Firenze FI, Italy",
+				commentary: "Right next to the Florence Cathedral, you can't miss this tower. You can climb up this tower, about 400-500 steps to get to the top, but the views are incredible and worth the effort!",
+				tips: ["No lift, so be prepared to work out. You can get a gelato or a refreshing Aperol Spritz after."],
+				category: "adventures",
+				types: ["sightsee", "hiking"],
+				label: '',
+				coord: {
+					lat: 43.7730912,
+					long: 11.2554649
+				}
+			},
+			{
+				name: "Piazzale Michelangelo",
+				address: "50125 Firenze FI, Italy",
+				commentary: "Top of this hill is a great spot to watch the sunset over Florence with views of the city and mountains.",
+				tips: ["Make sure to come beforehand to enjoy the view and claim your spot for the sunset. This area can fill up quickly."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 43.7437096,
+					long: 11.2580472
+				}
+			},
+			{
+				name: "Galleria dell'Accademia",
+				address: "Via Ricasoli, 58/60, 50129 Firenze FI, Italy",
+				commentary: "Home of the original Michelangelo's David sculpture and other masterpieces of Renaissance art.",
+				tips: ["Take a look at David's eyes if you can, I was told by my guide that his eyes are facing directly at Rome"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 43.7767682,
+					long: 11.2585778
+				}
+			},
+			{
+				name: "Gelateria La Carraia",
+				address: "Piazza Nazario Sauro, 25/r, 50124 Firenze FI, Italy",
+				commentary: "Silky and creamy gelato spot",
+				tips: ["My favorite was the dark chocolate with orange and strawberry cheesecake flavor"],
+				category: "foodAndDrinks",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 43.7696221,
+					long: 11.2466711
+				}
+			},
+		]
+	},
 	// {
 	// 	name: "Orlando,Florida",
 	// 	continent: "North America",
@@ -1050,7 +1523,7 @@ const locationsArray = [
     //     ]
     // },
     {
-		name: "Maui, Hawaii",
+		name: "Maui,Hawaii",
 		continent: "North America",
 		cityTips: [
 			"(Road to Hana tip) Download GyPSy audio guide for Road to Hana! It is $6.99 but it will be worth it 100%. Load it up on your phone before you go so it follows along your trip. It's a self guided tour audio with turn by turn directions!", "(Road to Hana tip) Leave early, like 5am early: it's an all day affair and you don't want to get stuck on the winding roads at night. I recommend being back in Paia by sunset or a little after, Road to Hana roads are scary at night for the unexperienced", "(Road to Hana tip) Plan your stops to make most of your time, there's a lot of stops along the way so make sure to see the ones you want!", "(Road to Hana tip) PREPARE: Gas up, pack snacks and drinks, and don't forget toilteries", "(Road to Hana tip) Plan extra time for unexpected stops along the way (for pics or unplanned trails)", "(Road to Hana tip) Rule of thumb for driving on this road: if you see somesone behind you driving faster, pull over to the next available side of the road and let them pass (locals drive on this road every day too) but for your safety, please don't drive like the locals! Drive slow and safe, there's nothing wrong with that!", "(Road to Hana tip) Hana is on the 'wet' side of the island, so prepare for light showers or muddy hikes. Which also means prepare the bug spray."
