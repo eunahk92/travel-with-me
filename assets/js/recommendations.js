@@ -15,7 +15,7 @@ const categoryArr = [
 	{ type: "coffee", icon: `<i class="fas fa-coffee"></i>` },
 	{ type: "sightsee", icon: `<i class="fas fa-binoculars"></i>` },
 	{ type: "spa", icon: `<i class="fas fa-spa"></i>` },
-	{ type: "local food", icon: `<i class="fas fa-utensils"></i>` },
+	{ type: "local food/ drinks", icon: `<i class="fas fa-utensils"></i>` },
 	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
 	{ type: "pastries", icon: `<i class="fas fa-bread-slice"></i>` },
 	
@@ -25,7 +25,7 @@ const locationsArray = [
 		name: "Honolulu,Hawaii",
 		continent: 'North America',
 		cityTips: [
-			"The delicious Hawaiian treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic.", "Traffic, traffic, traffic... Beware! Expect heavy traffic during rush hour."
+			"The delicious Hawaiian treat is called SHAVE ice, not SHAVED ice. If ever you see a place offering 'shaved ice' (in Hawaii or elsewhere), it is definitely not authentic.", "Traffic, traffic, traffic... Traffic going towards Honolulu is worst between 5am-8am, and traffic heading out of Honolulu tends to snarl up from 3pm-6pm. Expect heavy traffic during rush hour.", "Be aware of the signs posted on the beaches you visit. Depending on when you visit, there may be conditions like rip currents, dangerous shorebreak, brown water advisories, or box jellyfish in the waters", "If you’re going to hike Diamond Head/ Koko Head/ Makapu’u Lighthouse Trail, go as early as you can. There's hardly any shade at those locations.", "When snorkeling, don't step/ stand on the coral reef's.", "Don't feed or touch marine life, it can come with expensive consequences in certain areas (especially the turtles!).", "Bring your own snorkeling gear, save money!"
 		],
 		coord: {
 			lat: 21.5010,
@@ -38,7 +38,7 @@ const locationsArray = [
 				commentary: "Food truck style, not many seats",
 				tips: ["Try the Shrimp Scampi Plate!"],
 				category: "foodAndDrinks",
-				types: [],
+				types: ["local"],
 				label: '',
 				coord: {
 					lat: 21.5807083,
@@ -56,6 +56,84 @@ const locationsArray = [
 				coord: {
 					lat: 21.3665445,
 					long: -157.9393778
+				}
+			},
+			{
+				name: "Shark's Cove",
+				address: "59-727 Kamehameha Hwy, Haleiwa, HI 96712",
+				commentary: "A part of Pupukea Beach Park & is a lava-rock beach. Known for its' underwater rock formation and marine life.",
+				tips: ["Wear reef shoes or fins when snorkeling to avoid sharp lava rocks", "No actual sharks here, but a variety of vish, sea turtles, and maybe a moray eel or 2"],
+				category: "adventures",
+				types: ["snorkeling", "swimming", "beach"],
+				label: '',
+				coord: {
+					lat: 21.6637445,
+					long: -158.050678
+				}
+			},
+			{
+				name: "Haiku Gardens",
+				address: "46-336 Haiku Rd, Kaneohe, HI 96744",
+				commentary: "Beautiful garden with jaw-droppign mountain backdrops.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 21.414335,
+					long: -157.8152957
+				}
+			},
+			{
+				name: "Makapu'u Tidepools",
+				address: "8 7th St, Honolulu, HI 96819",
+				commentary: "",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee", "swimming"],
+				label: '',
+				coord: {
+					lat: 21.3450216,
+					long: -157.88107
+				}
+			},
+			{
+				name: "Makapu'u Lighthouse Trail",
+				address: "Makapuʻu Point Lighthouse Trail, Waimanalo, HI 96795",
+				commentary: "Hiking trail to the lighthouse. Sometimes you can do whale watching depending on the season!",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee", "hiking"],
+				label: '',
+				coord: {
+					lat: 21.3038214,
+					long: -157.6535015
+				}
+			},
+			{
+				name: "Tantalus Lookout",
+				address: "Nutridge St, Honolulu, HI 96822",
+				commentary: "A great city view of Honolulu. You can see inside the Diamond Head Crater from the top.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 21.3147841,
+					long: -157.8205714
+				}
+			},
+			{
+				name: "Mermaid Caves",
+				address: "Keaulana Ave, Hawaii 96792",
+				commentary: "Follow the rocky shoreline to the left for a few minutes and you'll see the opening for the caves. You can walk/ swim in the caves and (sometimes) jump off of the far cliffs",
+				tips: ["Check the tide levels before you go, you can only access the caves with low tide."],
+				category: "adventures",
+				types: ["swimming", "beach", "sightsee"],
+				label: '',
+				coord: {
+					lat: 21.3732293,
+					long: -158.1399859
 				}
 			},
             {
@@ -95,6 +173,19 @@ const locationsArray = [
 				coord: {
 					lat: 21.2849227,
 					long: -157.8132698
+				},
+            },
+			{
+				name: "Wow-Wow Lemonade Oahu",
+				address: "66-526 Kamehameha Hwy, Haleiwa, HI 96712",
+				commentary: "Fresh pressed juice with cute souvenir jars",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["local"],
+				label: '',
+				coord: {
+					lat: 21.5795363,
+					long: -158.1052039
 				},
             },
             {
@@ -231,9 +322,9 @@ const locationsArray = [
 				name: "Lucky Belly",
 				address: "50 N Hotel St, Honolulu, HI 96817",
 				commentary: "",
-				tips: ["Friend recommended the pork belly bao, oxtail dumplings, & the gyoza."],
+				tips: ["Friend recommended the pork belly bao, oxtail dumplings, & the gyoza.", "San Francisco-inspired craft cocktails"],
 				category: "extra",
-				types: [],
+				types: ["bar"],
 				label: '',
 				coord: {
 					lat: 21.3117452,
@@ -243,14 +334,53 @@ const locationsArray = [
 			{
 				name: "The Pig and The Lady",
 				address: "83 N King St, Honolulu, HI 96817",
-				commentary: "",
-				tips: [],
+				commentary: "Viet food inspired by Hawaiian Regional cruisine",
+				tips: ["Stop by Lucky Belly for Happy Hour"],
 				category: "foodAndDrinks",
 				types: [],
 				label: '',
 				coord: {
 					lat: 21.3114491,
 					long: -157.8636749
+				}
+			},
+			{
+				name: "Egg N Things",
+				address: "2464 Kalakaua Ave, Honolulu, HI 96815",
+				commentary: "Breakfast joint with multiple locations",
+				tips: ["Try their Macadamia Nut Pancakes with whipped cream, mouth watering!"],
+				category: "foodAndDrinks",
+				types: ["local"],
+				label: '',
+				coord: {
+					lat: 21.2748533,
+					long: -157.8242609
+				}
+			},
+			{
+				name: "Mai Tai Bar",
+				address: "2259 Kalakaua Ave, Honolulu, HI 96815",
+				commentary: "Great service, food and drinks. Located inside Royal Hawaiian Hotel on the beach so sit outside and relax",
+				tips: [],
+				category: "extra",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 21.2772621,
+					long: -157.8287186
+				}
+			},
+			{
+				name: "Roy's",
+				address: "6600 Kalanianaʻole Hwy, Honolulu, HI 96825",
+				commentary: "If you're looking for more of an extravagant meal or to celebrate an occasion, this is the spot to try.",
+				tips: ["Make a reservation! It's hard to get a table here without one."],
+				category: "foodAndDrinks",
+				types: ["seafood"],
+				label: '',
+				coord: {
+					lat: 21.2832851,
+					long: -157.7143291
 				}
 			},
             {
@@ -283,7 +413,7 @@ const locationsArray = [
 				name: "Hanauma Bay",
 				address: "7455 Kalanianaʻole Hwy, Honolulu, HI 96825",
 				commentary: "One of the most famous places on the entire island for Snorkel. There is also Hanauma Bay Lookout if you don't want to go for a dip!",
-				tips: [],
+				tips: ["Hanauma Bay's waters are clearest first thing on Wednesday morning since it's closed on Tuesdays"],
 				category: "adventures",
 				types: ["snorkeling", "beach"],
 				label: '',
@@ -395,7 +525,33 @@ const locationsArray = [
 					lat: 21.2762651,
 					long: -157.8271082
 				},
-            }
+            },
+			{
+				name: "House Without A Key",
+				address: "2199 Kalia Rd, Honolulu, HI 96815",
+				commentary: "For sunset mai tai's and live music with hula dancers. Ocean front restaurant, great for sunset views.",
+				tips: ["Must try Merriman’s famous Mai Tai"],
+				category: "extra",
+				types: ["bar", "local"],
+				label: '',
+				coord: {
+					lat: 21.2782153,
+					long: -157.8318756
+				}
+			},
+			{
+				name: "Merriman's",
+				address: "1108 Auahi St 170, Honolulu, HI 96814",
+				commentary: "Modern Hawaiian gastropub",
+				tips: ["Recommend the smoked oysters and Merriman's signature Mai Tai"],
+				category: "extra",
+				types: ["bar", "local"],
+				label: '',
+				coord: {
+					lat: 21.2936254,
+					long: -157.8525764
+				}
+			},
         ]
     },
     {

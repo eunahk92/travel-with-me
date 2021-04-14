@@ -190,13 +190,12 @@ h2 {
 		width: 100%;
 		max-height: 60vh;
 		overflow: hidden;
-		border: 2px solid rgba(255,255,255,0.95);
+		padding-top: 40px;
 	}
 	#map {
 		border: 2px solid rgba(255,255,255,0.95);
 		width: 100%;
 	}
-	
 	#tripContent-tips-list, #tripContent-eateries-list, #tripContent-adventures-list {
 		margin-bottom: 10px;
 		padding: 0;
