@@ -552,6 +552,19 @@ const locationsArray = [
 					long: -157.8525764
 				}
 			},
+			{
+				name: "Island Vintage Wine Bar",
+				address: "2301 Kalakaua Ave, Honolulu, HI 96815",
+				commentary: "Wine bar on the second floor with some great light menu items like poke or steamed clams in white wine.",
+				tips: [],
+				category: "extra",
+				types: ["bar", "coffee"],
+				label: '',
+				coord: {
+					lat: 21.2781681,
+					long: -157.828336
+				}
+			},
         ]
     },
     {
@@ -656,7 +669,7 @@ const locationsArray = [
 			long: 126.9892965
         },
 		cityTips: [
-			"Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies."
+			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies."
 		],
 		recommendations: [
             {
