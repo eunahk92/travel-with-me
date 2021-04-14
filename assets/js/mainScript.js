@@ -8,6 +8,5 @@ $(document).ready(function() {
         menu: true,
         normalScrollElements: '#tripContent',
         normalScrollElements: '#map',
-        fixedElements: '#header',
     });
 });
