@@ -184,7 +184,7 @@ h2 {
 
 /* Media query for mobile screen until I can get clamp on font-size to work*/
 @media only screen and (max-width: 600px) {
-	.recommendationListContainer { width: 100%; min-height: fit-content; }
+	.recommendationListContainer { width: 100%; min-height: auto; }
 	h2 { font-size: 3.5rem; letter-spacing: -.2rem; }
 	#mapContainer {
 		width: 100%;
