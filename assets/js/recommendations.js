@@ -304,7 +304,7 @@ const locationsArray = [
 				address: "32 N Hotel St, Honolulu, HI 96817",
 				commentary: "A coffee shop by day and a bar by night!",
 				tips: [],
-				category: "extra",
+				category: "extra-food",
 				types: ["coffee", "bar"],
 				label: '',
 				coord: {
@@ -330,8 +330,8 @@ const locationsArray = [
 				address: "50 N Hotel St, Honolulu, HI 96817",
 				commentary: "Asian Fusion Cuisine",
 				tips: ["Friend recommended the pork belly bao, oxtail dumplings, & the gyoza.", "San Francisco-inspired craft cocktails"],
-				category: "extra",
-				types: ["bar"],
+				category: "extra-food",
+				types: ["bar", "eating"],
 				label: '',
 				coord: {
 					lat: 21.3117452,
@@ -369,8 +369,8 @@ const locationsArray = [
 				address: "2259 Kalakaua Ave, Honolulu, HI 96815",
 				commentary: "Great service, food and drinks. Located inside Royal Hawaiian Hotel on the beach so sit outside and relax",
 				tips: [],
-				category: "extra",
-				types: ["bar"],
+				category: "extra-food",
+				types: ["bar", "eating"],
 				label: '',
 				coord: {
 					lat: 21.2772621,
@@ -473,7 +473,7 @@ const locationsArray = [
 				address: "49-560 Kamehameha Hwy, Kaneohe, HI 96744",
 				commentary: "Private 4,000 acre nature reserve & cattle ranch where JURASSIC PARK was filmed! & the show Five-0. There are a lot of things to do here: zipline, ATV, horseback, boat cruise, helicopter ride, jungle jeep expedition, etc.",
 				tips: ["All day affair, pack appropriately", "Book a package for the outdoor adventures/ tour."],
-				category: "extra",
+				category: "extra-adv",
 				types: ["hiking", "shopping"],
 				label: '',
 				coord: {
@@ -538,8 +538,8 @@ const locationsArray = [
 				address: "2199 Kalia Rd, Honolulu, HI 96815",
 				commentary: "For sunset mai tai's and live music with hula dancers. Ocean front restaurant, great for sunset views.",
 				tips: ["Must try Merriman’s famous Mai Tai"],
-				category: "extra",
-				types: ["bar", "local"],
+				category: "extra-food",
+				types: ["bar", "local", "eating"],
 				label: '',
 				coord: {
 					lat: 21.2782153,
@@ -551,8 +551,8 @@ const locationsArray = [
 				address: "1108 Auahi St 170, Honolulu, HI 96814",
 				commentary: "Modern Hawaiian gastropub",
 				tips: ["Recommend the smoked oysters and Merriman's signature Mai Tai"],
-				category: "extra",
-				types: ["bar", "local"],
+				category: "extra-food",
+				types: ["bar", "local", "eating"],
 				label: '',
 				coord: {
 					lat: 21.2936254,
@@ -564,7 +564,7 @@ const locationsArray = [
 				address: "2301 Kalakaua Ave, Honolulu, HI 96815",
 				commentary: "Wine bar on the second floor with some great light menu items like poke or steamed clams in white wine.",
 				tips: [],
-				category: "extra",
+				category: "extra-food",
 				types: ["bar", "coffee"],
 				label: '',
 				coord: {
@@ -1014,8 +1014,8 @@ const locationsArray = [
 				address: "38 Eulji-ro 1-gil, Mugyo-dong, Jung-gu, Seoul, South Korea",
 				commentary: "Very unique experience: They serve only one local dish per day, there is no menu and the meal comes with many small side dishes to combine with the entree.",
 				tips: [],
-				category: "extra",
-				types: ["eating"],
+				category: "extra-food",
+				types: ["eating", "local"],
 				label: '',
 				coord: {
 					lat: 37.5677037,
@@ -1027,7 +1027,7 @@ const locationsArray = [
 				address: "1 Dangsan-dong, Yeongdeungpo-gu, Seoul, South Korea",
 				commentary: "An island on the Hangang River that is a popular film location for Kdramas. The best part is the Seonyudo Bridge (pedestrian-only) that connects to the island (it's very romantic at night).",
 				tips: [],
-				category: "extra",
+				category: "extra-adv",
 				types: ["sightsee", "coffee"],
 				label: '',
 				coord: {
@@ -1079,7 +1079,7 @@ const locationsArray = [
 				address: "61-1 Wausan-ro, Mapo-gu, Seoul, South Korea",
 				commentary: "Small bar that offers their affordable cocktails to go in a little plastic bag. If you want to skip chugging soju that was bought from the convience store.",
 				tips: ["it is NOT illegal to drink on the streets in Korea"],
-				category: "extra",
+				category: "extra-food",
 				types: ["bar"],
 				label: '',
 				coord: {
@@ -1092,7 +1092,7 @@ const locationsArray = [
 				address: "23 Wausan-ro 29da-gil, Seogyo-dong, Mapo-gu, Seoul, South Korea",
 				commentary: "Trendy, Instagram spot - everything's pink",
 				tips: [],
-				category: "extra",
+				category: "extra-food",
 				types: ["coffee", "shopping"],
 				label: '',
 				coord: {
@@ -1105,7 +1105,7 @@ const locationsArray = [
 				address: "200 Achasan-ro, Jayang 4(sa)-dong, Gwangjin-gu, Seoul, South Korea",
 				commentary: "Hip, modern mall constructed from 200 shipping containers, featuring fashion & lifestyle shops & dining. (If you're from Orlando: It's like Boxi Park but BIGGER and with shops)",
 				tips: [],
-				category: "extra",
+				category: "extra-food",
 				types: ["shopping", "eating"],
 				label: '',
 				coord: {
@@ -1118,7 +1118,7 @@ const locationsArray = [
 				address: "225 Byeongbangchi-gil, Jeongseon-eup, Jeongseon-gun, Gangwon-do, South Korea",
 				commentary: "A skywalk (a tempered glass floor) that offers breathtaking views of a nearby Korean peninsula and Donggang River. The view is similar to Grand Canyon's Horseshoe Bend.",
 				tips: ["Have to pay for admission (buy tickets ahead of time)", "Friends have recommended doing the zipline (apparently the longest and fastest zipline in Asia)"],
-				category: "extra",
+				category: "extra-adv",
 				types: ["sightsee", "hiking"],
 				label: '',
 				coord: {
@@ -1131,7 +1131,7 @@ const locationsArray = [
 				address: "280-43 Cheonhwangsa-ro, Yeongam-eup, Yeongam-gun, Jeollanam-do 58424 South Korea",
 				commentary: "One of the more challenging hikes with numerous steep steel ladders and staircases to reach the peak. The bright red bridge connects the 2 peaks and has became a tourist attraction due to the beautiful views from a great vantage point.",
 				tips: ["Using Naver, type in “Wolchulsan National Park” it will route you to the parking lot", "This is an intermediate to advance labeled hike"],
-				category: "extra",
+				category: "extra-adv",
 				types: ["hiking"],
 				label: '',
 				coord: {
@@ -1144,7 +1144,7 @@ const locationsArray = [
 				address: "732-20 Hannam-dong, Yongsan-gu, Seoul, South Korea",
 				commentary: "Giant traditional Korean jjimjilbang (spa). Specifically known for getting water for their baths from underground. They have guestrooms if you prefer to stay here instead of a hotel.",
 				tips: ["open 24 hours"],
-				category: "extra",
+				category: "extra-adv",
 				types: ["spa"],
 				label: '',
 				coord: {
@@ -1157,7 +1157,7 @@ const locationsArray = [
 				address: "Itaewon-dong, Yongsan-gu, Seoul",
 				commentary: "A unique shopping experience unlike the other shopping districts. The street is lined with antique shops selling all sorts of Asian and European goodies.",
 				tips: [],
-				category: "extra",
+				category: "extra-adv",
 				types: ["shopping"],
 				label: '',
 				coord: {
@@ -1170,7 +1170,7 @@ const locationsArray = [
 				address: "2F, 53, Myeongdong 2-gil, Jung-gu, Seoul",
 				commentary: "A unique experience- you get to create your own perfume scent! Customize the perfume from its' base and natural flavors to the bottle and label inscription.",
 				tips: ["Advance booking required - go on their website"],
-				category: "extra",
+				category: "extra-adv",
 				types: ["shopping"],
 				label: '',
 				coord: {
@@ -1183,7 +1183,7 @@ const locationsArray = [
 				address: "6 Noksapyeong-daero 54-gil, Itaewon-dong, Yongsan-gu, Seoul",
 				commentary: "Korean craft beers! & this is the first bar in Asia to specialize in sours. Over 80 different imported bottles and a great selection of domestic beers like the 'Jeju Island Tangerine Gose' for all my beer lovers.",
 				tips: ["Closed Mondays"],
-				category: "extra",
+				category: "extra-food",
 				types: ["bar"],
 				label: '',
 				coord: {
@@ -1196,7 +1196,7 @@ const locationsArray = [
 				address: "24-12 Itaewon-ro 49-gil, Hannam-dong, Yongsan-gu, Seoul, South Korea",
 				commentary: "Highly recommended by a friend and known for unique ice-cream desserts, like vanilla ice cream with real honeycomb.",
 				tips: [],
-				category: "extra",
+				category: "extra-food",
 				types: ["dessert"],
 				label: '',
 				coord: {
@@ -1209,7 +1209,7 @@ const locationsArray = [
 				address: "140-1 Itaewon-ro, Yongsan-gu, Seoul, Korea",
 				commentary: "",
 				tips: ["Recommended to try the Maine Lobster Roll or Lobster Mac & Cheese"],
-				category: "extra",
+				category: "extra-food",
 				types: ["eating"],
 				label: '',
 				coord: {
@@ -2157,15 +2157,31 @@ renderListOfRecommendations = async (array, location) => {
 				case "adventures":
 					$("#tripContent-adventures-list").append(li);
 					break;
-				case "extra":
-					$("#tripContent-extras-list").append(li);
+				case "extra-adv":
+					$("#tripContent-adv-extras-list").append(li);
+					extrasCounter++;
+					break;
+				case "extra-food":
+					$("#tripContent-food-extras-list").append(li);
 					extrasCounter++;
 					break;
 			};
 		});
 	if (!extrasCounter) {
-		$("#tripContent-extras-list").append(`<p class="mx-2 smallText">Recommend something new for me to try :)</p>`);
-	} else if (!eateriesCounter) {
+		$('.noneMsg').remove();
+		$("#foodieSpots").css('display', 'none');
+		$("#advSpots").css('display', 'none');
+		$("#tripContent-adv-extras-list").css('display', 'none');
+		$("#tripContent-food-extras-list").css('display', 'none');
+		$("#tripContent-extras-list").append(`<p class="mx-2 smallText noneMsg">Recommend something new for me to try :)</p>`);
+	} else {
+		$('.noneMsg').remove();
+		$("#foodieSpots").css('display', 'block');
+		$("#advSpots").css('display', 'block');
+		$("#tripContent-adv-extras-list").css('display', 'block');
+		$("#tripContent-food-extras-list").css('display', 'block');
+	}
+	if (!eateriesCounter) {
 		$("#tripContent-eateries-list").append(`<p class="mx-2 smallText">soon to come...</p>`);
 	}
 	} catch { err => console.log(err)}
@@ -2203,7 +2219,8 @@ renderLocationContent = (location) => {
 	$('.locationTitle').attr('data-city', location);
 	$('#tripContent-eateries-list').empty();
 	$('#tripContent-adventures-list').empty();
-	$('#tripContent-extras-list').empty();
+	$('#tripContent-food-extras-list').empty();
+	$('#tripContent-adv-extras-list').empty();
 	$('#tripContent-tips-list').empty();
 	let markers = [];
 	let res = locationsArray.filter(city => city.name == location);

@@ -90,7 +90,7 @@
                 <div class="clearfix">
                     <a tabindex="0" class="smallText btn btn-link btn-sm popover-dismiss p-0 float-end" role="button" data-bs-toggle="popover" data-bs-container="body" data-bs-html="true" data-bs-trigger="focus"><i class="fas fa-key mx-1"></i>Legend</a>
                 </div>
-                <div class="tripDetails row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                <div class="tripDetails row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-4">
                     <div id="tripContent-eateries" class="col">
                         <div class="row">
                             <h3 class="recommendationsDivTitles">indulge & refresh</h3>
@@ -117,8 +117,11 @@
                             <p class="smallText mt-0 mb-1">[SPOTS ON MY LIST TO TRY ON NEXT VISIT]</p>
                             <span class="tripContent-border"></span>
                         </div>
-                        <div class="row">
-                            <div id="tripContent-extras-list" class="frame"></div>
+                        <div class="row" id="tripContent-extras-list">
+                            <p class="smallText mt-0 mb-1" id="foodieSpots">[FOODIE SPOTS]</p>
+                            <div id="tripContent-food-extras-list" class="frame"></div>
+                            <p class="smallText mt-0 mb-1" id="advSpots">[THINGS TODO]</p>
+                            <div id="tripContent-adv-extras-list" class="frame"></div>
                         </div>
                     </div>
                     <div id="tripContent-tips" class="col order-first">
