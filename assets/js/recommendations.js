@@ -816,7 +816,7 @@ const locationsArray = [
 			long: 126.9892965
         },
 		cityTips: [
-			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies.", "Don't be afraid to eat at that sidewalk kiosks or tents, it's better than restaurants sometimes!", "If you like dogs or cats, there are pet cafes! Dog cafes, cat cafes, rabbit cafes..."
+			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies.", "Don't be afraid to eat at that sidewalk kiosks or tents, it's better than restaurants sometimes!"
 		],
 		imgPaths: [
 			"./assets/photos/seoul/IMG_2804.jpg", 
@@ -917,7 +917,7 @@ const locationsArray = [
             {
 				name: "Bukhansan National Park",
 				address: "262 Bogukmun-ro, Jeongneung 4(sa)-dong, Seongbuk-gu, Seoul, South Korea",
-				commentary: "Hike up Bukhansan Mountain (follow markers for levels of hike).",
+				commentary: "Hike up Bukhansan Mountain for a view over the city center of Seoul and the Hangang River (follow markers for levels of hike).",
 				tips: [],
 				category: "adventures",
 				types: ["hiking"],
@@ -1040,7 +1040,7 @@ const locationsArray = [
 				address: "365-8 Seogyo-dong, Mapo-gu, Seoul, South Korea",
 				commentary: "Basically our version of a college town (like Athens, GA but smaller and closer together). Hongdae is also one of Seoul's biggest nightlife destinations and home to the city's biggest bars and  clubs. Streets are lined with lots of stores and an assortment of amazing (affordable) restaurants (it is a college town afterall). You'll see students busking (amateur street performers) as well during the day and night.",
 				tips: [],
-				category: "extra",
+				category: "adventures",
 				types: ["sightsee", "shopping", "eating", "bar"],
 				label: '',
 				coord: {
@@ -1086,7 +1086,59 @@ const locationsArray = [
 					lat: 37.5500295,
 					long: 126.9228849
 				},
-            }
+            },
+			{
+				name: "Stylenanda Pink Pool Cafe",
+				address: "23 Wausan-ro 29da-gil, Seogyo-dong, Mapo-gu, Seoul, South Korea",
+				commentary: "Trendy, Instagram spot - everything's pink",
+				tips: [],
+				category: "extra",
+				types: ["coffee", "shopping"],
+				label: '',
+				coord: {
+					lat: 37.554642,
+					long: 126.9275229
+				},
+            },
+			{
+				name: "Common Ground",
+				address: "200 Achasan-ro, Jayang 4(sa)-dong, Gwangjin-gu, Seoul, South Korea",
+				commentary: "Hip, modern mall constructed from 200 shipping containers, featuring fashion & lifestyle shops & dining. (If you're from Orlando: It's like Boxi Park but BIGGER and with shops)",
+				tips: [],
+				category: "extra",
+				types: ["shopping", "eating"],
+				label: '',
+				coord: {
+					lat: 37.5411175,
+					long: 127.0660706
+				},
+            },
+			{
+				name: "Byeongbangchi Skywalk",
+				address: "225 Byeongbangchi-gil, Jeongseon-eup, Jeongseon-gun, Gangwon-do, South Korea",
+				commentary: "A skywalk (a tempered glass floor) that offers breathtaking views of a nearby Korean peninsula and Donggang River. The view is similar to Grand Canyon's Horseshoe Bend.",
+				tips: ["Have to pay for admission (buy tickets ahead of time)", "Friends have recommended doing the zipline (apparently the longest and fastest zipline in Asia)"],
+				category: "extra",
+				types: ["sightsee", "hiking"],
+				label: '',
+				coord: {
+					lat: 37.340895,
+					long: 128.6333483
+				},
+            },
+			{
+				name: "Wolchulsan Cloud Bridge",
+				address: "280-43 Cheonhwangsa-ro, Yeongam-eup, Yeongam-gun, Jeollanam-do 58424 South Korea",
+				commentary: "One of the more challenging hikes with numerous steep steel ladders and staircases to reach the peak. The bright red bridge connects the 2 peaks and has became a tourist attraction due to the beautiful views from a great vantage point.",
+				tips: ["Using Naver, type in “Wolchulsan National Park” it will route you to the parking lot", "This is a intermediate to advance labeled hike"],
+				category: "extra",
+				types: ["hiking"],
+				label: '',
+				coord: {
+					lat: 34.7750486,
+					long: 126.7218085
+				},
+            },
         ]
     },
     {
