@@ -816,7 +816,7 @@ const locationsArray = [
 			long: 126.9892965
         },
 		cityTips: [
-			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies."
+			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies.", "Don't be afraid to eat at that sidewalk kiosks or tents, it's better than restaurants sometimes!", "If you like dogs or cats, there are pet cafes! Dog cafes, cat cafes, rabbit cafes..."
 		],
 		imgPaths: [
 			"./assets/photos/seoul/IMG_2804.jpg", 
@@ -1022,6 +1022,71 @@ const locationsArray = [
 					long: 126.9798457
 				},
             },
+			{
+				name: "Seonyudo Park",
+				address: "1 Dangsan-dong, Yeongdeungpo-gu, Seoul, South Korea",
+				commentary: "An island on the Hangang River that is a popular film location for Kdramas. The best part is the Seonyudo Bridge (pedestrian-only) that connects to the island (it's very romantic at night).",
+				tips: [],
+				category: "extra",
+				types: ["sightsee", "coffee"],
+				label: '',
+				coord: {
+					lat: 37.543569,
+					long: 126.8997156
+				},
+            },
+			{
+				name: "Hongdae",
+				address: "365-8 Seogyo-dong, Mapo-gu, Seoul, South Korea",
+				commentary: "Basically our version of a college town (like Athens, GA but smaller and closer together). Hongdae is also one of Seoul's biggest nightlife destinations and home to the city's biggest bars and  clubs. Streets are lined with lots of stores and an assortment of amazing (affordable) restaurants (it is a college town afterall). You'll see students busking (amateur street performers) as well during the day and night.",
+				tips: [],
+				category: "extra",
+				types: ["sightsee", "shopping", "eating", "bar"],
+				label: '',
+				coord: {
+					lat: 37.553166,
+					long: 126.9218031
+				},
+            },
+			{
+				name: "Choigozip Hongdae",
+				address: "25, World Cup buk-ro 2-gil, Mapo-gu, Seoul 121-898 South Korea",
+				commentary: "Popular KBBQ spot in Hongdae",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["local"],
+				label: '',
+				coord: {
+					lat: 37.5564249,
+					long: 126.9220821
+				},
+            },
+			{
+				name: "Okrumong",
+				address: "402-18 Seogyo-dong, Mapo-gu, Seoul, South Korea",
+				commentary: "Popular Bingsu (shaved ice dessert) and Juk (porridge) spot.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 37.5487208,
+					long: 126.9202828
+				},
+            },
+			{
+				name: "J. Vinyl",
+				address: "61-1 Wausan-ro, Mapo-gu, Seoul, South Korea",
+				commentary: "Small bar that offers their affordable cocktails to go in a little plastic bag. If you want to skip chugging soju that was bought from the convience store.",
+				tips: ["it is NOT illegal to drink on the streets in Korea"],
+				category: "extra",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 37.5500295,
+					long: 126.9228849
+				},
+            }
         ]
     },
     {
@@ -1032,7 +1097,7 @@ const locationsArray = [
 			long: 55.2858641
         },
 		cityTips: [
-            "If you have time, I recommend booking a desert excursion - usually meet in the afternoon and get taken out to the dunes for sandboarding, camel rides, etc. (depending on what you booked)"
+            "If you have time, I recommend booking a desert excursion - an all day affair: picked up in the morning/ afternoon and get taken out to the dunes for sandboarding, camel rides, etc. (depending on what you booked). Ends with a dinner and a show out the desert.", "Recommended dressing modestly, in respect for their culture (jeans & t-shirts, not anything that shows too much skin like tanktops and shorts).", "Show respect during Ramadan (can't eat or drink in public)."
         ],
 		imgPaths: [
 			"./assets/photos/dubai/IMG_0402.jpg", 
@@ -1043,19 +1108,6 @@ const locationsArray = [
 			"./assets/photos/dubai/IMG_9238.jpg"
 		],
 		recommendations: [
-            {
-				name: "Jumeirah Mosque",
-				address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
-				commentary: "mosque",
-				tips: [],
-				category: "adventures",
-				types: ["sightsee"],
-				label: '',
-				coord: {
-					lat: 25.2338,
-					long: 55.2655
-				},
-            },
 			{
 				name: "Burj Khalifa",
 				address: "1 Sheikh Mohammed bin Rashid Blvd - Downtown Dubai - Dubai - United Arab Emirates",
@@ -1107,7 +1159,20 @@ const locationsArray = [
 					lat: 25.23556,
 					long: 55.3003639
 				}
-			}
+			},
+			{
+				name: "Jumeirah Mosque",
+				address: "JumeirahJumeirah 1 - Dubai - United Arab Emirates",
+				commentary: "Beautiful mosque in Dubai.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 25.2442856,
+					long: 55.2858641
+				}
+			},
         ]
     },
     // {
