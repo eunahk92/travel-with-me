@@ -30,6 +30,14 @@ const locationsArray = [
 			lat: 21.5010,
 			long: -158.0377136
         },
+		imgPaths: [
+			"./assets/photos/honolulu/IMG_2813.jpg", 
+			"./assets/photos/honolulu/IMG_2814.jpg", 
+			"./assets/photos/honolulu/IMG_2801.jpg", 
+			"./assets/photos/honolulu/IMG_2800.jpg", 
+			"./assets/photos/honolulu/IMG_2799.jpg",
+			"./assets/photos/honolulu/IMG_2798.jpg"
+		],
 		recommendations: [
             {
 				name: "Giovanni Shrimp Truck",
@@ -576,6 +584,14 @@ const locationsArray = [
 		cityTips: [
             "I recommend not getting accommodations in one city as you'll be doing a lot of driving back and forth. If you do, plan your days appropriately, gas ain't cheap.", "Look out for speed trap signs, and slow down if you see it!! They literally warn you that a speed trap device is approaching. If you see the sign, it's guaranteed there is one coming right up.", "Pack noodles and go grocery shopping for snacks/ sandwiches: meat and to-go food is very expensive.", "Don't have any food spots listed since we ate practically only ate gas station food, ramen noodles, and thai food (family style), due to tip #3", "Prepay for a gas card and use it at gas pumps. Credit cards at gas stations will ask for a pin.", "Rent a car and make sure to get insurance, Iceland's weather has a mind of it's own.", "If you see a spot ending with 'foss', it means 'falls' like waterfall."
         ],
+		imgPaths: [
+			"./assets/photos/iceland/IMG_1710.jpg", 
+			"./assets/photos/iceland/IMG_2354.jpg", 
+			"./assets/photos/iceland/IMG_2364.jpg", 
+			"./assets/photos/iceland/IMG_2841.jpg", 
+			"./assets/photos/iceland/IMG_5129.jpg",
+			"./assets/photos/iceland/IMG_8413.jpg"
+		],
 		recommendations: [
             {
 				name: "Hallgrimskirkja Church",
@@ -802,6 +818,14 @@ const locationsArray = [
 		cityTips: [
 			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies."
 		],
+		imgPaths: [
+			"./assets/photos/seoul/IMG_2804.jpg", 
+			"./assets/photos/seoul/IMG_2805.jpg", 
+			"./assets/photos/seoul/IMG_2806.jpg", 
+			"./assets/photos/seoul/IMG_2807.jpg", 
+			"./assets/photos/seoul/IMG_2808.jpg",
+			"./assets/photos/seoul/IMG_2809.jpg"
+		],
 		recommendations: [
             {
 				name: "Dragon Hill Spa",
@@ -1010,6 +1034,14 @@ const locationsArray = [
 		cityTips: [
             "If you have time, I recommend booking a desert excursion - usually meet in the afternoon and get taken out to the dunes for sandboarding, camel rides, etc. (depending on what you booked)"
         ],
+		imgPaths: [
+			"./assets/photos/dubai/IMG_0402.jpg", 
+			"./assets/photos/dubai/IMG_2811.jpg", 
+			"./assets/photos/dubai/IMG_2812.jpg", 
+			"./assets/photos/dubai/IMG_3851.jpg", 
+			"./assets/photos/dubai/IMG_3852.jpg",
+			"./assets/photos/dubai/IMG_9238.jpg"
+		],
 		recommendations: [
             {
 				name: "Jumeirah Mosque",
@@ -1219,6 +1251,14 @@ const locationsArray = [
 			lat: 45.4408,
 			long: 12.3155
         },
+		imgPaths: [
+			"./assets/photos/venice/IMG_1984.jpg", 
+			"./assets/photos/venice/IMG_4176.jpg", 
+			"./assets/photos/venice/IMG_4278.jpg", 
+			"./assets/photos/venice/IMG_4314.jpg", 
+			"./assets/photos/venice/IMG_8429.jpg",
+			"./assets/photos/venice/IMG_9800.jpg"
+		],
 		recommendations: [
 			{
 				name: "Piazza San Marco",
@@ -1323,6 +1363,14 @@ const locationsArray = [
 			lat: 43.7696,
 			long: 11.2558
         },
+		imgPaths: [
+			"./assets/photos/florence/IMG_2811.jpg", 
+			"./assets/photos/florence/IMG_4088.jpg", 
+			"./assets/photos/florence/IMG_4107.jpg", 
+			"./assets/photos/florence/IMG_2805.jpg", 
+			"./assets/photos/florence/IMG_2806.jpg",
+			"./assets/photos/florence/IMG_2809.jpg"
+		],
 		recommendations: [
 			{
 				name: "Ponte Vecchio",
@@ -1584,6 +1632,14 @@ const locationsArray = [
 			lat: 20.7984,
 			long: -156.3319
         },
+		imgPaths: [
+			"./assets/photos/maui/IMG_0626.jpg", 
+			"./assets/photos/maui/IMG_0645.jpg", 
+			"./assets/photos/maui/IMG_0659.jpg", 
+			"./assets/photos/maui/IMG_0663.jpg", 
+			"./assets/photos/maui/IMG_0709.jpg",
+			"./assets/photos/maui/IMG_0711.jpg"
+		],
 		recommendations: [
 			{
 				name: "Molokini Crater",
@@ -1863,6 +1919,15 @@ generateGeocode = (array) => {
 	});
 };
 
+generatePhotos = (photoArr, location) => {
+	for(let i=1; i<photoArr.length + 1; i++) {
+		let photoIndex = i - 1;
+		let element = `#photo${i}`
+		$(element).attr('src', photoArr[photoIndex]);
+		$(element).attr('alt', `Eunah in ${location}`);
+	}
+};
+
 sortAlphabetically = (arr) => {
 	arr.sort((a, b) => {
         if (a.name === b.name) {
@@ -2040,7 +2105,9 @@ $(document).ready(() => {
 $(document.querySelector('.recommendationListContainer')).on('click', '.locationLink', e => {
 	let clickedLocation = e.target.innerText.trim();
 	$('.locationTitle').css('data-city', clickedLocation)
+	let array = locationsArray.filter(locations => locations.name == clickedLocation);
 	renderRecommendationsPage(clickedLocation);
+	generatePhotos(array[0].imgPaths, clickedLocation);
 });
 
 $(document.querySelector('#tripContent')).on('click', '.recommendationLink', e => {
