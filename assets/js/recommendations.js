@@ -816,7 +816,7 @@ const locationsArray = [
 			long: 126.9892965
         },
 		cityTips: [
-			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies.", "Don't be afraid to eat at that sidewalk kiosks or tents, it's better than restaurants sometimes!"
+			"Rent a wifi egg (pocket wifi) at the airport for your stay (return before you depart Korea). Recommend that over a prepaid SIM card.", "Don't rely on google maps, instead use KakaoMap (more detailed) or Naver Maps.", "Get a T-Money card from any convenience store to ride the subway; best way to get around the city. Download Subway Korea App for directions.", "Expect to pay cover at Korean clubs, even gals. Drinks at bars and clubs are expensive so you can buy from a convenience store to pregame.", "There are no open-container laws in Korea so you'll see people drinking practically anywhere, but DON'T drive while intoxicated, that law still applies.", "Don't be afraid to eat at that sidewalk kiosks or tents, it's better than restaurants sometimes!", "Things to pack (hard to find in Korea): deodorant and tampons (if you're very particular on size, material, or brand)"
 		],
 		imgPaths: [
 			"./assets/photos/seoul/IMG_2804.jpg", 
@@ -1130,7 +1130,7 @@ const locationsArray = [
 				name: "Wolchulsan Cloud Bridge",
 				address: "280-43 Cheonhwangsa-ro, Yeongam-eup, Yeongam-gun, Jeollanam-do 58424 South Korea",
 				commentary: "One of the more challenging hikes with numerous steep steel ladders and staircases to reach the peak. The bright red bridge connects the 2 peaks and has became a tourist attraction due to the beautiful views from a great vantage point.",
-				tips: ["Using Naver, type in “Wolchulsan National Park” it will route you to the parking lot", "This is a intermediate to advance labeled hike"],
+				tips: ["Using Naver, type in “Wolchulsan National Park” it will route you to the parking lot", "This is an intermediate to advance labeled hike"],
 				category: "extra",
 				types: ["hiking"],
 				label: '',
@@ -1139,6 +1139,84 @@ const locationsArray = [
 					long: 126.7218085
 				},
             },
+			{
+				name: "Itaewon Land",
+				address: "732-20 Hannam-dong, Yongsan-gu, Seoul, South Korea",
+				commentary: "Giant traditional Korean jjimjilbang (spa). Specifically known for getting water for their baths from underground. They have guestrooms if you prefer to stay here instead of a hotel.",
+				tips: ["open 24 hours"],
+				category: "extra",
+				types: ["spa"],
+				label: '',
+				coord: {
+					lat: 37.534083,
+					long: 126.9972736
+				}
+			},
+			{
+				name: "Itaewon Antique Street",
+				address: "Itaewon-dong, Yongsan-gu, Seoul",
+				commentary: "A unique shopping experience unlike the other shopping districts. The street is lined with antique shops selling all sorts of Asian and European goodies.",
+				tips: [],
+				category: "extra",
+				types: ["shopping"],
+				label: '',
+				coord: {
+					lat: 37.5400456,
+					long: 126.9921017
+				}
+			},
+			{
+				name: "G.N. Perfume Studio",
+				address: "2F, 53, Myeongdong 2-gil, Jung-gu, Seoul",
+				commentary: "A unique experience- you get to create your own perfume scent! Customize the perfume from its' base and natural flavors to the bottle and label inscription.",
+				tips: ["Advance booking required - go on their website"],
+				category: "extra",
+				types: ["shopping"],
+				label: '',
+				coord: {
+					lat: 37.5610562,
+					long: 126.9833297
+				}
+			},
+			{
+				name: "Sour Pongdang",
+				address: "6 Noksapyeong-daero 54-gil, Itaewon-dong, Yongsan-gu, Seoul",
+				commentary: "Korean craft beers! & this is the first bar in Asia to specialize in sours. Over 80 different imported bottles and a great selection of domestic beers like the 'Jeju Island Tangerine Gose' for all my beer lovers.",
+				tips: ["Closed Mondays"],
+				category: "extra",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 37.5392274,
+					long: 126.9876058
+				}
+			},
+			{
+				name: "Softree Ice Cream",
+				address: "24-12 Itaewon-ro 49-gil, Hannam-dong, Yongsan-gu, Seoul, South Korea",
+				commentary: "Highly recommended by a friend and known for unique ice-cream desserts, like vanilla ice cream with real honeycomb.",
+				tips: [],
+				category: "extra",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 37.5373286,
+					long: 126.999518
+				}
+			},
+			{
+				name: "Lobster Bar",
+				address: "140-1 Itaewon-ro, Yongsan-gu, Seoul, Korea",
+				commentary: "",
+				tips: ["Recommended to try the Maine Lobster Roll or Lobster Mac & Cheese"],
+				category: "extra",
+				types: ["eating"],
+				label: '',
+				coord: {
+					lat: 37.5339468,
+					long: 126.9893291
+				}
+			},
         ]
     },
     {
@@ -1491,15 +1569,15 @@ const locationsArray = [
 		recommendations: [
 			{
 				name: "Ponte Vecchio",
-				address: "7050 Catania Dr, Boynton Beach, FL 33472",
+				address: "Ponte Vecchio, 50125 Firenze FI, Italy",
 				commentary: "One of the oldest bridges in Florence, and the most recognizable. It is filled with little shops and stalls.",
 				tips: ["The market is usally filled with people.", "Don't forget to get the views from the bridge, but also of the bridge on the outside."],
 				category: "adventures",
 				types: ["sightsee", "shopping"],
 				label: '',
 				coord: {
-					lat: 26.540574,
-					long: -80.1562465
+					lat: 43.767925,
+					long: 11.2531435
 				}
 			},
 			{
