@@ -1233,7 +1233,7 @@ const locationsArray = [
 			"./assets/photos/dubai/IMG_0402.jpg", 
 			"./assets/photos/dubai/IMG_2811.jpg", 
 			"./assets/photos/dubai/IMG_2812.jpg", 
-			"./assets/photos/dubai/IMG_3851.jpg", 
+			"./assets/photos/dubai/IMG_3851.JPG", 
 			"./assets/photos/dubai/IMG_3852.jpg",
 			"./assets/photos/dubai/IMG_9238.jpg"
 		],
