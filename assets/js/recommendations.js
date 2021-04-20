@@ -1222,6 +1222,19 @@ const locationsArray = [
 					long: 126.9893291
 				}
 			},
+			{
+				name: "Seoulism",
+				address: "48-7 Songpa-dong, Songpa-gu, Seoul, South Korea",
+				commentary: "Stunning views of the city from this rooftop view",
+				tips: ["A very popular cafe so go during less-popular times or expect a wait, especially for pics.", "Due to its popularity, the cafe prices here are high."],
+				category: "extra-food",
+				types: ["food available", "seafood"],
+				label: '',
+				coord: {
+					lat: 37.509745,
+					long: 127.1115349
+				}
+			},
         ]
     },
     {
