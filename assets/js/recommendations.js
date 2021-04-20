@@ -2088,6 +2088,71 @@ const locationsArray = [
 					long: -81.365977
 				}
 			},
+			{
+				name: "Krungthep Tea Time",
+				address: "1051 W Fairbanks Ave, Winter Park, FL 32789",
+				commentary: "Sweet little Thai spot, known for their instagramable rainbow range of teas (iced or hot) and their mouth watering toast-style desserts.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 28.5932566,
+					long: -81.3628209
+				}
+			},
+			{
+				name: "Krave Tea",
+				address: "839 Orlando Ave, Winter Park, FL 32789",
+				commentary: "Local boba tea spot, known for their Black Sugar boba.",
+				tips: ["Their Thai Green Milk Tea is my favorite"],
+				category: "foodAndDrinks",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 28.604413,
+					long: -81.3657635
+				}
+			},
+			{
+				name: "Keke's Breakfast Cafe",
+				address: "345 W Fairbanks Ave, Winter Park, FL 32789",
+				commentary: "There are numerous locations throughout the city. Great spot that serves a variety of breakfast delicacies, savory and sweet.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["breakfast"],
+				label: '',
+				coord: {
+					lat: 28.5934726,
+					long: -81.3534551
+				}
+			},
+			{
+				name: "Se7en Bites",
+				address: "617 Primrose Dr, Orlando, FL 32803",
+				commentary: "Cute modern bakery that serves breakfast, lunch, and plenty of decadent sweets.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["breakfast", "dessert", "american"],
+				label: '',
+				coord: {
+					lat: 28.5518578,
+					long: -81.347139
+				}
+			},
+			{
+				name: "Craft & Common",
+				address: "47 E Robinson St UNIT 100, Orlando, FL 32801",
+				commentary: "Very trendy, hipster cafe that also services craft beer and wine.",
+				tips: ["Parking is located in the back"],
+				category: "foodAndDrinks",
+				types: ["coffee", "food available"],
+				label: '',
+				coord: {
+					lat: 28.5458382,
+					long: -81.3780712
+				}
+			},
         ]
     },
     {
