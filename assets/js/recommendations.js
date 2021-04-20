@@ -1708,7 +1708,7 @@ const locationsArray = [
 		name: "Orlando,Florida",
 		continent: "North America",
 		cityTips: [
-			"Expect traffic on I4 highway, especially around Disney area."
+			"Expect traffic on I4 highway, especially around Disney area.", "For the beer lovers- Orlando house over 25 local craft breweries. I listed the ones I've been to, but highly recommend checking at least 1 of these local breweries out."
 		],
 		imgPaths: [
 			"./assets/photos/orlando/IMG_2830.jpg", 
@@ -1763,11 +1763,24 @@ const locationsArray = [
 					long: -81.36475399999999
 				}
 			},
+			{
+				name: "Domu",
+				address: "3201 Corrine Dr Suite 100, Orlando, FL 32803",
+				commentary: "Adjacent to the East End Market is Domu, a very stylish Asian restaurant and craft bar.",
+				tips: ["They don't take reserverations, it's first come, first serve", "Cannot order ramen at the bar, only in the dining room. Recommend ordering small plates (apps) and a drink at the bar while waiting for a table.", "If you try anything at all here, it has to be the Domu Wings", "Parking can be hard here, especially on weekends.", "Not open for lunch on weekdays, but open for brunch on weekends."],
+				category: "foodAndDrinks",
+				types: ["bar", "asian"],
+				label: '',
+				coord: {
+					lat: 28.5683585,
+					long: -81.3437659
+				}
+			},
             {
 				name: "The Guesthouse",
 				address: "1321 N Mills Ave, Orlando, FL 32803",
 				commentary: "Delicious craft cocktails",
-				tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!", "Street parking is available or the lot behind the building."],
+				tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!", "Street parking is available or the parking lot behind the building."],
 				category: "foodAndDrinks",
 				types: ["bar"],
 				label: '',
@@ -1780,7 +1793,7 @@ const locationsArray = [
 				name: "East End Market",
 				address: "3201 Corrine Dr, Orlando, FL 32803",
 				commentary: "A hipster, indoor farmers market that showcases local businesses! From fresh juice to freshly baked goods, check it out.",
-				tips: ["Gideon cookies is a MUST TRY!"],
+				tips: ["Gideon cookies is a MUST TRY!", "Parking can be hard, especially on weekends."],
 				category: "adventures",
 				types: ["bar", "local", "food available", "dessert", "shopping"],
 				label: '',
@@ -1895,16 +1908,16 @@ const locationsArray = [
 			},
 			{
 				name: "Mochi Dochi",
-				address: "",
+				address: "1222 E Colonial, suite B, Orlando, FL 32803",
 				commentary: "A new twist to donuts! Fresh, house-crafted Japaense donuts made with mochi with flavors that compliment the texture of the donut, such as ube glaze, matcha-orea, etc.",
 				tips: ["Go early as they get packed and tend to sell out sometimes (mainly on weekends).", "Only open until mid-afternoon"],
 				category: "foodAndDrinks",
 				types: ["pastries"],
 				label: '',
-				// coord: {
-				// 	lat: 0,
-				// 	long: 0
-				// }
+				coord: {
+					lat: 28.5529026,
+					long: -81.3635082
+				}
 			},
 			{
 				name: "Wekiwa Springs State Park",
@@ -1922,14 +1935,144 @@ const locationsArray = [
 			{
 				name: "Blue Springs State Park",
 				address: "2100 W French Ave, Orange City, FL 32763",
-				commentary: "A great spot for paddle boarding, canoeing, scuba diving, kayaking, tubing, or swimming. During the right season, you can kayak/ canoe along manatees in the crystal clear waters of Blue Springs. The water stays around 72-degrees, perfect under the blazing Florida sun.",
+				commentary: "A dedicated manatee refuge and a great spot for paddle boarding, canoeing, scuba diving, kayaking, tubing, or swimming. During the right season, you can kayak/ canoe along manatees in the crystal clear waters of Blue Springs. The water stays around 72-degrees, perfect under the blazing Florida sun.",
 				tips: ["You CANNOT swim with the manatees", "If you swim upstream, you can reach the spring boil where you can snorkel in deeper waters for an amazing underwater view.", "You must be a certified diver for scuba diving here."],
 				category: "adventures",
-				types: ["snorkeling", "swimming"],
+				types: ["snorkeling", "swimming", "hiking"],
 				label: '',
 				coord: {
 					lat: 28.9465852,
 					long: -81.3402342
+				}
+			},
+			{
+				name: "Disney Springs",
+				address: "1486 Buena Vista Dr, Lake Buena Vista, FL 32830",
+				commentary: "An outdoor shopping, dining, and entertainment center right outside of Disney World.",
+				tips: ["Numerous parking garages and outdoor parking lots. Orange garage is one of the closer garages, with minimal walking to the plaza, but one of the busiest.", "Recommendations to eat at: Raglan Road (Irish pub), Morimoto Asia (Asian/ sushi restaurant - highly recommend reservations for dinner), Blaze Pizza (Pizza), & The Boathouse (Seafood - highly recommend reservations for dinner)."],
+				category: "adventures",
+				types: ["shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 28.3701571,
+					long: -81.5163054
+				}
+			},
+			{
+				name: "Lake Eola Park",
+				address: "512 E Washington St, Orlando, FL 32801",
+				commentary: "In the heart of Downtown Orlando, Lake Eola is a great spot for a daily stroll, a picnic next to the lake, going for a swan boat ride, or (if you're there on a Sunday) enjoy the farmer's market. It's beautiful during Christmas time with decorated lights.",
+				tips: ["Parking can be limited, beware of signage for private spots or time-limited parking."],
+				category: "adventures",
+				types: ["sightsee", "shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 28.5432783,
+					long: -81.3708109
+				}
+			},
+			{
+				name: "Ivanhoe Park Brewing Co.",
+				address: "1300 Alden Rd, Orlando, FL 32803",
+				commentary: "Craft brewery and tasting room located in the historic Ivahoe district.",
+				tips: ["Occasionally has food trucks outside"],
+				category: "foodAndDrinks",
+				types: ["brewery"],
+				label: '',
+				coord: {
+					lat: 28.5631432,
+					long: -81.3722714
+				}
+			},
+			{
+				name: "Orlando Brewing",
+				address: "1301 Atlanta Ave, Orlando, FL 32806",
+				commentary: "One of the oldest Orlando breweries that serve craft beer that exclusively uses organic ingredients. They're the only U.S.D.A.-certified organic brewery east of Colorado.",
+				tips: ["Does not serve food"],
+				category: "foodAndDrinks",
+				types: ["brewery"],
+				label: '',
+				coord: {
+					lat: 28.5264039,
+					long: -81.3826012
+				}
+			},
+			{
+				name: "Sideward Brewing",
+				address: "210 N Bumby Ave suite c, Orlando, FL 32803",
+				commentary: "Family owned brewery located in a 100-year-old warehouse. They're known for their unique and fruit inspired brews.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["brewery"],
+				label: '',
+				coord: {
+					lat: 28.5453923,
+					long: -81.35216609999999
+				}
+			},
+			{
+				name: "Player 1 Video Game Bar",
+				address: "8562 Palm Pkwy, Orlando, FL 32836",
+				commentary: "It's like taking a step back in the 90's. This bar offers classic arcade games with a selection of craft beers, meads, wines, and more.",
+				tips: ["$5 cover charge"],
+				category: "adventures",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 28.38413,
+					long: -81.5017177
+				}
+			},			
+			{
+				name: "Pig Floyds",
+				address: "1326 N Mills Ave, Orlando, FL 32803",
+				commentary: "A rustic counter-service restaurant that serves mouth watering, flavorful BBQ dishes.",
+				tips: ["Street parking available or parking behind the building."],
+				category: "foodAndDrinks",
+				types: ["american"],
+				label: '',
+				coord: {
+					lat: 28.5630657,
+					long: -81.36466810000002
+				}
+			},
+			{
+				name: "King Cajun Crawfish",
+				address: "924 N Mills Ave, Orlando, FL 32803",
+				commentary: "Authentic cajun (with their little twist of modern flavors) Seafood boil",
+				tips: ["Get the ShaBang sauce with your desired level of spice for your chosen platter, won't regret it!", "Get their fries on the side, they're great"],
+				category: "foodAndDrinks",
+				types: ["seafood"],
+				label: '',
+				coord: {
+					lat: 28.5575064,
+					long: -81.36475399999999
+				}
+			},
+			{
+				name: "Vietnam Cuisine",
+				address: "1224 E Colonial Dr, Orlando, FL 32803",
+				commentary: "One of my favorite spots for pho! Small restaurant located in Orlando's Viet town.",
+				tips: ["The Ban Cuon and Pho is my favorite here"],
+				category: "foodAndDrinks",
+				types: ["asian"],
+				label: '',
+				coord: {
+					lat: 28.552967,
+					long: -81.3634594
+				}
+			},
+			{
+				name: "Lazy Moon Pizza",
+				address: "1011 E Colonial Dr Suite 101, Orlando, FL 32803",
+				commentary: "A hipster pizzeria that is known for their JUMBO pizza slices. The pizza is so big that it doesn't even all fit on their provided plate. Although they are huge, they are slightly on the thinner side.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["american"],
+				label: '',
+				coord: {
+					lat: 28.5534424,
+					long: -81.365977
 				}
 			},
         ]
