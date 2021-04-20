@@ -6,18 +6,23 @@ let intViewportWidth = window.innerWidth;
 const listPage = $(document.querySelector('#tripDetailsSection'));
 const categoryArr = [
 	{ type: "desserts", icon: `<i class="fas fa-ice-cream"></i>` },
+	{ type: "local food/ drinks", icon: `<i class="fas fa-utensils"></i>` },
+	{ type: "pastries", icon: `<i class="fas fa-bread-slice"></i>` },
+	{ type: "seafood", icon: `<i class="fas fa-fish"></i>` },
+	{ type: "asian food", icon: `<span class="material-icons align-middle tiny">set_meal</span>` },
+	{ type: "american food", icon: `<span class="material-icons align-middle tiny">lunch_dining</span>` },
+	{ type: "breakfast food", icon: `<span class="material-icons align-middle tiny">breakfast_dining</span>` },
+	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt"></i>` },
+	{ type: "brewery", icon: `<i class="fas fa-beer"></i>` },
 	{ type: "hiking", icon: `<i class="fas fa-hiking"></i>` },
 	{ type: "shopping", icon: `<i class="fas fa-shopping-bag"></i>` },
-	{ type: "eating", icon: `<i class="fas fa-utensils"></i>` },
+	{ type: "food available", icon: `<span class="material-icons align-middle tiny">dining</span>` },
 	{ type: "swimming", icon: `<i class="fas fa-swimmer"></i>` },
-	{ type: "snorkeling", icon: `<i class="fas fa-fish"></i>` },
-	{ type: "bar", icon: `<i class="fas fa-glass-martini-alt"></i>` },
+	{ type: "snorkeling", icon: `<span class="material-icons align-middle">pool</span>` },
 	{ type: "coffee", icon: `<i class="fas fa-coffee"></i>` },
 	{ type: "sightsee", icon: `<i class="fas fa-binoculars"></i>` },
 	{ type: "spa", icon: `<i class="fas fa-spa"></i>` },
-	{ type: "local food/ drinks", icon: `<i class="fas fa-utensils"></i>` },
 	{ type: "beach", icon: `<i class="fas fa-umbrella-beach"></i>` },
-	{ type: "pastries", icon: `<i class="fas fa-bread-slice"></i>` },
 ];
 const locationsArray = [
     {
@@ -149,7 +154,7 @@ const locationsArray = [
 				commentary: "You can get poke everywhere, from Ahi Assassins to your local food market, like Foodland (like a publix).",
 				tips: [],
 				category: "foodAndDrinks",
-				types: [],
+				types: ["seafood"],
 				label: '',
 				coord: {
 					lat: 21.2925559,
@@ -253,7 +258,7 @@ const locationsArray = [
 				commentary: "Authentic Japanese Udon noodles",
 				tips: [],
 				category: "foodAndDrinks",
-				types: [],
+				types: ["asian food"],
 				label: '',
 				coord: {
 					lat: 21.2796049,
@@ -292,7 +297,7 @@ const locationsArray = [
 				commentary: "On the way to North Shore Beach, stop by the famous Dole Pineapple Farm! There is a pineapple maze (world's largest maze?) and little shops and dessert spots.",
 				tips: ["Recommendation: You have to try the delicious pineapple soft serve"],
 				category: "adventures",
-				types: ["tour", "shopping", "eating"],
+				types: ["tour", "shopping", "food available"],
 				label: '',
 				coord: {
 					lat: 21.5260075,
@@ -331,7 +336,7 @@ const locationsArray = [
 				commentary: "Asian Fusion Cuisine",
 				tips: ["Friend recommended the pork belly bao, oxtail dumplings, & the gyoza.", "San Francisco-inspired craft cocktails"],
 				category: "extra-food",
-				types: ["bar", "eating"],
+				types: ["bar", "asian"],
 				label: '',
 				coord: {
 					lat: 21.3117452,
@@ -344,7 +349,7 @@ const locationsArray = [
 				commentary: "Viet food inspired by Hawaiian Regional cruisine",
 				tips: ["Stop by Lucky Belly for Happy Hour"],
 				category: "foodAndDrinks",
-				types: [],
+				types: ["asian"],
 				label: '',
 				coord: {
 					lat: 21.3114491,
@@ -357,7 +362,7 @@ const locationsArray = [
 				commentary: "Breakfast joint with multiple locations",
 				tips: ["Try their Macadamia Nut Pancakes with whipped cream, mouth watering!"],
 				category: "foodAndDrinks",
-				types: ["local"],
+				types: ["local", "breakfast"],
 				label: '',
 				coord: {
 					lat: 21.2748533,
@@ -370,7 +375,7 @@ const locationsArray = [
 				commentary: "Great service, food and drinks. Located inside Royal Hawaiian Hotel on the beach so sit outside and relax",
 				tips: [],
 				category: "extra-food",
-				types: ["bar", "eating"],
+				types: ["bar", "food available"],
 				label: '',
 				coord: {
 					lat: 21.2772621,
@@ -487,7 +492,7 @@ const locationsArray = [
 				commentary: "The Laylow in general is Instagram heaven and the Hideout is no exception. Food is good here too but at a minimum, stop by for a drink and snap some pics!",
 				tips: [],
 				category: "foodAndDrinks",
-				types: ["eating", "bar"],
+				types: ["food available", "bar"],
 				label: '',
 				coord: {
 					lat: 21.2792893,
@@ -513,7 +518,7 @@ const locationsArray = [
 				commentary: "Waikiki is Honolulu’s largest shopping mall. *If you're from Orlando, it's like the Mall of Millenia but even bigger.",
 				tips: [],
 				category: "adventures",
-				types: [ "shopping", "eating"],
+				types: [ "shopping", "food available"],
 				label: '',
 				coord: {
 					lat: 21.291298,
@@ -526,7 +531,7 @@ const locationsArray = [
 				commentary: "It’s the main touristy area of town where there’s a numerous hotels/ resorts, stores, and restaurants lining up the beach. A lot of beautiful beaches (Waikiki beach, Kuhio Beach, Kahanamoku Beach) to choose from. This is also where the more mainland restaurant brands will be.",
 				tips: [],
 				category: "adventures",
-				types: ["beach", "shopping", "eating"],
+				types: ["beach", "shopping", "food available"],
 				label: '',
 				coord: {
 					lat: 21.2762651,
@@ -539,7 +544,7 @@ const locationsArray = [
 				commentary: "For sunset mai tai's and live music with hula dancers. Ocean front restaurant, great for sunset views.",
 				tips: ["Must try Merriman’s famous Mai Tai"],
 				category: "extra-food",
-				types: ["bar", "local", "eating"],
+				types: ["bar", "local", "food available"],
 				label: '',
 				coord: {
 					lat: 21.2782153,
@@ -552,7 +557,7 @@ const locationsArray = [
 				commentary: "Modern Hawaiian gastropub",
 				tips: ["Recommend the smoked oysters and Merriman's signature Mai Tai"],
 				category: "extra-food",
-				types: ["bar", "local", "eating"],
+				types: ["bar", "local", "food available"],
 				label: '',
 				coord: {
 					lat: 21.2936254,
@@ -799,7 +804,7 @@ const locationsArray = [
 				commentary: "Oldest brewery in all of Iceland!",
 				tips: ["Try some Icelandic beer or honey wine while you're there"],
 				category: "foodAndDrinks",
-				types: ["bar"],
+				types: ["brewery"],
 				label: '',
 				coord: {
 					lat: 64.12327619999999,
@@ -862,7 +867,7 @@ const locationsArray = [
                     "I recommend taking the cable car up and taking the stairs down."
                 ],
 				category: "adventures",
-				types: ["sightsee", "eating", "shopping"],
+				types: ["sightsee", "food available", "shopping"],
 				label: '',
 				coord: {
 					lat: 37.5509473,
@@ -894,7 +899,7 @@ const locationsArray = [
                     ""
                 ],
 				category: "adventures",
-				types: ["sightsee", "eating", "shopping"],
+				types: ["sightsee", "food available", "shopping"],
 				label: '',
 				coord: {
 					lat: 37.5833149,
@@ -907,7 +912,7 @@ const locationsArray = [
 				commentary: "It's like Disney world but not Disney. A day's worth activities: world's largest indoor theme park, shopping malls, outdoor amusement park, sports facilities, and more!",
 				tips: [],
 				category: "adventures",
-				types: ["sightsee", "shopping", "eating"],
+				types: ["sightsee", "shopping", "food available"],
 				label: '',
 				coord: {
 					lat: 37.5111158,
@@ -933,7 +938,7 @@ const locationsArray = [
 				commentary: "Myeongdong Market is one of South Korea’s prime shopping districts – you’ll find department stores, shopping malls, and independent shops, together with a host of trendy restaurants and cafes.",
 				tips: [],
 				category: "adventures",
-				types: ["shopping", "eating"],
+				types: ["shopping", "food available"],
 				label: '',
 				coord: {
 					lat: 37.55998,
@@ -972,7 +977,7 @@ const locationsArray = [
 				commentary: "Largest traditional market",
 				tips: ["FYI market is closed on Sunday"],
 				category: "adventures",
-				types: ["shopping","eating"],
+				types: ["shopping","food available"],
 				label: '',
 				coord: {
 					lat: 37.55914730000001,
@@ -1015,7 +1020,7 @@ const locationsArray = [
 				commentary: "Very unique experience: They serve only one local dish per day, there is no menu and the meal comes with many small side dishes to combine with the entree.",
 				tips: [],
 				category: "extra-food",
-				types: ["eating", "local"],
+				types: ["food available", "local"],
 				label: '',
 				coord: {
 					lat: 37.5677037,
@@ -1041,7 +1046,7 @@ const locationsArray = [
 				commentary: "Basically our version of a college town (like Athens, GA but smaller and closer together). Hongdae is also one of Seoul's biggest nightlife destinations and home to the city's biggest bars and  clubs. Streets are lined with lots of stores and an assortment of amazing (affordable) restaurants (it is a college town afterall). You'll see students busking (amateur street performers) as well during the day and night.",
 				tips: [],
 				category: "adventures",
-				types: ["sightsee", "shopping", "eating", "bar"],
+				types: ["sightsee", "shopping", "food available", "bar"],
 				label: '',
 				coord: {
 					lat: 37.553166,
@@ -1106,7 +1111,7 @@ const locationsArray = [
 				commentary: "Hip, modern mall constructed from 200 shipping containers, featuring fashion & lifestyle shops & dining. (If you're from Orlando: It's like Boxi Park but BIGGER and with shops)",
 				tips: [],
 				category: "extra-food",
-				types: ["shopping", "eating"],
+				types: ["shopping", "food available"],
 				label: '',
 				coord: {
 					lat: 37.5411175,
@@ -1184,7 +1189,7 @@ const locationsArray = [
 				commentary: "Korean craft beers! & this is the first bar in Asia to specialize in sours. Over 80 different imported bottles and a great selection of domestic beers like the 'Jeju Island Tangerine Gose' for all my beer lovers.",
 				tips: ["Closed Mondays"],
 				category: "extra-food",
-				types: ["bar"],
+				types: ["brewery", "bar"],
 				label: '',
 				coord: {
 					lat: 37.5392274,
@@ -1210,7 +1215,7 @@ const locationsArray = [
 				commentary: "",
 				tips: ["Recommended to try the Maine Lobster Roll or Lobster Mac & Cheese"],
 				category: "extra-food",
-				types: ["eating"],
+				types: ["food available", "seafood"],
 				label: '',
 				coord: {
 					lat: 37.5339468,
@@ -1461,7 +1466,7 @@ const locationsArray = [
 				commentary: "St. Mark's Square: The heart of Venice. Holds 3 major sites: The Basilica di San Marco, The Torre dell'Orologio, and The Doges' Palace.",
 				tips: ["Recommend grabbing something to eat or some coffee at one of the side outdoor restaurants/ cafe and relaxing (or people watching)."],
 				category: "adventures",
-				types: ["sightsee", "eating", "coffee"],
+				types: ["sightsee", "food available", "coffee"],
 				label: '',
 				coord: {
 					lat: 45.4342798,
@@ -1539,7 +1544,7 @@ const locationsArray = [
 				commentary: "A great take out spot for fresh pasta",
 				tips: ["Try the squid ink pasta!"],
 				category: "foodAndDrinks",
-				types: ["bar"],
+				types: ["local"],
 				label: '',
 				coord: {
 					lat: 45.4363112,
@@ -1638,7 +1643,7 @@ const locationsArray = [
 				commentary: "This Piazza is filled with statues, but most noteables are the 500-year-old Fountain of Neptune (can't miss this one, it's huge), Perseus with the head of Medusa, and Michelangelo's David (this one is a replica- original David is in Academia Gallery).",
 				tips: ["See if you can spot the signs for the execution site of Savonarola and the fire of the Vanities that occured in this Piazza."],
 				category: "adventures",
-				types: ["sightsee", "coffee", "eating"],
+				types: ["sightsee", "coffee", "food available"],
 				label: '',
 				coord: {
 					lat: 43.7695499,
@@ -1699,124 +1704,236 @@ const locationsArray = [
 			},
 		]
 	},
-	// {
-	// 	name: "Orlando,Florida",
-	// 	continent: "North America",
-	// 	cityTips: [
-	// 		""
-	// 	],
-	// 	coord: {
-	// 		lat: 28.3852,
-	// 		long: -81.3792
-    //     },
-	// 	recommendations: [
-	// 		// Most updated obj properties:
-	// 		// {
-	// 			// name: "",
-	// 			// address: "",
-	// 			// commentary: "",
-	// 			// tips: [""],
-	// 			// category: "",
-	// 			// types: ["",""],
-	// 			// label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		//},
-	// 		{
-	// 			name: "The Wellborn",
-	// 			address: "211 N Lucerne Cir W, Orlando, FL 32801",
-	// 			commentary: "",
-	// 			tips: ["Parking can be tough here so uber if you can."],
-	// 			category: "foodAndDrinks",
-	// 			types: ["bar"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 28.535778,
-	// 				long: -81.3756003
-	// 			}
-	// 		},
-	// 		{
-	// 			name: "Tori Tori",
-	// 			address: "720 N Mills Ave, Orlando, FL 32803",
-	// 			commentary: "Japanese pub with delicious craft cocktails",
-	// 			tips: ["They don't take reserverations, it's first come, first serve", "Recommend the Salmon or Crab fried rice!"],
-	// 			category: "foodAndDrinks",
-	// 			types: ["bar"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 28.5539774,
-	// 				long: -81.36475399999999
-	// 			}
-	// 		},
-	// 		{
-	// 			name: "Santiago's Bodega",
-	// 			address: "802 Virginia Dr, Orlando, FL 32803",
-	// 			commentary: "Delicious brunch spot!",
-	// 			tips: [""],
-	// 			category: "foodAndDrinks",
-	// 			types: ["bar"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 28.5638579,
-	// 				long: -81.3671597
-	// 			}
-	// 		},
-    //         {
-	// 			name: "The Guesthouse",
-	// 			address: "1321 N Mills Ave, Orlando, FL 32803",
-	// 			commentary: "Delicious craft cocktails",
-	// 			tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!", "Street parking is available or the lot behind the building."],
-	// 			category: "foodAndDrinks",
-	// 			types: ["bar"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 28.5629081,
-	// 				long: -81.36421419999999
-	// 			}
-	// 		},
-	// 		{
-	// 			name: "East End Market",
-	// 			address: "3201 Corrine Dr, Orlando, FL 32803",
-	// 			commentary: "A hipster spot that showcases local businesses! From fresh juice to freshly baked goods, check it out.",
-	// 			tips: ["Gideon cookies is a MUST TRY!"],
-	// 			category: "adventures",
-	// 			types: ["bar", "local", "shopping", "eating", "dessert"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 28.5683585,
-	// 				long: -81.3437659
-	// 			}
-	// 		},
-	// 		{
-	// 			name: "Hanson’s Shoe Repair",
-	// 			address: "27 E Pine St, Orlando, FL 32801",
-	// 			commentary: "Speakeasy bar with some of the best craft cocktails in town, hands down.",
-	// 			tips: ["You need a password to get in: check their twitter."],
-	// 			category: "foodAndDrinks",
-	// 			types: ["bar"],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 28.5415,
-	// 				long: -81.3784136
-	// 			}
-	// 		},
-	// 		{
-	// 			name: "Kadence",
-	// 			address: "1809 Winter Park Rd, Orlando, FL 32803",
-	// 			commentary: "Small, reservations-only, Japanese restaurant featuring multi-course sushi meals plus sake (Omakase).",
-	// 			tips: ["Must make reservations online"],
-	// 			category: "foodAndDrinks",
-	// 			types: [],
-	// 			label: '',
-	// 			coord: {
-	// 				lat: 0,
-	// 				long: 0
-	// 			}
-	// 		},
-    //     ]
-    // },
+	{
+		name: "Orlando,Florida",
+		continent: "North America",
+		cityTips: [
+			"Expect traffic on I4 highway, especially around Disney area."
+		],
+		imgPaths: [
+			"./assets/photos/orlando/IMG_2830.jpg", 
+			"./assets/photos/orlando/IMG_4516.jpg",
+			"./assets/photos/orlando/IMG_2831.jpg", 
+			"./assets/photos/orlando/IMG_2832.jpg", 
+			"./assets/photos/orlando/IMG_5240.jpg",
+			"./assets/photos/orlando/IMG_2828.jpg"
+		],
+		coord: {
+			lat: 28.535778,
+			long: -81.3756003
+        },
+		recommendations: [
+			// Most updated obj properties:
+			// {
+				// name: "",
+				// address: "",
+				// commentary: "",
+				// tips: [""],
+				// category: "",
+				// types: ["",""],
+				// label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			//},
+			{
+				name: "The Wellborn",
+				address: "211 N Lucerne Cir W, Orlando, FL 32801",
+				commentary: "A very hipster/ instagram spot with delicious craft cocktails. The place is huge, outdoor seating available as well as 2 floors inside with patio seating upstairs.",
+				tips: ["Parking can be tough here so uber if you can."],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 28.535778,
+					long: -81.3756003
+				}
+			},
+			{
+				name: "Tori Tori",
+				address: "720 N Mills Ave, Orlando, FL 32803",
+				commentary: "Japanese pub with delicious craft cocktails and small bites.",
+				tips: ["They don't take reserverations, it's first come, first serve", "I always order the salmon or crab fried rice, the gyoza, beef yakatori with chimichurri skewer, and the chicken oysters skewer."],
+				category: "foodAndDrinks",
+				types: ["bar", "asian"],
+				label: '',
+				coord: {
+					lat: 28.5539774,
+					long: -81.36475399999999
+				}
+			},
+            {
+				name: "The Guesthouse",
+				address: "1321 N Mills Ave, Orlando, FL 32803",
+				commentary: "Delicious craft cocktails",
+				tips: ["They don't serve food inside but usually will have a food truck outdoor or the pizza place next door is delicious!", "Street parking is available or the lot behind the building."],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 28.5629081,
+					long: -81.36421419999999
+				}
+			},
+			{
+				name: "East End Market",
+				address: "3201 Corrine Dr, Orlando, FL 32803",
+				commentary: "A hipster, indoor farmers market that showcases local businesses! From fresh juice to freshly baked goods, check it out.",
+				tips: ["Gideon cookies is a MUST TRY!"],
+				category: "adventures",
+				types: ["bar", "local", "food available", "dessert", "shopping"],
+				label: '',
+				coord: {
+					lat: 28.5683585,
+					long: -81.3437659
+				}
+			},
+			{
+				name: "Hanson’s Shoe Repair",
+				address: "27 E Pine St, Orlando, FL 32801",
+				commentary: "Speakeasy bar with some of the best craft cocktails in town, hands down.",
+				tips: ["You need a password to get in: check their twitter."],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 28.5415,
+					long: -81.3784136
+				}
+			},
+			{
+				name: "Kadence",
+				address: "1809 Winter Park Rd, Orlando, FL 32803",
+				commentary: "Small, reservations-only, Japanese restaurant featuring multi-course sushi meals plus sake (Omakase).",
+				tips: ["Must make reservations online"],
+				category: "foodAndDrinks",
+				types: ["seafood"],
+				label: '',
+				coord: {
+					lat: 28.568412,
+					long: -81.345923
+				}
+			},
+			{
+				name: "Susuru",
+				address: "8548 Palm Pkwy, Orlando, FL 32836",
+				commentary: "If you're by Disney Springs area, this is a must try. Vintage ads & decor elevate this buzzing Japanese hangout serving drinks, ramen & grilled snacks.",
+				tips: ["Open for dinner only"],
+				category: "foodAndDrinks",
+				types: ["asian"],
+				label: '',
+				coord: {
+					lat: 28.3841325,
+					long: -81.50091789999999
+				}
+			},
+			{
+				name: "Hillstone",
+				address: "215 S Orlando Ave, Winter Park, FL 32789",
+				commentary: "If you're looking for an upscale dinner, I recommend Hillstone in Winter Park. Their outdoor seating overlooks a lake and is beautiful during Golden Hour.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["american"],
+				label: '',
+				coord: {
+					lat: 28.597102,
+					long: -81.3660213
+				}
+			},
+			{
+				name: "Park Avenue",
+				address: "S Park AveOrlando, FL 32789",
+				commentary: "A very cute local spot that is lined with local restaurants and shops. Almost all the restaurants offer outdoor seating if you want to people watch.",
+				tips: ["Recommend the Wine Room - offers over 100+ wines to taste at your own expense"],
+				category: "adventures",
+				types: ["shopping", "food available", "bar"],
+				label: '',
+				coord: {
+					lat: 28.5949682,
+					long: -81.35085219999999
+				}
+			},
+			{
+				name: "The Ravenous Pig",
+				address: "565 W Fairbanks Ave, Winter Park, FL 32789",
+				commentary: "Stylish American Gastropub where the menu is practically changing everyday due to their Farm-to-Table ingredients. There is nothing that I have tried that I did not like.",
+				tips: ["Closed on Mondays", "After dinner, check out their Beer Garden for their personally brewed craft beers!"],
+				category: "foodAndDrinks",
+				types: ["american"],
+				label: '',
+				coord: {
+					lat: 28.5933844,
+					long: -81.3559685
+				}
+			},
+			{
+				name: "Ravenous Pig Beer Garden",
+				address: "511 W Fairbanks Ave, Winter Park, FL 32789",
+				commentary: "Behind Ravenous Pig (the restaurant), they opened an outdoor, family and dog-friendly Beer Garden for their craft beer. They also serve wine and cocktails.",
+				tips: ["Closed on Mondays"],
+				category: "foodAndDrinks",
+				types: ["brewery"],
+				label: '',
+				coord: {
+					lat: 28.5933907,
+					long: -81.3555844
+				}
+			},
+			{
+				name: "The Glass Knife",
+				address: "276 S Orlando Ave, Winter Park, FL 32789",
+				commentary: "Beautiful, sleek exterior and interior, this cafe is modern yet feminine with jaw dropping cakes and pasteries. It feels like you fell into Alice in Wonderland's tea time, but without the chaotic guests.",
+				tips: ["No cash"],
+				category: "foodAndDrinks",
+				types: ["dessert", "coffee", "pastries", "food available"],
+				label: '',
+				coord: {
+					lat: 28.5959398,
+					long: -81.3648096
+				}
+			},
+			{
+				name: "Mochi Dochi",
+				address: "",
+				commentary: "A new twist to donuts! Fresh, house-crafted Japaense donuts made with mochi with flavors that compliment the texture of the donut, such as ube glaze, matcha-orea, etc.",
+				tips: ["Go early as they get packed and tend to sell out sometimes (mainly on weekends).", "Only open until mid-afternoon"],
+				category: "foodAndDrinks",
+				types: ["pastries"],
+				label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			},
+			{
+				name: "Wekiwa Springs State Park",
+				address: "1800 Wekiwa Cir, Apopka, FL 32712",
+				commentary: "A great spot for paddle boarding, kayaking, canoeing, or swimming that is closer to 'Orlando'.",
+				tips: [],
+				category: "adventures",
+				types: ["swimming"],
+				label: '',
+				coord: {
+					lat: 28.7114806,
+					long: -81.4628178
+				}
+			},
+			{
+				name: "Blue Springs State Park",
+				address: "2100 W French Ave, Orange City, FL 32763",
+				commentary: "A great spot for paddle boarding, canoeing, scuba diving, kayaking, tubing, or swimming. During the right season, you can kayak/ canoe along manatees in the crystal clear waters of Blue Springs. The water stays around 72-degrees, perfect under the blazing Florida sun.",
+				tips: ["You CANNOT swim with the manatees", "If you swim upstream, you can reach the spring boil where you can snorkel in deeper waters for an amazing underwater view.", "You must be a certified diver for scuba diving here."],
+				category: "adventures",
+				types: ["snorkeling", "swimming"],
+				label: '',
+				coord: {
+					lat: 28.9465852,
+					long: -81.3402342
+				}
+			},
+        ]
+    },
     {
 		name: "Maui,Hawaii",
 		continent: "North America",
@@ -1853,9 +1970,9 @@ const locationsArray = [
 				name: "Maui Brewing Company",
 				address: "605 Lipoa Pkwy, Kihei, HI 96753",
 				commentary: "1 of the 2 biggest breweries on Maui",
-				tips: [""],
+				tips: [],
 				category: "foodAndDrinks",
-				types: ["bar"],
+				types: ["brewery"],
 				label: '',
 				coord: {
 					lat: 20.7494953,
@@ -1866,9 +1983,9 @@ const locationsArray = [
 				name: "Kohola Brewery",
 				address: "910 HI-30 #55, Lahaina, HI 96761",
 				commentary: "1 of the 2 biggest breweries on Maui",
-				tips: [""],
+				tips: [],
 				category: "foodAndDrinks",
-				types: ["bar"],
+				types: ["brewery"],
 				label: '',
 				coord: {
 					lat: 20.8815705,
@@ -1879,7 +1996,7 @@ const locationsArray = [
 				name: "Haleakala Crater",
 				address: "Mile Marker 41 Hana Hwy, Hana, HI 96713",
 				commentary: "",
-				tips: [""],
+				tips: [],
 				category: "adventures",
 				types: ["hiking", "sightsee"],
 				label: '',
@@ -1905,7 +2022,7 @@ const locationsArray = [
 				name: "Ululani’s Shave Ice",
 				address: "61 S Kihei Rd, Kihei, HI 96753",
 				commentary: "Best shave ice on Maui and known for their unique flavors!",
-				tips: [""],
+				tips: [],
 				category: "foodAndDrinks",
 				types: ["dessert"],
 				label: '',
@@ -1931,7 +2048,7 @@ const locationsArray = [
 				name: "Aunty Sandy's Banana Bread",
 				address: "210 Keanae Rd, Ke‘Anae, HI 96708",
 				commentary: "BEST BANANA BREAD HANDS DOWN!",
-				tips: [""],
+				tips: [],
 				category: "foodAndDrinks",
 				types: ["pastries"],
 				label: '',
@@ -1944,9 +2061,9 @@ const locationsArray = [
 				name: "Paia Town",
 				address: "",
 				commentary: "The last city you'll see when doing Road to Hana!",
-				tips: [""],
+				tips: [],
 				category: "adventures",
-				types: ["shopping", "eating"],
+				types: ["shopping", "food available"],
 				label: '',
 				// coord: {
 				// 	lat: 0,
@@ -1983,7 +2100,7 @@ const locationsArray = [
 				name: "Garden of Eden",
 				address: "10600 Hana Hwy, Haiku, HI 96708",
 				commentary: "Beautiful garden and arboretum that overlooks the waters. A little pricey but very stunning.",
-				tips: [""],
+				tips: [],
 				category: "adventures",
 				types: ["sightsee"],
 				label: '',
@@ -2009,7 +2126,7 @@ const locationsArray = [
 				name: "Pīpīwai Trail",
 				address: "Hana, HI 96713",
 				commentary: "About 4 mile trail - Known for their bamboo trees in their tropical rainforest.",
-				tips: [""],
+				tips: [],
 				category: "adventures",
 				types: ["hiking", "sightsee"],
 				label: '',
@@ -2049,9 +2166,9 @@ async function renderMap(array, location) {
 		await locationsArray.forEach(city => {
 			if (city.name == location) {
 				map.removeMarkers();
-				if (location.includes('Hawaii')) {
+				if (location.includes('Hawaii') || location.includes('Orlando')) {
 					map.setZoom(10);
-				} else if (location.includes('Iceland') || location.includes('Orlando')) {
+				} else if (location.includes('Iceland')) {
 					map.setZoom(6);
 				} else {
 					map.setZoom(12);
@@ -2061,7 +2178,7 @@ async function renderMap(array, location) {
 			}
 		});
 		await array.forEach(spot => {
-			const { coord, name, label, address, commentary, tips } = spot;
+			const { coord, name, label, address, commentary, tips, types } = spot;
 			if (coord) {
 				let query = `${name} ${address}`
 				let m = map.addMarker({
@@ -2238,7 +2355,7 @@ renderLocationContent = (location) => {
 renderLegend = (categoryArray) => {
 	let content = categoryArray.map(cat => {
 		return `<div class="row d-flex justify-content-start m-0 p-0">
-			<p class="smallText">${cat.icon} ${cat.type}</p>
+		<p>${cat.icon} <span class="smallText">${cat.type}</span></p>
 		</div>`
 	}).join('');
 	$('.popover-dismiss').attr('data-bs-content', content)
