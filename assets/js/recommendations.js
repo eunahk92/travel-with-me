@@ -1210,19 +1210,6 @@ const locationsArray = [
 				}
 			},
 			{
-				name: "Lobster Bar",
-				address: "140-1 Itaewon-ro, Yongsan-gu, Seoul, Korea",
-				commentary: "",
-				tips: ["Recommended to try the Maine Lobster Roll or Lobster Mac & Cheese"],
-				category: "extra-food",
-				types: ["seafood"],
-				label: '',
-				coord: {
-					lat: 37.5339468,
-					long: 126.9893291
-				}
-			},
-			{
 				name: "Seoulism",
 				address: "48-7 Songpa-dong, Songpa-gu, Seoul, South Korea",
 				commentary: "Stunning views of the city from this rooftop view",
@@ -2508,8 +2495,8 @@ const locationsArray = [
 		],
 		imgPaths: [
 			"./assets/photos/bangkok/IMG_0319.jpg", 
-			"./assets/photos/bangkok/IMG_0418.jpg", 
-			"./assets/photos/bangkok/IMG_0556.jpg", 
+			"./assets/photos/bangkok/IMG_0418.JPG", 
+			"./assets/photos/bangkok/IMG_0556.JPG", 
 			"./assets/photos/bangkok/IMG_0629.jpg", 
 			"./assets/photos/bangkok/IMG_0900.jpg",
 			"./assets/photos/bangkok/IMG_1081.jpg"
@@ -2671,9 +2658,9 @@ const locationsArray = [
 			"Don't ride the elephants in the city and book an excursion at an Elephant farm/ sanctuary."
 		],
 		imgPaths: [
-			"./assets/photos/chiangmai/IMG_0887.jpg", 
-			"./assets/photos/chiangmai/IMG_0925.jpg", 
-			"./assets/photos/chiangmai/IMG_0998.jpg", 
+			"./assets/photos/chiangmai/IMG_0887.JPG", 
+			"./assets/photos/chiangmai/IMG_0925.JPG", 
+			"./assets/photos/chiangmai/IMG_0998.JPG", 
 			"./assets/photos/chiangmai/IMG_2440.jpg", 
 			"./assets/photos/chiangmai/IMG_3061.jpg",
 			"./assets/photos/chiangmai/IMG_3118.jpg"
