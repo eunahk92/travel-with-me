@@ -938,7 +938,7 @@ const locationsArray = [
 				commentary: "Myeongdong Market is one of South Korea’s prime shopping districts – you’ll find department stores, shopping malls, and independent shops, together with a host of trendy restaurants and cafes.",
 				tips: [],
 				category: "adventures",
-				types: ["shopping", "food available"],
+				types: ["shopping", "local food"],
 				label: '',
 				coord: {
 					lat: 37.55998,
@@ -1046,7 +1046,7 @@ const locationsArray = [
 				commentary: "Basically our version of a college town (like Athens, GA but smaller and closer together). Hongdae is also one of Seoul's biggest nightlife destinations and home to the city's biggest bars and  clubs. Streets are lined with lots of stores and an assortment of amazing (affordable) restaurants (it is a college town afterall). You'll see students busking (amateur street performers) as well during the day and night.",
 				tips: [],
 				category: "adventures",
-				types: ["sightsee", "shopping", "food available", "bar"],
+				types: ["sightsee", "shopping", "local", "food available", "bar"],
 				label: '',
 				coord: {
 					lat: 37.553166,
@@ -1215,7 +1215,7 @@ const locationsArray = [
 				commentary: "",
 				tips: ["Recommended to try the Maine Lobster Roll or Lobster Mac & Cheese"],
 				category: "extra-food",
-				types: ["food available", "seafood"],
+				types: ["seafood"],
 				label: '',
 				coord: {
 					lat: 37.5339468,
@@ -2658,6 +2658,131 @@ const locationsArray = [
 					long: 99.9588649
 				},
             },
+		]
+	},
+	{
+		name: "Chiang Mai,Thailand",
+		continent: "Asia",
+		coord: {
+			lat: 18.7883,
+			long: 98.9853
+        },
+		cityTips: [
+			"Don't ride the elephants in the city and book an excursion at an Elephant farm/ sanctuary."
+		],
+		imgPaths: [
+			"./assets/photos/chiangmai/IMG_0887.jpg", 
+			"./assets/photos/chiangmai/IMG_0925.jpg", 
+			"./assets/photos/chiangmai/IMG_0998.jpg", 
+			"./assets/photos/chiangmai/IMG_2440.jpg", 
+			"./assets/photos/chiangmai/IMG_3061.jpg",
+			"./assets/photos/chiangmai/IMG_3118.jpg"
+		],
+		recommendations: [
+            {
+				name: "Wat Phra That Doi Suthep",
+				address: "9 หมู่ที่ 9 Mueang Chiang Mai District, Chiang Mai 50200, Thailand",
+				commentary: "Buddhist temple in Chiang Mai Province. It is a sacred site to many Thai people. Beautiful entrance to the temple that requires a little climbing.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 18.8049889,
+					long: 98.92163370000002
+				},
+            },
+			{
+				name: "Hmong Village",
+				address: "หมู่ที่ 11 อุทยานแห่งชาติดอยสุเทพ-ปุย Mueang Chiang Mai District, Chiang Mai 50200, Thailand",
+				commentary: "Home to a Hmong tribe, who sell traditional handmade crafts.",
+				tips: ["Be mindful when exploring as this is their home."],
+				category: "adventures",
+				types: ["sightsee", "shopping"],
+				label: '',
+				coord: {
+					lat: 18.8067027,
+					long: 98.91635210000001
+				},
+            },
+			{
+				name: "Patara Elephant Farm",
+				address: "Ban Pong, Hang Dong District, Chiang Mai 50230, Thailand",
+				commentary: "One of the amazing Elephant farms that offer an interactive and educational experience! You get to feed them, bathe them, and ride them.",
+				tips: ["Book ahead of time"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 18.7635987,
+					long: 98.8583309
+				},
+            },
+			{
+				name: "Tikky Cafe",
+				address: "20 Taeparak Rd, Tambon Chang Phueak, Mueang Chiang Mai District, Chiang Mai 50300, Thailand",
+				commentary: "",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["local"],
+				label: '',
+				coord: {
+					lat: 18.8040669,
+					long: 98.97339
+				},
+            },
+			{
+				name: "Warorot Market",
+				address: "Wichayanon Rd, Tambon Chang Moi, Mueang Chiang Mai District, Chiang Mai 50300, Thailand",
+				commentary: "(Copied from Google) Warorot Market, locally known as Kad Luang is a market and one of tourist attractions in Chiang Mai Province, regarded as the largest and most well-known market in the north region of Thailand.",
+				tips: [],
+				category: "adventures",
+				types: ["shopping", "local"],
+				label: '',
+				coord: {
+					lat: 18.7931582,
+					long: 98.99954679999999
+				},
+            },
+			{
+				name: "Namtok Bua Tong (Sticky Waterfalls)",
+				address: "Mae Ho Phra, Mae Taeng District, Chiang Mai 50150, Thailand",
+				commentary: "Known as 'Sticky Waterfalls' because the rocks are coated with mineral deposits from the water, allowing you to climb up the rocks with your bare feet. You can head up to the top, to the source of the spring.",
+				tips: ["About an hour and half out from Chiang Mai"],
+				category: "extra-adv",
+				types: ["swimming", "hiking"],
+				label: '',
+				coord: {
+					lat: 19.0949665,
+					long: 99.0681668
+				}
+			},
+			{
+				name: "Wat Pha Lat",
+				address: "บ้านห้วยผาลาด 101, Sriwichai Alley, Mueang Chiang Mai District, Chiang Mai 50200, Thailand",
+				commentary: "Hike the Pilgrim's Path to the temple. Unlike all the other temples, this one is surrounded by a jungle and can only be reached by a 30-45 minute hike to it.",
+				tips: ["A strenuous hike so bring some water"],
+				category: "extra-adv",
+				types: ["hiking", "sightsee"],
+				label: '',
+				coord: {
+					lat: 18.7993968,
+					long: 98.9341468
+				}
+			},
+			{
+				name: "Doi Inthanon",
+				address: "Ban Luang, Chom Thong District, Chiang Mai 50270, Thailand",
+				commentary: "Highest peak in Thailand with a temple at the top, offering stunning summit views. There are some easy hikes along waterfalls.",
+				tips: [],
+				category: "extra-adv",
+				types: ["sightsee", "hiking"],
+				label: '',
+				coord: {
+					lat: 18.422175,
+					long: 98.67757180000001
+				}
+			},
 		]
 	},
 ];
