@@ -2496,6 +2496,170 @@ const locationsArray = [
 			},
         ]
     },
+	{
+		name: "Bangkok,Thailand",
+		continent: "Asia",
+		coord: {
+			lat: 13.7563,
+			long: 100.5018
+        },
+		cityTips: [
+			"Get as many massages as you can as it only comes out to ~$5-$15 (with tip). After a day of walking around, a Thai or foot massage is heavenly.", "If you scheduled to see temples in your itinerary for the day, dress appropriately (no exposed shoulders or skin above the knee).", "Keep cash with you at all times so you don't miss out on the endless delicious street food (wonderfully cheap ~$1-$3)", "Ride a tuk tuk (taxi) at least once."
+		],
+		imgPaths: [
+			"./assets/photos/bangkok/IMG_0319.jpg", 
+			"./assets/photos/bangkok/IMG_0418.jpg", 
+			"./assets/photos/bangkok/IMG_0556.jpg", 
+			"./assets/photos/bangkok/IMG_0629.jpg", 
+			"./assets/photos/bangkok/IMG_0900.jpg",
+			"./assets/photos/bangkok/IMG_1081.jpg"
+		],
+		recommendations: [
+            {
+				name: "The Grand Palace",
+				address: "Grand Palace Na Phra Lan Road, Grand Palace Bangkok 10200, Thailand",
+				commentary: "A complex of majestic buildings in the heart of Bangkok. Entrance fee for The Grand Palace is higher than most of the other sites.",
+				tips: ["500 Baht entrance fee"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 13.7498558,
+					long: 100.4915765
+				},
+            },
+			{
+				name: "Wat Pho",
+				address: "2 Sanam Chai Rd, Phra Borom Maha Ratchawang, Phra Nakhon, Bangkok 10200, Thailand",
+				commentary: "Buddhist temple complex, famous for its giant reclining Buddha that is 46 meters long, covered in gold leaf.",
+				tips: ["You'll have to take off your shoes to enter to see the reclining Buddha."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 13.7448466,
+					long: 100.4942644
+				},
+            },
+			{
+				name: "Wat Saket",
+				address: "344 Thanon Chakkraphatdi Phong, Ban Bat, Pom Prap Sattru Phai, Bangkok 10100, Thailand",
+				commentary: "Also called the Golden Mount, it occupies an 80-meter-tall manmade hill.",
+				tips: ["If you want a tour, recommend booking ahead of time."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 13.7538076,
+					long: 100.5065934
+				},
+            },
+			{
+				name: "Khaosan Road",
+				address: "Khwaeng Talat Yot, Khet Phra Nakhon, Krung Thep Maha Nakhon 10200, Thailand",
+				commentary: "Known as the party street! Street lined with affordable (cheap) drinks, food, and shops.",
+				tips: [],
+				category: "adventures",
+				types: ["shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 13.7596276,
+					long: 100.4979764
+				},
+            },
+			{
+				name: "Patpong Night Market",
+				address: "Thanon Patpong 1, Suriya Wong, Bang Rak, Bangkok 10500, Thailand",
+				commentary: "(Copied from Google) Busy night bazaar with many stalls hawking gifts, souvenirs, clothing & street food.",
+				tips: ["Negotiate your prices!! Don't buy anything for the initial price they tell you."],
+				category: "adventures",
+				types: ["shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 13.7288752,
+					long: 100.5317455
+				},
+            },
+			{
+				name: "Wat Maha That",
+				address: "Wat Mahathat, Naresuan Rd, Tha Wasukri, Phra Nakhon Si Ayutthaya District, Phra Nakhon Si Ayutthaya 13000, Thailand",
+				commentary: "Buddhist temple in Ayutthaya",
+				tips: ["You can find the Buddha head embedded in a Banyan tree here at Wat Mahathat in Ayutthaya"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 14.3569443,
+					long: 100.5675112
+				},
+            },
+			{
+				name: "Wat Yai Chai Mang Khon",
+				address: "หมู่ที่ 3 40/3 ตำบล คลองสวนพลู Phra Nakhon Si Ayutthaya District, Phra Nakhon Si Ayutthaya 13000, Thailand",
+				commentary: "A Buddhist temple in Ayutthaya",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 14.3455172,
+					long: 100.5924518
+				},
+            },
+			{
+				name: "Wat Yai Chaimongkol",
+				address: "หมู่ที่ 3 40/3 ตำบล คลองสวนพลู Phra Nakhon Si Ayutthaya District, Phra Nakhon Si Ayutthaya 13000, Thailand",
+				commentary: "Buddhist temple in Ayutthaya",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 14.3455172,
+					long: 100.5924518
+				},
+            },
+			{
+				name: "Chatuchak market",
+				address: "สวนจตุจักร Kamphaeng Phet 2 Rd, Chatuchak, Bangkok 10900, Thailand",
+				commentary: "Largest market in Thailand. Loads of cheap food and souvenirs.",
+				tips: [],
+				category: "adventures",
+				types: ["shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 13.8077093,
+					long: 100.5533847
+				},
+            },
+			{
+				name: "Srinagarindra Train Night Market",
+				address: "1 4 Srinagarindra Rd, Nong Bon, Prawet, Bangkok 10250, Thailand",
+				commentary: "Outdoor night market with shops that specialize in antiques and vintage items, with bars and food stalls as well.",
+				tips: ["Open only at night", "Closed Mon-Wed"],
+				category: "extra-adv",
+				types: ["shopping", "food availble"],
+				label: '',
+				coord: {
+					lat: 13.6724988,
+					long: 100.6480589
+				},
+            },
+			{
+				name: "Damnoen Sadua Floating Market",
+				address: "Damnoen Saduak, Damnoen Saduak District, Ratchaburi 70130, Thailand",
+				commentary: "One of the more famous floating markets in Thailand where vendors are in wooden boats selling souvenirs and food!",
+				tips: ["Closes at 5pm, go early"],
+				category: "extra-adv",
+				types: ["shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 13.5210808,
+					long: 99.9588649
+				},
+            },
+		]
+	},
 ];
 
 let popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
@@ -2525,7 +2689,7 @@ async function renderMap(array, location) {
 		await locationsArray.forEach(city => {
 			if (city.name == location) {
 				map.removeMarkers();
-				if (location.includes('Hawaii') || location.includes('Orlando')) {
+				if (location.includes('Hawaii') || location.includes('Orlando') || location.includes('Thailand')) {
 					map.setZoom(10);
 				} else if (location.includes('Iceland')) {
 					map.setZoom(6);
@@ -2559,7 +2723,7 @@ async function renderMap(array, location) {
 								</p>
 							</div>
 							<div class="d-flex justify-content-end">
-								<a href="${renderGoogleLinks(query)}">google me here</a>
+								<a href="${renderGoogleLinks(query)}" class="px-1">google me here</a>
 							</div>
 						`
 					},
@@ -2622,7 +2786,7 @@ renderListOfRecommendations = async (array, location) => {
 			if (icons) icons = icons.toString().replaceAll(',', '');
 			const li = `
 				<div class="row d-flex justify-content-start m-0 p-0">
-					<a href="#recommendationsSection" class="recommendationLink mr-3" data-label=${label}>
+					<a href="#recommendationsSection" class="recommendationLink" data-label=${label}>
 						<small>${label ? renderMarkerLabelsForLi(label) : ''} ${name} ${icons ? icons : ''}</small>
 					</a>
 				</div>`
