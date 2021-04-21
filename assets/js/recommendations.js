@@ -2647,10 +2647,8 @@ renderListOfRecommendations = async (array, location) => {
 
 		if (!extrasAdvCounter && !extrasFoodCounter) {
 			if ($('.noneMsg')[0]) {
-				console.log('here')
 				return ''
 			} else {
-				console.log('there')
 				$("#tripContent-extras-list").append(`<p class="mx-2 smallText noneMsg">Recommend something new for me to try :)</p>`);
 			}
 			$("#foodieSpotsHeader").css('display', 'none');
