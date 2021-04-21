@@ -2963,10 +2963,13 @@ renderListOfRecommendations = async (array, location) => {
 			$("#tripContent-food-extras-list").css('display', 'block');
 		}
 		if (!eateriesCounter) {
-			$("#tripContent-eateries-list").append(`<p class="mx-2 smallText noEateriesMsg">soon to come...</p>`);
-		} else {
-			$('.noEateriesMsg').remove();
-		}
+			if ($('.noEateriesMsg')[0]) {
+				return ''
+			} else {
+				$("#tripContent-eateries-list").append(`<p class="mx-2 smallText noEateriesMsg">soon to come...</p>`);
+			}
+			
+		} 
 	} catch { err => console.log(err)}
 };
 
