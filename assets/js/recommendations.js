@@ -3086,16 +3086,17 @@ initMap = () => {
 
 $(document).ready(() => {
 	let title = `
-		<h2 class="text-center locationTitle" id="locationTitleV" data-city="city"></h2>
+		<h2 class="text-center locationTitle" id="locationTitleMobile" data-city="city"></h2>
 	`
 	let title2 = `
-		<h2 class="text-end locationTitle" id="locationTitleH" data-city="city"></h2>
+		<h2 class="text-end locationTitle" id="locationTitleWide" data-city="city"></h2>
 	`
-	if (intViewportWidth > '620') {
+	if (intViewportWidth > 760) {
 		$('#recommendationsSection').append(title2);
 	} else {
 		$('#cityName').append(title);
 	}
+	console.log(intViewportWidth)
 	renderLocationLinks();
 	initMap();
 });
