@@ -2646,10 +2646,10 @@ renderListOfRecommendations = async (array, location) => {
 		});
 
 		if (!extrasAdvCounter && !extrasFoodCounter) {
-			if ($('.noneMsg')[0]) {
+			if ($('.noneListedMsg')[0]) {
 				return ''
 			} else {
-				$("#tripContent-extras-list").append(`<p class="mx-2 smallText noneMsg">Recommend something new for me to try :)</p>`);
+				$("#tripContent-extras-list").append(`<p class="mx-2 smallText noneListedMsg">Recommend something new for me to try :)</p>`);
 			}
 			$("#foodieSpotsHeader").css('display', 'none');
 			$("#advSpotsHeader").css('display', 'none');
@@ -2657,7 +2657,7 @@ renderListOfRecommendations = async (array, location) => {
 			$("#tripContent-food-extras-list").css('display', 'none');
 		} 
 		if (extrasAdvCounter || extrasFoodCounter) {
-			$('.noneMsg').remove();
+			$('.noneListedMsg').remove();
 		}
  		if (!extrasAdvCounter) {
 			$("#advSpotsHeader").css('display', 'none');
@@ -2674,7 +2674,9 @@ renderListOfRecommendations = async (array, location) => {
 			$("#tripContent-food-extras-list").css('display', 'block');
 		}
 		if (!eateriesCounter) {
-			$("#tripContent-eateries-list").append(`<p class="mx-2 smallText">soon to come...</p>`);
+			$("#tripContent-eateries-list").append(`<p class="mx-2 smallText noEateriesMsg">soon to come...</p>`);
+		} else {
+			$('.noEateriesMsg').remove();
 		}
 	} catch { err => console.log(err)}
 };
