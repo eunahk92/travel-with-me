@@ -1323,137 +1323,236 @@ const locationsArray = [
 			},
         ]
     },
-    // {
-	// 	name: "Rome,Italy",
-	// 	continent: "Europe",
-	// 	cityTips: [
-
-	// 	],
-	// 	coord: {
-	// 		lat: 41.9028,
-	// 		long: 12.4964
-    //     },
-	// 	recommendations: [
-	// 		// Most updated obj properties:
-	// 		// {
-	// 			// name: "",
-	// 			// address: "",
-	// 			// commentary: "",
-	// 			// tips: [],
-	// 			// category: "",
-	// 			// types: [],
-	// 			// label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		//},
-	// 		{
-	// 			name: "Colesseum",
-	// 			address: "",
-	// 			commentary: "",
-	// 			tips: ["Buy tickets ahead of time to skip lines (you can also get an audio tour guide)."],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Palatine Hill",
-	// 			address: "",
-	// 			commentary: "",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Roman Forum",
-	// 			address: "",
-	// 			commentary: "",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Arch of Constantine",
-	// 			address: "",
-	// 			commentary: "",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Pantheon",
-	// 			address: "",
-	// 			commentary: "",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Trevi Fountain",
-	// 			address: "",
-	// 			commentary: "Like seen in the Lizzie Maguire Movie lol",
-	// 			tips: ["Gets VERY crowded and they don't allow you to sit on the fountain edge (unless you can do it before they yell at you)."],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Spanish Steps",
-	// 			address: "",
-	// 			commentary: "",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-	// 		{
-	// 			name: "Vatican City",
-	// 			address: "",
-	// 			commentary: "Prepare this to be an all day event",
-	// 			tips: [],
-	// 			category: "adventures",
-	// 			types: ["sightsee"],
-	// 			label: '',
-	// 			// coord: {
-	// 			// 	lat: 0,
-	// 			// 	long: 0
-	// 			// }
-	// 		},
-    //     ]
-    // },
+    {
+		name: "Rome,Italy",
+		continent: "Europe",
+		cityTips: [
+			"Financally, if you are able to, stay close to the city center. You will be able to visit most of Rome on foot if so.", "Buy bus tickets if you're traveling far. You can buy 24-hour or 48-hour bus tickets at the convenient shops (spot the large T in front).", "Larger stores or restaurants can process cards, but smaller business's can't or will charge you a fee, so carry cash.", "If you're traveling in a group, just venmo who-ever pays the bill, as the restaurants traditionally won't split the bill."
+		],
+		imgPaths: [
+			"./assets/photos/rome/IMG_4003.jpg", 
+			"./assets/photos/rome/IMG_4027.jpg", 
+			"./assets/photos/rome/IMG_4034.jpg", 
+			"./assets/photos/rome/IMG_4038.JPG", 
+			"./assets/photos/rome/IMG_4060.jpg",
+			"./assets/photos/rome/IMG_4388.jpg"
+		],
+		coord: {
+			lat: 41.9028,
+			long: 12.4964
+        },
+		recommendations: [
+			// Most updated obj properties:
+			// {
+				// name: "",
+				// address: "",
+				// commentary: "",
+				// tips: [],
+				// category: "",
+				// types: [],
+				// label: '',
+				// // coord: {
+				// // 	lat: 0,
+				// // 	long: 0
+				// // }
+			//},
+			{
+				name: "Colesseum",
+				address: "Piazza del Colosseo, 1, 00184 Roma RM, Italy",
+				commentary: "Can't go to Rome without a visit to the Colosseum!",
+				tips: ["Buy tickets ahead of time to skip lines (you can also get an audio tour guide).", "You can buy combo tickets for Colesseum, the Roman Forum, and the Palantine Hill."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.8899435,
+					long: 12.4943371
+				}
+			},
+			{
+				name: "Palatine Hill",
+				address: "",
+				commentary: "",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				// coord: {
+				// 	lat: 0,
+				// 	long: 0
+				// }
+			},
+			{
+				name: "Piazza Navona",
+				address: "Piazza Navona, 00186 Roma RM, Italy",
+				commentary: "A public space in Rome that is lined with restaurants, shops, and numerous Gelato shops. Make your way toward Via Della Pace, one of the most picturesque streets.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee", "shopping", "food available"],
+				label: '',
+				coord: {
+					lat: 41.8991328,
+					long: 12.4732921
+				}
+			},
+			{
+				name: "Roman Forum",
+				address: "Via della Salara Vecchia, 5/6, 00186 Roma RM, Italy",
+				commentary: "An archeological site that makes it seem like you were transported back into time and you're strolling through the cobblestoned streets.",
+				tips: ["Get the audio tour that tells you all about the site as you stroll through.", "You can buy combo tickets for Colesseum, the Roman Forum, and the Palantine Hill."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.8925821,
+					long: 12.4861014
+				}
+			},
+			{
+				name: "Arch of Constantine",
+				address: "Via di San Gregorio, 00186 Roma RM, Italy",
+				commentary: "",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.8866806,
+					long: 12.4898458
+				}
+			},
+			{
+				name: "Market at Campo de’ Fiori",
+				address: "Piazza Campo de' Fiori, 33, 00186 Roma RM, Italy",
+				commentary: "Local fruit and vegetable market",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee", "shopping"],
+				label: '',
+				coord: {
+					lat: 41.8957215,
+					long: 12.4720282
+				}
+			},
+			{
+				name: "Pantheon",
+				address: "Piazza della Rotonda, 00186 Roma RM, Italy",
+				commentary: "The burial place of Rome's prominent figures, like Raphael. When you walk in, take a look up: the oculus in the dome is open to the sky, allowing the sunlight to light up the inside.",
+				tips: ["No tickets needed"],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.8992619,
+					long: 12.4768866
+				}
+			},
+			{
+				name: "Trevi Fountain",
+				address: "Piazza di Trevi, 00187 Roma RM, Italy",
+				commentary: "Make a wish and throw a coin in the Trevi Fountain! Like seen in the Lizzie Maguire Movie lol. The details of the sculptures and the fountain itself is worth of a stare.",
+				tips: ["Gets VERY crowded with other tourists and street hawkers trying to sell cheap souvenirs.", "They don't allow you to sit on the fountain edge (unless you can do it before they yell at you)."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.9007617,
+					long: 12.4833133
+				}
+			},
+			{
+				name: "Spanish Steps",
+				address: "Piazza di Spagna, 00187 Roma RM, Italy",
+				commentary: "Climb the famous steps and admire the views, including Bernini's ship-shaped fountain.",
+				tips: [],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.9056798,
+					long: 12.4822062
+				}
+			},
+			{
+				name: "Vatican City",
+				address: "Città del Vaticano, 00120 Vatican City",
+				commentary: "So many things to see around Vatican city... Piazza di San Pietro, St. Peter's Basilica, the Vatican Museums, or the 1,400 room palace. You can climb to the top of Castel Sant'Angelo, where you can get great views of Vatican City.",
+				tips: ["You can easily spend the whole day here", "Tickets are required to attend Mass."],
+				category: "adventures",
+				types: ["sightsee"],
+				label: '',
+				coord: {
+					lat: 41.9021788,
+					long: 12.4536007
+				}
+			},
+			{
+				name: "Tazza d'Oro",
+				address: "Via degli Orfani, 84, 00186 Roma RM, Italy",
+				commentary: "A very popular cafe that holds rivalry with another cafe right down the block, Caffè Sant’Eustachio. Love the smell of their coffee as you walk in.",
+				tips: ["One of their specialties is granita di caffe (slushy coffee with whipped cream)."],
+				category: "foodAndDrinks",
+				types: ["coffee", "pastries"],
+				label: '',
+				coord: {
+					lat: 41.8994747,
+					long: 12.477493
+				}
+			},
+			{
+				name: "Caffè Sant'Eustachio",
+				address: "Via degli Orfani, 84, 00186 Roma RM, Italy",
+				commentary: "The other popular cafe, competitor of Tazza d'Oro that's right down the block, known for their Old-school Roman coffee bar vibe.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["coffee"],
+				label: '',
+				coord: {
+					lat: 41.8994747,
+					long: 12.477493
+				}
+			},
+			{
+				name: "Open Baladin",
+				address: "Via degli Specchi, 6, 00186 Roma RM, Italy",
+				commentary: "I tagged it with 'brewery' but it is not a brewery, just a great, central spot that offers a wide selection of craft beers.",
+				tips: ["No wine"],
+				category: "foodAndDrinks",
+				types: ["brewery"],
+				label: '',
+				coord: {
+					lat: 41.8935213,
+					long: 12.4746525
+				}
+			},		
+			{
+				name: "Fatamorgana",
+				address: "Piazza degli Zingari, 5, 00184 Roma RM, Italy",
+				commentary: "Numerous locations, including Monti and near Campo e' Fiori. This gelato shop is known for their fresh, organic ingredients. They serve your classic gelato flavors and some crazy ones if you're adventurous, like horseradish.",
+				tips: ["Closed during Winter"],
+				category: "foodAndDrinks",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 41.8956767,
+					long: 12.4932618
+				}
+			},	
+			{
+				name: "The Jerry Thomas Project",
+				address: "Vicolo Cellini, 30, 00186 Roma RM, Italy",
+				commentary: "(Totally got this off google) A speakeasy cocktail bar and a pioneer in the city's craft cocktail movement. This was actually the first italian 'secret bar'.",
+				tips: ["Space is tiny & seats are limited. Call in advance to reserve a spot.", "Beware: Poorly ventilated and smoking is permitted."],
+				category: "extra-food",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 41.897904,
+					long: 12.468005
+				}
+			},		
+        ]
+    },
 	{
 		name: "Venice,Italy",
 		continent: "Europe",
@@ -1871,7 +1970,7 @@ const locationsArray = [
 				name: "Park Avenue",
 				address: "S Park AveOrlando, FL 32789",
 				commentary: "A very cute local spot that is lined with local restaurants and shops. Almost all the restaurants offer outdoor seating if you want to people watch.",
-				tips: ["Recommend the Wine Room - offers over 100+ wines to taste at your own expense"],
+				tips: ["I recommend a visit to the Wine Room- over 100+ wines to taste at your own expense"],
 				category: "adventures",
 				types: ["shopping", "food available", "bar"],
 				label: '',
@@ -2076,6 +2175,19 @@ const locationsArray = [
 				}
 			},
 			{
+				name: "Pho Huong Lan",
+				address: "1216 E Colonial Dr suite 7, Orlando, FL 32803",
+				commentary: "My favorite spot for pho!",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["asian"],
+				label: '',
+				coord: {
+					lat: 28.5528209,
+					long: -81.3637263
+				}
+			},
+			{
 				name: "Lazy Moon Pizza",
 				address: "1011 E Colonial Dr Suite 101, Orlando, FL 32803",
 				commentary: "A hipster pizzeria that is known for their JUMBO pizza slices. The pizza is so big that it doesn't even all fit on their provided plate. Although they are huge, they are slightly on the thinner side.",
@@ -2151,6 +2263,32 @@ const locationsArray = [
 				coord: {
 					lat: 28.5458382,
 					long: -81.3780712
+				}
+			},
+			{
+				name: "Kabooki Sushi",
+				address: "7705 Turkey Lake Rd, Orlando, FL 32819",
+				commentary: "Contemporary Japanese cuisine/ Kaiseki style with 2 locations in Orlando (I prefer Sandlake location due to accessibility, parking can be tough at the Colonial location).",
+				tips: ["Sit at the sushi bar for a great experience with the sushi chef's! I recommend the Nigiri tasting if the chefs aren't too busy.", "Kabooki offers Omakase that has to be reserved ahead of time."],
+				category: "foodAndDrinks",
+				types: ["bar", "sushi", "asian"],
+				label: '',
+				coord: {
+					lat: 28.4528512,
+					long: -81.47589719999999
+				}
+			},
+			{
+				name: "The Woods",
+				address: "49 N Orange Ave, Orlando, FL 32801",
+				commentary: "Rustic styled bar that offers high quality craft cocktails, located on the 2nd floor.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["bar"],
+				label: '',
+				coord: {
+					lat: 28.5430571,
+					long: -81.3788427
 				}
 			},
         ]
@@ -2474,9 +2612,10 @@ sortAlphabetically = (arr) => {
 renderListOfRecommendations = async (array, location) => {
 	try {
 		let eateriesCounter = 0;
-		let extrasCounter = 0;
-		const sortedArr = sortAlphabetically(array);
-		generateGeocode(sortedArr);
+		let extrasAdvCounter = 0;
+		let extrasFoodCounter = 0;
+		const sortedArr = await sortAlphabetically(array);
+		await generateGeocode(sortedArr);
 		await sortedArr.forEach(spot => {
 			let { name, types, category, label } = spot;
 			let icons = renderIcons(types);
@@ -2497,31 +2636,48 @@ renderListOfRecommendations = async (array, location) => {
 					break;
 				case "extra-adv":
 					$("#tripContent-adv-extras-list").append(li);
-					extrasCounter++;
+					extrasAdvCounter++;
 					break;
 				case "extra-food":
 					$("#tripContent-food-extras-list").append(li);
-					extrasCounter++;
+					extrasFoodCounter++;
 					break;
 			};
 		});
-	if (!extrasCounter) {
-		$('.noneMsg').remove();
-		$("#foodieSpots").css('display', 'none');
-		$("#advSpots").css('display', 'none');
-		$("#tripContent-adv-extras-list").css('display', 'none');
-		$("#tripContent-food-extras-list").css('display', 'none');
-		$("#tripContent-extras-list").append(`<p class="mx-2 smallText noneMsg">Recommend something new for me to try :)</p>`);
-	} else {
-		$('.noneMsg').remove();
-		$("#foodieSpots").css('display', 'block');
-		$("#advSpots").css('display', 'block');
-		$("#tripContent-adv-extras-list").css('display', 'block');
-		$("#tripContent-food-extras-list").css('display', 'block');
-	}
-	if (!eateriesCounter) {
-		$("#tripContent-eateries-list").append(`<p class="mx-2 smallText">soon to come...</p>`);
-	}
+
+		if (!extrasAdvCounter && !extrasFoodCounter) {
+			if ($('.noneMsg')[0]) {
+				console.log('here')
+				return ''
+			} else {
+				console.log('there')
+				$("#tripContent-extras-list").append(`<p class="mx-2 smallText noneMsg">Recommend something new for me to try :)</p>`);
+			}
+			$("#foodieSpotsHeader").css('display', 'none');
+			$("#advSpotsHeader").css('display', 'none');
+			$("#tripContent-adv-extras-list").css('display', 'none');
+			$("#tripContent-food-extras-list").css('display', 'none');
+		} 
+		if (extrasAdvCounter || extrasFoodCounter) {
+			$('.noneMsg').remove();
+		}
+ 		if (!extrasAdvCounter) {
+			$("#advSpotsHeader").css('display', 'none');
+			$("#tripContent-adv-extras-list").css('display', 'none');
+		} else {
+			$("#advSpotsHeader").css('display', 'block');
+			$("#tripContent-adv-extras-list").css('display', 'block');
+		}
+		if (!extrasFoodCounter) {
+			$("#foodieSpotsHeader").css('display', 'none');
+			$("#tripContent-food-extras-list").css('display', 'none');
+		} else {
+			$("#foodieSpotsHeader").css('display', 'block');
+			$("#tripContent-food-extras-list").css('display', 'block');
+		}
+		if (!eateriesCounter) {
+			$("#tripContent-eateries-list").append(`<p class="mx-2 smallText">soon to come...</p>`);
+		}
 	} catch { err => console.log(err)}
 };
 

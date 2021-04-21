@@ -128,7 +128,10 @@ div i {
 		letter-spacing: -.7rem;
 		text-align: center;
 	}
-	#aboutMeSection { flex-direction: column-reverse; padding-bottom: 40px; }
+	#aboutMeSection { 
+		flex-direction: column-reverse; 
+		padding-bottom: 40px; 
+	}
 	#eunahsDiv img {
 		width: 80%;
 		border: 10px solid rgba(255,255,255,0.95);
