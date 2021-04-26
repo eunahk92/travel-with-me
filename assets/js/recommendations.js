@@ -645,7 +645,7 @@ const locationsArray = [
 			{
 				name: "Domo Cafe",
 				address: "1016 Maunakea St M1, Honolulu, HI 96817",
-				commentary: "Hawaiian's family style everything sushi. ",
+				commentary: "Sushiiiii.",
 				tips: ["Recommend their chirashi bowl or one of their nigiri sets. Great portions for your money."],
 				category: "extra-food",
 				types: ["seafood", "asian"],
@@ -653,6 +653,19 @@ const locationsArray = [
 				coord: {
 					lat: 21.312139,
 					long: -157.8633824
+				}
+			},
+			{
+				name: "Anu plant based desserts",
+				address: "737 Kapahulu Ave, Honolulu, HI 96816",
+				commentary: "Dairy free soft serve: flavors are rotated every few weeks but are known for their Ube flavor!",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 21.2808281,
+					long: -157.8139218
 				}
 			},
         ]
