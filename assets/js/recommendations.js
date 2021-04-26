@@ -3156,7 +3156,7 @@ $(document).ready(() => {
 	let title2 = `
 		<h2 class="text-end locationTitle" id="locationTitleWide" data-city="city"></h2>
 	`
-	if (intViewportWidth < 990 && intViewportWidth > 970) {
+	if (intViewportWidth <= 990 && intViewportWidth >= 960) {
 		$('#cityName').append(title);
 	} else if (intViewportWidth > 770) {
 		$('#recommendationsSection').append(title2);
