@@ -3156,13 +3156,13 @@ $(document).ready(() => {
 	let title2 = `
 		<h2 class="text-end locationTitle" id="locationTitleWide" data-city="city"></h2>
 	`
-	if (intViewportWidth > 770) {
+	if (intViewportWidth < 990 && intViewportWidth > 970) {
+		$('#cityName').append(title);
+	} else if (intViewportWidth > 770) {
 		$('#recommendationsSection').append(title2);
 	} else {
 		$('#cityName').append(title);
 	}
-	console.log(intViewportWidth)
-	$('#polaroidDiv').append(`<small>${intViewportWidth}</small>`)
 	renderLocationLinks();
 	initMap();
 });
