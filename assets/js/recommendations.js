@@ -577,6 +577,84 @@ const locationsArray = [
 					long: -157.828336
 				}
 			},
+			{
+				name: "Cloud 9 Cafe",
+				address: "2919 Kapiolani Blvd, Honolulu, HI 96826",
+				commentary: "Known for their fluffy souffle pancakes! They also have boba teas.",
+				tips: ["It does take ~20 minutes if you order the souffle pancake"],
+				category: "extra-food",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 21.2882729,
+					long: -157.8150262
+				}
+			},
+			{
+				name: "Double Fat Ice Cream",
+				address: "2490 Kalakaua Ave, Honolulu, HI 96815",
+				commentary: "Locally spun ice cream!",
+				tips: ["Parking is available at the Alohilani Hotel and you get your ticket validated at the ice cream shop (valid for 3 hours)."],
+				category: "extra-food",
+				types: ["dessert"],
+				label: '',
+				coord: {
+					lat: 21.2746557,
+					long: -157.8232359
+				}
+			},
+			{
+				name: "Holey Grail Donuts",
+				address: "1200 Ala Moana Blvd, Honolulu, HI 96814",
+				commentary: "The Original Taro Donut! Fried in coconut oil and in seasonally rotated flavors.",
+				tips: [],
+				category: "extra-food",
+				types: ["pastries"],
+				label: '',
+				coord: {
+					lat: 21.2923896,
+					long: -157.8519883
+				}
+			},
+			{
+				name: "MoDo Hawaii",
+				address: "2330 Kalakaua Ave # 250, Honolulu, HI 96815",
+				commentary: "Mochi donuts! Similar to Mochi Dochi in Orlando.",
+				tips: [],
+				category: "foodAndDrinks",
+				types: ["pastries"],
+				label: '',
+				coord: {
+					lat: 21.2779635,
+					long: -157.8265374
+				}
+			},
+			{
+				name: "Fat Cheeks",
+				address: "333 Ward Ave, Honolulu, HI 96814",
+				commentary: "Lobster rolls! & they load you up. NEED TO SAY MORE?",
+				tips: ["Located inside the Ohana Marketplace along many other eateries!", "Can get busy so recommend placing order online."],
+				category: "extra-food",
+				types: ["seafood"],
+				label: '',
+				coord: {
+					lat: 21.2961619,
+					long: -157.8550224
+				}
+			},
+			{
+				name: "Domo Cafe",
+				address: "1016 Maunakea St M1, Honolulu, HI 96817",
+				commentary: "Hawaiian's family style everything sushi. ",
+				tips: ["Recommend their chirashi bowl or one of their nigiri sets. Great portions for your money."],
+				category: "extra-food",
+				types: ["seafood", "asian"],
+				label: '',
+				coord: {
+					lat: 21.312139,
+					long: -157.8633824
+				}
+			},
         ]
     },
     {
@@ -3084,6 +3162,7 @@ $(document).ready(() => {
 		$('#cityName').append(title);
 	}
 	console.log(intViewportWidth)
+	$('#polaroidDiv').append(`<small>${intViewportWidth}</small>`)
 	renderLocationLinks();
 	initMap();
 });
